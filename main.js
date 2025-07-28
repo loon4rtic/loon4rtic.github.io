@@ -83,16 +83,153 @@ function popupBox(){
 }
 document.addEventListener('DOMContentLoaded', function () {
   const sliderImages = document.querySelectorAll('.review_slider_img');
+  const reviewGroups = document.querySelectorAll('.review'); // each group of 3 headers
 
-  sliderImages.forEach(function (img) {
+  sliderImages.forEach(function (img, index) {
     img.addEventListener('click', function () {
-      // Remove 'active' class from all images
-      sliderImages.forEach(function (el) {
-        el.classList.remove('active');
-      });
-
-      // Add 'active' class to the clicked image
+      // Remove 'active' from all images
+      sliderImages.forEach(el => el.classList.remove('active'));
       this.classList.add('active');
+
+      // Hide all review groups
+      reviewGroups.forEach(group => group.classList.remove('active'));
+
+      // Show only the corresponding review group
+      if (reviewGroups[index]) {
+        reviewGroups[index].classList.add('active');
+      }
+    });
+    });
+});
+document.querySelectorAll('.reviewHeader').forEach(header => {
+    header.addEventListener('click', () => {
+      header.classList.toggle('active');
     });
   });
+
+
+
+  /*game js*/ 
+  const startordering=document.querySelector("#placeOrderBtn");
+  const gameopening=document.querySelector(".ordering");
+  
+  startordering.addEventListener("click", function(){
+    
+    gameopening.style.display = "flex";
+  })
+  // const btn = document.getElementById("btn");
+  // const btn5 = document.getElementById("btn5");
+
+  // btn.addEventListener("mousedown", () => {
+  //   btn5.className = "hold";
+  // });
+
+  // btn.addEventListener("mouseup", () => {
+  //   btn5.className = "release";
+  // });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sprite = document.getElementById("sprite");
+  const bubblesprite = document.getElementById("bubble");
+
+  let isAnimating = false;
+
+  sprite.addEventListener("mousedown", () => {
+    sprite.classList.add("playing");
+    bubblesprite.classList.add("playing");
+    sprite.classList.remove("released");
+    bubblesprite.classList.remove("released");
+    isAnimating = true;
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isAnimating) {
+      sprite.classList.remove("playing");
+      bubblesprite.classList.remove("playing");
+      isAnimating = false;
+
+      // Delay before fade/slide happens (e.g. 500ms)
+      setTimeout(() => {
+        sprite.classList.add("released");
+        bubblesprite.classList.add("released");
+      }, 500); // You can change this to 1000 for 1s delay, etc.
+    }
+  });
+
+
+// Listen for when the fade/slide transition ends
+  sprite.addEventListener("transitionend", (event) => {
+    if (event.propertyName === "opacity") {
+      //Fading finished, switch to next phase
+      console.log("Transition complete. Move to next phase.");
+      switchToNextPhase();
+    }
+  });
+
+  function switchToNextPhase() {
+    document.querySelector(".phase1").style.display = "none";
+    document.querySelector(".phase2").style.display = "flex";
+  }
+  
 });
+
+
+/*phase 2 js */
+document.addEventListener("DOMContentLoaded", () => {
+  const teapotsprite = document.getElementById("teapot");
+
+  let isAnimating = false;
+
+  teapotsprite.addEventListener("mousedown", () => {
+    teapotsprite.classList.add("playing");
+    teapotsprite.classList.remove("released");
+
+    isAnimating = true;
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isAnimating) {
+      teapotsprite.classList.remove("playing");
+
+      isAnimating = false;
+
+      // Delay before fade/slide happens (e.g. 500ms)
+      setTimeout(() => {
+        teapotsprite.classList.add("released");
+      }, 500); // You can change this to 1000 for 1s delay, etc.
+    }
+  });
+
+
+// Listen for when the fade/slide transition ends
+  teapotsprite.addEventListener("transitionend", (event) => {
+    if (event.propertyName === "opacity") {
+      //Fading finished, switch to next phase
+      console.log("Transition complete. Move to next phase.");
+      switchToNextPhase();
+    }
+  });
+
+  function switchToNextPhase() {
+    document.querySelector(".phase1").style.display = "none";
+    document.querySelector(".phase2").style.display = "flex";
+  }
+  
+});
+
+
+
+
+/*types js*/
+  let next = document.querySelector('.next');
+  let prev = document.querySelector('.prev');
+  let slider = document.querySelector('.types_slider');
+  
+  next.addEventListener('click', function(){
+    let slides = document.querySelectorAll('.type_slides');
+    slider.appendChild(slides[0]);
+  })
+  prev.addEventListener('click', function(){
+    let slides = document.querySelectorAll('.type_slides');
+    slider.prepend(slides[slides.length - 1]);
+  })
