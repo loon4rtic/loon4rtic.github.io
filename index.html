@@ -13,18 +13,23 @@
     
     
     <div class="nav-bar">
-        <h3>Bubble Tea &#129483</h3>
+        <h3>Bubble Tea &#129483;</h3>
         <div class="main-menu">
-            <span class = "menuBtn" onclick="openMenu()">&#9776</span>
-            <span class = "closeBtn" onclick="closeMenu()">&#9746</span>
+            <span class = "menuBtn" onclick="openMenu()">&#9776;</span>
+            <span class = "closeBtn" onclick="closeMenu()">&#9746;</span>
             <ul id="menu">
                 <li id = "homeBtn">Home</li>
                 <li id = "cultureBtn">Culture</li>
                 <li id = "typesBtn">Types</li>        
                 <li id = "reviewsBtn">Reviews</li>
+                <li><button id ="fullscreenbtn">Full Screen</button></li>
+                <li><button id="refreshBtn">Refresh Page</button></li>
             </ul>
         </div>
     </div>
+    <audio id ="song">
+        <source src = "Audio/bubblepop.mp3">
+    </audio> 
     <main id = "pagecontainer">
         <section class ="page" id = "page1">
             <header class = "header_container">
@@ -84,31 +89,37 @@
             <div class = "OrderBBTGame">
                 <h1>Order your own bubble tea!</h1>
                 <div class="cafegame">
-                    <img src="Images/cafebackground.webp" alt="gameimg">
+                    <img  class ="cafebackground" src="Images/cafebackground.webp" alt="gameimg">
                     <div class="startordering">
                         <h2 id="placeOrderBtn">place order</h2>
                     </div>
                     <div class="ordering">
                         <div class="imagetest" id ="bubble">
-                                <img src="Images/bubbles.png" id="reveal_img">
+                                <img src="Images/bubbles.png" alt = "bubbles" id="reveal_img">
                                 
                             </div>
-                            <div class="drink"></div>
-                           <img class = "emptycup" src="Images/emptycup.png">
+                            <div class="drink" id = "drink"></div>
+                            <div class="syrup" id = "syrup"></div>
+                           <img class = "cupwithlid" src="Images/cupwithlid.png" alt ="cupwithlid">
+                           
                         <div class="phase1">
                            <!-- <button id="btn">Click</button>
                            <button id="btn5">Target</button> -->
                            <div class="sprite_container" id="sprite">
                                 
                            </div>
-                           
-                            
+                                                      
                            
                         </div>
                          <div class="phase2" id="teapot">
-                            <img class ="teapot" src="Images/teapot.png">
+                            <img class ="teapot" src="Images/teapot.png" alt ="teapot">
                         </div>
-                        <div class="phase3"></div>
+                        <div class="phase3">
+                            <div class ="syrupbottle" id="syrupbottle"></div>
+                        </div>
+                        <div class="phase4">
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -214,7 +225,7 @@
                 <div class="culture-container">
                     <div class="culture_row">
                         <div class="culture-section-title">
-                            <h1>Culture</h1>
+                            <h2>Culture</h2>
                         </div>
                     </div>
                     <div class="culture_row">
@@ -266,11 +277,11 @@
             <div class="popup-box">
                 <div class="popup-content">
                     <div class="popup-header">
-                        <h3></h3>
+                        <h3>hi</h3>
                         <span class="popup-close-icon">&times;</span>
                     </div>
                     <div class="popup-body">
-                        <p></p>
+                        <p>hi</p>
                     </div>
                     <div class="popup-footer">
                         <button class="btn popup-close-btn">Close</button>
@@ -337,7 +348,7 @@
                     <!-- start -->
                     <div class="review_slider_img">
                         <img src="Images/bbt.png" alt = "1">
-                        <h1>GongCha</h1>
+                        <h2>GongCha</h2>
                         <div class="details">
                             <h2>GongCha</h2>
                             <p>Sg brand</p>
@@ -348,7 +359,7 @@
                     <!-- start -->
                     <div class="review_slider_img">
                         <img src="Images/bbt.png" alt = "2">
-                        <h1>KOI</h1>
+                        <h2>KOI</h2>
                         <div class="details">
                             <h2>KOI</h2>
                             <p>Sg brand</p>
@@ -358,7 +369,7 @@
                     <!-- start -->
                     <div class="review_slider_img">
                         <img src="Images/bbt.png" alt = "3">
-                        <h1>Liho</h1>
+                        <h2>Liho</h2>
                         <div class="details">
                             <h2>Liho</h2>
                             <p>Sg brand</p>
@@ -368,7 +379,7 @@
                     <!-- start -->
                     <div class="review_slider_img active">
                         <img src="Images/bbt.png" alt = "4">
-                        <h1>ITea</h1>
+                        <h2>ITea</h2>
                         <div class="details">
                             <h2>ITea</h2>
                             <p>Sg brand</p>
@@ -378,7 +389,7 @@
                     <!-- start -->
                     <div class="review_slider_img">
                         <img src="Images/bbt.png" alt = "5">
-                        <h1>R&B</h1>
+                        <h2>R&B</h2>
                         <div class="details">
                             <h2>R&B</h2>
                             <p>Sg brand</p>
@@ -388,7 +399,7 @@
                     <!-- start -->
                     <div class="review_slider_img">
                         <img src="Images/bbt.png" alt = "6">
-                        <h1>SanChen</h1>
+                        <h2>SanChen</h2>
                         <div class="details">
                             <h2>SanChen</h2>
                             <p>Sg brand</p>
@@ -403,7 +414,7 @@
                 <div class="review">
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="gongcha review1">
                          </div>
                          Review 1
                         <div class="reviewDetails">
@@ -413,7 +424,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="gongcha review2">
                          </div>
                          Review 2
                         <div class="reviewDetails">
@@ -423,7 +434,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="gongcha review3">
                          </div>
                          Review 3
                         <div class="reviewDetails">
@@ -435,7 +446,7 @@
                 <div class="review">
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="koi review1">
                          </div>
                          Review 1
                         <div class="reviewDetails">
@@ -445,7 +456,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="koi review2">
                          </div>
                          Review 2
                         <div class="reviewDetails">
@@ -455,7 +466,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="koi review3">
                          </div>
                          Review 3
                         <div class="reviewDetails">
@@ -467,7 +478,7 @@
                 <div class="review">
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="liho review1">
                          </div>
                          Review 1
                         <div class="reviewDetails">
@@ -477,7 +488,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="liho review2">
                          </div>
                          Review 2
                         <div class="reviewDetails">
@@ -487,7 +498,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="liho review3">
                          </div>
                          Review 3
                         <div class="reviewDetails">
@@ -500,7 +511,7 @@
                     
                     <div class="reviewHeader">
                         <div class = "reviewImgBox">
-                             <img src="Images/bbt.png">
+                             <img src="Images/bbt.png" alt ="itea review1">
                         </div>Review 1
                         <div class="reviewDetails">
                             <h2>ITEA</h2>
@@ -509,7 +520,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="itea review2">
                          </div>
                          Review 2
                         <div class="reviewDetails">
@@ -519,7 +530,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                             <img src="Images/bbt.png">
+                             <img src="Images/bbt.png" alt ="itea review3">
                          </div>
                          Review 3
                         <div class="reviewDetails">
@@ -531,7 +542,7 @@
                 <div class="review">
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="r&b review1">
                          </div>
                          Review 1
                         <div class="reviewDetails">
@@ -541,7 +552,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="r&b review2">
                          </div>
                          Review 2
                         <div class="reviewDetails">
@@ -551,7 +562,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="r&b review3">
                          </div>
                          Review 3
                         <div class="reviewDetails">
@@ -563,7 +574,7 @@
                <div class="review">
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="SanChen review1">
                          </div>
                          Review 1
                         <div class="reviewDetails">
@@ -573,7 +584,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="SanChen review2">
                          </div>
                          Review 2
                         <div class="reviewDetails">
@@ -583,7 +594,7 @@
                     </div>
                     <div class="reviewHeader">
                          <div class = "reviewImgBox">
-                            <img src="Images/bbt.png">
+                            <img src="Images/bbt.png" alt ="SanChen review3">
                          </div>
                          Review 3
                         <div class="reviewDetails">
@@ -594,6 +605,7 @@
                 </div>
             </section>
         </section>
+        
     </main>
 </body>
 </html>

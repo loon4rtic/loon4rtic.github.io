@@ -1,3 +1,7 @@
+/* audio js*/
+window.addEventListener("click", ()=>{
+  document.getElementById("song").play();
+});
 const btn1=document.querySelector("#homeBtn");
 const btn2=document.querySelector("#cultureBtn");
 const btn3=document.querySelector("#typesBtn");
@@ -177,25 +181,27 @@ document.addEventListener("DOMContentLoaded", () => {
 /*phase 2 js */
 document.addEventListener("DOMContentLoaded", () => {
   const teapotsprite = document.getElementById("teapot");
-
+  const drinks = document.getElementById("drink");
   let isAnimating = false;
 
   teapotsprite.addEventListener("mousedown", () => {
     teapotsprite.classList.add("playing");
+    drinks.classList.add("playing");
     teapotsprite.classList.remove("released");
-
+    drinks.classList.remove("released");
     isAnimating = true;
   });
 
   document.addEventListener("mouseup", () => {
     if (isAnimating) {
       teapotsprite.classList.remove("playing");
-
+      drinks.classList.remove("playing");
       isAnimating = false;
 
       // Delay before fade/slide happens (e.g. 500ms)
       setTimeout(() => {
         teapotsprite.classList.add("released");
+        drinks.classList.add("released");
       }, 500); // You can change this to 1000 for 1s delay, etc.
     }
   });
@@ -211,13 +217,55 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function switchToNextPhase() {
+    document.querySelector(".phase2").style.display = "none";
+    document.querySelector(".phase3").style.display = "flex";
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const syrupbottlesprite = document.getElementById("syrupbottle");
+ const syrup = document.getElementById("syrup");
+  let isAnimating = false;
+
+  syrupbottlesprite.addEventListener("mousedown", () => {
+    syrupbottlesprite.classList.add("playing");
+    syrup.classList.add("playing");
+    syrupbottlesprite.classList.remove("released");
+     syrup.classList.remove("released");
+    isAnimating = true;
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isAnimating) {
+      syrupbottlesprite.classList.remove("playing");
+     syrup.classList.remove("playing");
+
+      isAnimating = false;
+
+      // Delay before fade/slide happens (e.g. 500ms)
+      setTimeout(() => {
+        syrupbottlesprite.classList.add("released");
+         syrup.classList.add("released");
+      }, 500); // You can change this to 1000 for 1s delay, etc.
+    }
+  });
+
+
+// Listen for when the fade/slide transition ends
+  syrupbottlesprite.addEventListener("transitionend", (event) => {
+    if (event.propertyName === "opacity") {
+      //Fading finished, switch to next phase
+      console.log("Transition complete. Move to next phase.");
+      switchToNextPhase();
+    }
+  });
+
+  function switchToNextPhase() {
     document.querySelector(".phase1").style.display = "none";
     document.querySelector(".phase2").style.display = "flex";
   }
   
 });
-
-
 
 
 /*types js*/
@@ -233,3 +281,55 @@ document.addEventListener("DOMContentLoaded", () => {
     let slides = document.querySelectorAll('.type_slides');
     slider.prepend(slides[slides.length - 1]);
   })
+
+
+
+
+
+  /*full screen js*/ 
+  let fullscreenDocument = document.documentElement;
+  let fullscreenbtn = document.getElementById("fullscreenbtn");
+
+  fullscreenbtn.addEventListener("click", ()=>{
+    if(fullscreenbtn.textContent == "Full Screen"){
+      if(fullscreenDocument.requestFullscreen){
+        fullscreenDocument.requestFullscreen();
+      }
+      else if(fullscreenDocument.msRequestFullScreen){
+        fullscreenDocument.msRequestFullScreen();
+      }
+      else if(fullscreenDocument.mozRequestFullScreen){
+        fullscreenDocument.mozRequestFullScreen();
+      }
+      else if(fullscreenDocument.webkitRequestFullScreen){
+        fullscreenDocument.webkitRequestFullScreen();
+      }
+      fullscreenbtn.textContent = "Exit Full Screen";
+    }
+    else{
+      if(document.exitFullscreen){
+        document.exitFullscreen();
+      }
+      else if(fullscreenDocument.msexitFullScreen){
+        fullscreenDocument.msexitFullScreen();
+      }
+      else if(fullscreenDocument.mozexitFullScreen){
+        fullscreenDocument.mozexitFullScreen();
+      }
+      else if(fullscreenDocument.webkitexitFullScreen){
+        fullscreenDocument.webkitexitFullScreen();
+      }
+      fullscreenbtn.textContent = "Full Screen";
+    }
+  });
+  /*reload website js */
+  function reload() {
+    const button = document.getElementById("refreshBtn");
+    button.addEventListener("click", () => {
+      window.location.reload();
+    });
+  }
+
+  // Call it so the event listener is attached
+  reload(); 
+
