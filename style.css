@@ -879,6 +879,7 @@ transform:scale(0.4) translateX(200px);
     border-radius: 20px;
     z-index: 0;
 }
+/*child of type_slides placement*/
 .types_slider .type_slides:nth-child(1),
 .types_slider .type_slides:nth-child(2)
 {
@@ -954,12 +955,18 @@ transform:scale(0.4) translateX(200px);
     transform: translateY(40px);
     transition: 0.25s;
 }
+/*:nth-child(n) CSS pseudo-class selects elements based on their position (order) within a parent.
+ Ensure that the .type_content element inside the first and second .type_slides
+   within .types_slider is fully visible and in its original vertical position*/
 .types_slider .type_slides:nth-child(1) .type_content,
 .types_slider .type_slides:nth-child(2) .type_content{
     opacity:1;
-     transform: translateY(0px);
+     transform: translateY(0px);/* Resets any vertical movement */
 }
 /* REVIEWS PAGE */
+#page4{
+    overflow-x: hidden;
+}
 .review_slider_container {
     width: 100%;
     min-height: 100vh;
