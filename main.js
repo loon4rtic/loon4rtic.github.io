@@ -1,17 +1,17 @@
 /* audio js*/
-window.addEventListener("click", ()=>{
+window.addEventListener("click", function() {
   document.getElementById("song").play();
 });
 
-const btn1=document.querySelector("#homeBtn");
-const btn2=document.querySelector("#cultureBtn");
-const btn3=document.querySelector("#typesBtn");
-const btn4=document.querySelector("#reviewsBtn");
+var btn1=document.querySelector("#homeBtn");
+var btn2=document.querySelector("#cultureBtn");
+var btn3=document.querySelector("#typesBtn");
+var btn4=document.querySelector("#reviewsBtn");
 var allpages=document.querySelectorAll(".page");
 
-let menu = document.getElementById('menu');
-let menuBtn = document.querySelector('.menuBtn');
-let closeBtn = document.querySelector('.closeBtn');
+var menu = document.getElementById('menu');
+var menuBtn = document.querySelector('.menuBtn');
+var closeBtn = document.querySelector('.closeBtn');
 
 function openMenu(){
     menu.style.display = 'block';
@@ -23,8 +23,8 @@ function closeMenu(){
     menuBtn.style.display = 'block';
     closeBtn.style.display = 'none';
 }
-// Reset when resizing window
-window.addEventListener("resize", () => {
+//reset when resizing window
+window.addEventListener("resize", function(){
     if (window.innerWidth > 800) {
         menu.style.display = "inline-block"; 
         menuBtn.style.display = "none";
@@ -36,49 +36,52 @@ window.addEventListener("resize", () => {
     }
 });
 
-function hideall(){ //function to hide all pages
-for(let onepage of allpages){ //go through all subtopic pages
-onepage.style.display="none"; //hide it
+function hideall() {
+  var allpages = document.querySelectorAll(".page"); // select all pages
+  for (var i = 0; i < allpages.length; i++) {
+    var onepage = allpages[i];
+    onepage.style.display = "none"; // hide it
+  }
 }
+
+function show(pgno) {
+  hideall();
+  var onepage = document.querySelector("#page" + pgno);
+  onepage.style.display = "block"; // show selected page
 }
-function show(pgno){ //function to show selected page no
-hideall();
-//select the page based on the parameter passed in
-let onepage=document.querySelector("#page"+pgno);
-onepage.style.display="block"; //show the page
-}
-/*Listen for clicks on the buttons, assign anonymous
-eventhandler functions to call show function*/
+
+// Attach event listeners to buttons
 btn1.addEventListener("click", function () {
-    show(1);
+  show(1);
 });
 btn2.addEventListener("click", function () {
-    show(2);
+  show(2);
 });
 btn3.addEventListener("click", function () {
-    show(3);
+  show(3);
 });
 btn4.addEventListener("click", function () {
-    show(4);
+  show(4);
 });
+
 hideall();
 show(1);
 
-const cultureItems = document.querySelector(".culture-items");
-const popup = document.querySelector(".popup-box");
-const popupCloseBtn = popup.querySelector(".popup-close-btn");
-const popupCloseIcon = popup.querySelector(".popup-close-icon");
+var cultureItems = document.querySelector(".culture-items");
+var popup = document.querySelector(".popup-box");
+var popupCloseBtn = popup.querySelector(".popup-close-btn");
+var popupCloseIcon = popup.querySelector(".popup-close-icon");
 cultureItems.addEventListener("click",function(event){
     if(event.target.tagName.toLowerCase() == "button"){
-        const item = event.target.parentElement;
-        const h3 = item.querySelector("h3").innerHTML;
-        const readMoreCont = item.querySelector(".culture_read-more-content").innerHTML;
+        var item = event.target.parentElement;
+        var h3 = item.querySelector("h3").innerHTML;
+        var readMoreCont = item.querySelector(".culture_read-more-content").innerHTML;
 
         popup.querySelector("h3").innerHTML = h3;
         popup.querySelector(".popup-body").innerHTML = readMoreCont;
         popupBox();
     }
-})
+});
 popupCloseBtn.addEventListener("click", popupBox);
 popupCloseIcon.addEventListener("click", popupBox);
 
@@ -87,59 +90,55 @@ function popupBox(){
     popup.classList.toggle("open");
 }
 document.addEventListener('DOMContentLoaded', function () {
-  const sliderImages = document.querySelectorAll('.review_slider_img');
-  const reviewGroups = document.querySelectorAll('.review'); // each group of 3 headers
+  var sliderImages = document.querySelectorAll('.review_slider_img');
+  var reviewGroups = document.querySelectorAll('.review');
 
   sliderImages.forEach(function (img, index) {
     img.addEventListener('click', function () {
       // Remove 'active' from all images
-      sliderImages.forEach(el => el.classList.remove('active'));
+      sliderImages.forEach(function (el) {
+        el.classList.remove('active');
+      });
       this.classList.add('active');
 
       // Hide all review groups
-      reviewGroups.forEach(group => group.classList.remove('active'));
+      reviewGroups.forEach(function (group) {
+        group.classList.remove('active');
+      });
 
-      // Show only the corresponding review group
+      // Show the corresponding review group
       if (reviewGroups[index]) {
         reviewGroups[index].classList.add('active');
       }
     });
-    });
-});
-document.querySelectorAll('.reviewHeader').forEach(header => {
-    header.addEventListener('click', () => {
-      header.classList.toggle('active');
-    });
   });
+});
+
+var headers = document.querySelectorAll('.reviewHeader');
+headers.forEach(function (header) {
+  header.addEventListener('click', function () {
+    header.classList.toggle('active');
+  });
+});
 
 
 
   /*game js*/ 
-  const startordering=document.querySelector("#placeOrderBtn");
-  const gameopening=document.querySelector(".ordering");
+  var startordering=document.querySelector("#placeOrderBtn");
+  var gameopening=document.querySelector(".ordering");
   
   startordering.addEventListener("click", function(){
     
     gameopening.style.display = "flex";
-  })
-  // const btn = document.getElementById("btn");
-  // const btn5 = document.getElementById("btn5");
+  });
 
-  // btn.addEventListener("mousedown", () => {
-  //   btn5.className = "hold";
-  // });
+document.addEventListener("DOMContentLoaded", function() {
+  var sprite = document.getElementById("sprite");
+  var bubblesprite = document.getElementById("bubble");
 
-  // btn.addEventListener("mouseup", () => {
-  //   btn5.className = "release";
-  // });
+  var isAnimating = false;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sprite = document.getElementById("sprite");
-  const bubblesprite = document.getElementById("bubble");
-
-  let isAnimating = false;
-
-  sprite.addEventListener("mousedown", () => {
+  sprite.addEventListener("mousedown", function() {
     sprite.classList.add("playing");
     bubblesprite.classList.add("playing");
     sprite.classList.remove("released");
@@ -147,25 +146,25 @@ document.addEventListener("DOMContentLoaded", () => {
     isAnimating = true;
   });
 
-  document.addEventListener("mouseup", () => {
+  document.addEventListener("mouseup", function() {
     if (isAnimating) {
       sprite.classList.remove("playing");
       bubblesprite.classList.remove("playing");
       isAnimating = false;
 
-      // Delay before fade/slide happens (e.g. 500ms)
-      setTimeout(() => {
+      //delay before fade 
+      setTimeout(function() {
         sprite.classList.add("released");
         bubblesprite.classList.add("released");
-      }, 500); // You can change this to 1000 for 1s delay, etc.
+      }, 500); //change delay time
     }
   });
 
 
-// Listen for when the fade/slide transition ends
-  sprite.addEventListener("transitionend", (event) => {
+//to listen for when the fade transition ends
+  sprite.addEventListener("transitionend", function(event) {
     if (event.propertyName === "opacity") {
-      //Fading finished, switch to next phase
+      //when fading finished, switch to next phase
       console.log("Transition complete. Move to next phase.");
       switchToNextPhase();
     }
@@ -180,38 +179,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*phase 2 js */
-document.addEventListener("DOMContentLoaded", () => {
-  const teapotsprite = document.getElementById("teapot");
-  const drinks = document.getElementById("drink");
-  let isAnimating = false;
+document.addEventListener("DOMContentLoaded", function() {
+  var teapotsprite = document.getElementById("teapot");
+  var drinks = document.getElementById("drink");
+  var isAnimating = false;
 
-  teapotsprite.addEventListener("mousedown", () => {
+  //listen when mouse is down to trigger spritw
+  teapotsprite.addEventListener("mousedown", function(){
     teapotsprite.classList.add("playing");
     drinks.classList.add("playing");
     teapotsprite.classList.remove("released");
     drinks.classList.remove("released");
     isAnimating = true;
   });
-
-  document.addEventListener("mouseup", () => {
+//listen when mouse is not down to stop sprite 
+  document.addEventListener("mouseup", function(){
     if (isAnimating) {
       teapotsprite.classList.remove("playing");
       drinks.classList.remove("playing");
       isAnimating = false;
 
-      // Delay before fade/slide happens (e.g. 500ms)
-      setTimeout(() => {
+      //delay before fade happens 
+      setTimeout(function(){
         teapotsprite.classList.add("released");
         drinks.classList.add("released");
-      }, 500); // You can change this to 1000 for 1s delay, etc.
+      }, 500); //change delay time
     }
   });
 
 
-// Listen for when the fade/slide transition ends
-  teapotsprite.addEventListener("transitionend", (event) => {
+//to listen for when the fade transition ends
+  teapotsprite.addEventListener("transitionend", function(event){
     if (event.propertyName === "opacity") {
-      //Fading finished, switch to next phase
+      //when fading finished, switch to next phase
       console.log("Transition complete. Move to next phase.");
       switchToNextPhase();
     }
@@ -223,12 +223,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const syrupbottlesprite = document.getElementById("syrupbottle");
- const syrup = document.getElementById("syrup");
-  let isAnimating = false;
+document.addEventListener("DOMContentLoaded", function(){
+ var syrupbottlesprite = document.getElementById("syrupbottle");
+ var syrup = document.getElementById("syrup");
+ var isAnimating = false;
 
-  syrupbottlesprite.addEventListener("mousedown", () => {
+  syrupbottlesprite.addEventListener("mousedown", function(){
     syrupbottlesprite.classList.add("playing");
     syrup.classList.add("playing");
     syrupbottlesprite.classList.remove("released");
@@ -236,24 +236,24 @@ document.addEventListener("DOMContentLoaded", () => {
     isAnimating = true;
   });
 
-  document.addEventListener("mouseup", () => {
+  document.addEventListener("mouseup", function(){
     if (isAnimating) {
       syrupbottlesprite.classList.remove("playing");
      syrup.classList.remove("playing");
 
       isAnimating = false;
 
-      // Delay before fade/slide happens (e.g. 500ms)
-      setTimeout(() => {
+      //delay before fade happens 
+      setTimeout(function(){
         syrupbottlesprite.classList.add("released");
          syrup.classList.add("released");
-      }, 500); // You can change this to 1000 for 1s delay, etc.
+      }, 500); // change delay time
     }
   });
 
 
-// Listen for when the fade/slide transition ends
-  syrupbottlesprite.addEventListener("transitionend", (event) => {
+//listen for when the fade transition ends
+  syrupbottlesprite.addEventListener("transitionend", function(event){
     if (event.propertyName === "opacity") {
       //Fading finished, switch to next phase
       console.log("Transition complete. Move to next phase.");
@@ -270,29 +270,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*types js*/
-  let next = document.querySelector('.next');
-  let prev = document.querySelector('.prev');
-  let slider = document.querySelector('.types_slider');
+  var next = document.querySelector('.next');
+  var prev = document.querySelector('.prev');
+  var slider = document.querySelector('.types_slider');
   
   next.addEventListener('click', function(){
-    let slides = document.querySelectorAll('.type_slides');
+    var slides = document.querySelectorAll('.type_slides');
     slider.appendChild(slides[0]);
-  })
+  });
   prev.addEventListener('click', function(){
-    let slides = document.querySelectorAll('.type_slides');
+    var slides = document.querySelectorAll('.type_slides');
     slider.prepend(slides[slides.length - 1]);
-  })
+  });
 
 
 
 
 
   /*full screen js*/ 
-  let fullscreenDocument = document.documentElement;
-  let fullscreenbtn = document.getElementById("fullscreenbtn");
+  var fullscreenDocument = document.documentElement;
+  var fullscreenbtn = document.getElementById("fullscreenbtn");
 
-  fullscreenbtn.addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent anchor from jumping
+  fullscreenbtn.addEventListener("click", function(e){
+  e.preventDefault(); //prevent anchor from jumping
 
   if (!document.fullscreenElement) {
     if (fullscreenDocument.requestFullscreen) {
@@ -319,18 +319,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*reload website js */
   function reload() {
-    const button = document.getElementById("refreshBtn");
-    button.addEventListener("click", (e) => {
+    var button = document.getElementById("refreshBtn");
+    button.addEventListener("click", function(e){
       e.preventDefault();
       window.location.reload();
     });
   }
-  // Call it so the event listener is attached
+  //call it so the event listener is attached
   reload(); 
 /*qr code btn js*/
 function qrcode() {
-    const qrbutton = document.getElementById("qrcodeBtn");
-    qrbutton.addEventListener("click", (e) => {
+    var qrbutton = document.getElementById("qrcodeBtn");
+    qrbutton.addEventListener("click", function(e){
       e.preventDefault();
       document.querySelector(".qrcode_popupbox").style.display = "block";
     });
@@ -343,8 +343,8 @@ qrcode();
 });
 //form js
 function form() {
-    const formbutton = document.getElementById("formBtn");
-    formbutton.addEventListener("click", (e) => {
+    var formbutton = document.getElementById("formBtn");
+    formbutton.addEventListener("click", function(e){
       e.preventDefault();
       document.querySelector(".form_popupbox").style.display = "block";
     });
@@ -357,15 +357,15 @@ form();
 });
 
 
-const nameInput = document.getElementById('name');
-const password = document.getElementById('password');
-const forms = document.getElementById('form');
-const errorElement = document.getElementById('error');
+var nameInput = document.getElementById('name');
+var password = document.getElementById('password');
+var forms = document.getElementById('form');
+var errorElement = document.getElementById('error');
 
-forms.addEventListener('submit', (e) => {
+forms.addEventListener('submit', function(e){
   e.preventDefault();  // prevent submission so user can fix errors
 
-  let messages = [];
+  var messages = [];
 
   if (nameInput.value === '' || nameInput.value == null) {
     messages.push('Name is required');
@@ -386,21 +386,19 @@ forms.addEventListener('submit', (e) => {
   if (messages.length > 0) {
     errorElement.innerText = messages.join(', ');
   } else {
-    errorElement.innerText = ''; // clear errors
-    // Optionally submit the form here, if no errors:
-    // forms.submit();
+    errorElement.innerText = ''; //clear errors
+    
   }
 });
 
 //open sidebar
 
-
 document.addEventListener('DOMContentLoaded', function () {
-      const toggleBtn = document.querySelector('.sidebar_open');
-      const sidebarContent = document.getElementById('side_navbar');
+      var toggleBtn = document.querySelector('.sidebar_open');
+      var sidebarContent = document.getElementById('side_navbar');
 
-      toggleBtn.addEventListener('click', () => {
-        // Toggle between none and block
+      toggleBtn.addEventListener('click', function(){
+        //toggles between none and block
         if (sidebarContent.style.display === 'none' || sidebarContent.style.display === '') {
           sidebarContent.style.display = 'block';
         } else {

@@ -31,6 +31,7 @@ body{
     position: fixed;
     inset:0;
     margin: auto 0;
+    z-index: 1000000;
 }
 .side_navbarlist{
     position:relative;
@@ -848,6 +849,7 @@ transform:scale(0.4) translateX(200px);
     display:flex;
     justify-content: center;
     align-items: center;
+    
 }
 .types_slider{
     position:absolute;
@@ -942,7 +944,7 @@ transform:scale(0.4) translateX(200px);
     position: absolute;
     bottom: 20px;
     left: 20px;
-    color: #333;
+    color:#Aed9e0;
     
     padding: 10px 20px;
     border-radius: 12px;
@@ -1118,7 +1120,7 @@ transform:scale(0.4) translateX(200px);
     position: absolute;
     bottom: 20px;
     left: 20px;
-    color: white;
+    color: #84a9ae;
 }
 .details h2,
 .details p
@@ -1180,7 +1182,7 @@ transform:scale(0.4) translateX(200px);
         background: #95bec4;
         position: absolute;
         text-align: center;
-        z-index: 1;
+        z-index: 10000;
     }
   
     .header_container{
