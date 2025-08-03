@@ -2,6 +2,7 @@
 window.addEventListener("click", ()=>{
   document.getElementById("song").play();
 });
+
 const btn1=document.querySelector("#homeBtn");
 const btn2=document.querySelector("#cultureBtn");
 const btn3=document.querySelector("#typesBtn");
@@ -290,46 +291,120 @@ document.addEventListener("DOMContentLoaded", () => {
   let fullscreenDocument = document.documentElement;
   let fullscreenbtn = document.getElementById("fullscreenbtn");
 
-  fullscreenbtn.addEventListener("click", ()=>{
-    if(fullscreenbtn.textContent == "Full Screen"){
-      if(fullscreenDocument.requestFullscreen){
-        fullscreenDocument.requestFullscreen();
-      }
-      else if(fullscreenDocument.msRequestFullScreen){
-        fullscreenDocument.msRequestFullScreen();
-      }
-      else if(fullscreenDocument.mozRequestFullScreen){
-        fullscreenDocument.mozRequestFullScreen();
-      }
-      else if(fullscreenDocument.webkitRequestFullScreen){
-        fullscreenDocument.webkitRequestFullScreen();
-      }
-      fullscreenbtn.textContent = "Exit Full Screen";
+  fullscreenbtn.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent anchor from jumping
+
+  if (!document.fullscreenElement) {
+    if (fullscreenDocument.requestFullscreen) {
+      fullscreenDocument.requestFullscreen();
+    } else if (fullscreenDocument.msRequestFullscreen) {
+      fullscreenDocument.msRequestFullscreen();
+    } else if (fullscreenDocument.mozRequestFullScreen) {
+      fullscreenDocument.mozRequestFullScreen();
+    } else if (fullscreenDocument.webkitRequestFullscreen) {
+      fullscreenDocument.webkitRequestFullscreen();
     }
-    else{
-      if(document.exitFullscreen){
-        document.exitFullscreen();
-      }
-      else if(fullscreenDocument.msexitFullScreen){
-        fullscreenDocument.msexitFullScreen();
-      }
-      else if(fullscreenDocument.mozexitFullScreen){
-        fullscreenDocument.mozexitFullScreen();
-      }
-      else if(fullscreenDocument.webkitexitFullScreen){
-        fullscreenDocument.webkitexitFullScreen();
-      }
-      fullscreenbtn.textContent = "Full Screen";
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
     }
-  });
+  }
+});
+
   /*reload website js */
   function reload() {
     const button = document.getElementById("refreshBtn");
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
       window.location.reload();
     });
   }
-
   // Call it so the event listener is attached
   reload(); 
+/*qr code btn js*/
+function qrcode() {
+    const qrbutton = document.getElementById("qrcodeBtn");
+    qrbutton.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(".qrcode_popupbox").style.display = "block";
+    });
+  }
+qrcode();
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("#QrCodeclose").addEventListener("click", function () {
+    document.querySelector(".qrcode_popupbox").style.display = "none";
+  });
+});
+//form js
+function form() {
+    const formbutton = document.getElementById("formBtn");
+    formbutton.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(".form_popupbox").style.display = "block";
+    });
+  }
+form();
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("#Formclose").addEventListener("click", function () {
+    document.querySelector(".form_popupbox").style.display = "none";
+  });
+});
 
+
+const nameInput = document.getElementById('name');
+const password = document.getElementById('password');
+const forms = document.getElementById('form');
+const errorElement = document.getElementById('error');
+
+forms.addEventListener('submit', (e) => {
+  e.preventDefault();  // prevent submission so user can fix errors
+
+  let messages = [];
+
+  if (nameInput.value === '' || nameInput.value == null) {
+    messages.push('Name is required');
+  }
+
+  if (password.value.length <= 6) {
+    messages.push('Password must be longer than 6 characters');
+  }
+
+  if (password.value.length >= 20) {
+    messages.push('Password must be shorter than 20 characters');
+  }
+
+  if (password.value.toLowerCase() === 'password') {
+    messages.push('Password cannot be "password"');
+  }
+
+  if (messages.length > 0) {
+    errorElement.innerText = messages.join(', ');
+  } else {
+    errorElement.innerText = ''; // clear errors
+    // Optionally submit the form here, if no errors:
+    // forms.submit();
+  }
+});
+
+//open sidebar
+
+
+document.addEventListener('DOMContentLoaded', function () {
+      const toggleBtn = document.querySelector('.sidebar_open');
+      const sidebarContent = document.getElementById('side_navbar');
+
+      toggleBtn.addEventListener('click', () => {
+        // Toggle between none and block
+        if (sidebarContent.style.display === 'none' || sidebarContent.style.display === '') {
+          sidebarContent.style.display = 'block';
+        } else {
+          sidebarContent.style.display = 'none';
+        }
+      });
+    });

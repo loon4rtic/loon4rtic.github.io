@@ -11,9 +11,13 @@
 </head>
 <body>
     
-    
+    <audio id ="song">
+        <source src = "Audio/bubblepop.mp3">
+    </audio> 
     <div class="nav-bar">
-        <h3>Bubble Tea &#129483;</h3>
+        <h3 class="sidebar_open">Bubble Tea 🧋</h3>
+
+
         <div class="main-menu">
             <span class = "menuBtn" onclick="openMenu()">&#9776;</span>
             <span class = "closeBtn" onclick="closeMenu()">&#9746;</span>
@@ -22,14 +26,49 @@
                 <li id = "cultureBtn">Culture</li>
                 <li id = "typesBtn">Types</li>        
                 <li id = "reviewsBtn">Reviews</li>
-                <li><button id ="fullscreenbtn">Full Screen</button></li>
-                <li><button id="refreshBtn">Refresh Page</button></li>
+                
             </ul>
         </div>
     </div>
-    <audio id ="song">
-        <source src = "Audio/bubblepop.mp3">
-    </audio> 
+    <nav id = "side_navbar" class = "side_navbar">
+        <ul class ="side_navbarlist">
+            <a href="#" id="qrcodeBtn" class="side_navbarlink hide-on-mobile">
+                <img class="icons" src="Images/qr-code.png" alt="qr code icon">
+                <span class="side_navbarname">QR</span>
+            </a>
+            <a href="#" id="formBtn" class = "side_navbarlink">
+                <img class = "icons" src="Images/user.png" alt = "account icon">
+                <span class="side_navbarname">Account</span>
+            </a>
+            <a href="#" id ="fullscreenbtn" class = "side_navbarlink">
+                <img class = "icons" src="Images/maximize.png" alt = "fullscreen icon">
+                <span class="side_navbarname">Full screen</span>
+            </a>
+            <a href="#" id="refreshBtn" class = "side_navbarlink">
+                <img class = "icons" src="Images/refresh.png" alt = "refresh icon">
+                <span class="side_navbarname">Reload</span>
+            </a>
+        </ul>
+    </nav>
+    <div class="qrcode_popupbox">
+        <button id="QrCodeclose">&times;</button>
+        <img src="Images/bbt.png">
+    </div>
+    <div class="form_popupbox">
+        <button id="Formclose">&times;</button>
+        <div id="error"></div>
+        <form id="form" action="#" method="GET">
+            <div>
+                <label for="name">Name</label>
+                <input id="name" name = "name" type = "text" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                 <input id="password" name = "password" type = "password">
+            </div>
+            <button type = "submit">Submit</button>
+        </form>
+    </div>
     <main id = "pagecontainer">
         <section class ="page" id = "page1">
             <header class = "header_container">
