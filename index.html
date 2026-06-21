@@ -1,711 +1,424 @@
 <!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset="UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All about bubble tea!!</title>
-    <script src = "main.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
-    
-    <audio id ="song">
-        <source src = "Audio/bubblepop.mp3">
-    </audio> 
-    <div class="nav-bar">
-        <h3 class="sidebar_open">Bubble Tea 🧋</h3>
+<html lang = en>
+    <head>
+        <title> shayn's portfolio </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy" crossorigin="anonymous">
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+    </head>
 
-
-        <div class="main-menu">
-            <span class = "menuBtn" onclick="openMenu()">&#9776;</span>
-            <span class = "closeBtn" onclick="closeMenu()">&#9746;</span>
-            <ul id="menu">
-                <li id = "homeBtn">Home</li>
-                <li id = "cultureBtn">Culture</li>
-                <li id = "typesBtn">Types</li>        
-                <li id = "reviewsBtn">Reviews</li>
+    <body>
+        <div class = "top-bar">
+            <header>
                 
-            </ul>
-        </div>
-    </div>
-    <nav id = "side_navbar" class = "side_navbar">
-        <ul class ="side_navbarlist">
-            <a href="#" id="qrcodeBtn" class="side_navbarlink hide-on-mobile">
-                <img class="icons" src="Images/qr-code.png" alt="qr code icon">
-                <span class="side_navbarname">QR</span>
-            </a>
-            <a href="#" id="formBtn" class = "side_navbarlink">
-                <img class = "icons" src="Images/user.png" alt = "account icon">
-                <span class="side_navbarname">Account</span>
-            </a>
-            <a href="#" id ="fullscreenbtn" class = "side_navbarlink">
-                <img class = "icons" src="Images/maximize.png" alt = "fullscreen icon">
-                <span class="side_navbarname">Full screen</span>
-            </a>
-            <a href="#" id="refreshBtn" class = "side_navbarlink">
-                <img class = "icons" src="Images/refresh.png" alt = "refresh icon">
-                <span class="side_navbarname">Reload</span>
-            </a>
-        </ul>
-    </nav>
-    <div class="qrcode_popupbox">
-        <button id="QrCodeclose">&times;</button>
-        <img src="Images/web_qr.png">
-    </div>
-    <div class="form_popupbox">
-        <button id="Formclose">&times;</button>
-        <div id="error"></div>
-        <form id="form" action="#" method="GET">
-            <div>
-                <label for="name">Name</label>
-                <input id="name" name = "name" type = "text" required>
-            </div>
-            <div>
-                <label for="password">Password</label>
-                 <input id="password" name = "password" type = "password">
-            </div>
-            <button type = "submit">Submit</button>
-        </form>
-    </div>
-    <main id = "pagecontainer">
-        <section class ="page" id = "page1">
-            <header class = "header_container">
-                <div class = "header_content">
-                    <h1>Pouring joy<br>One cup at a 
-                        <span>Time</span></h1>
-                    <p>Bubble tea isn’t just a drink — it’s an experience. 
-                        From the first sweet sip to the playful pop of chewy pearls, every cup is a little celebration. 
-                        Discover endless flavors, fun textures, and a moment of pure joy, one bubble at a time.</p>
-                </div>
-                <div class="header_image">
-                    <img src="Images/bbt.png" alt ="bbt">
-                </div>
+                <h1> Shayn's Portfolio!</h1>
+                
             </header>
-            <div class = "bubbletea_anatomy">
-                <h1>Learn what goes in your regular Bubble milk tea!</h1>
-                <div class="bubbletea_hotspot">
-                    <img src="Images/bbtanatomy.png" alt = "bubble tea anatomy">
+            <nav>
+                <a href="#about"> About me</a>
 
-                    <div class="bubbletea_item bubble" style = "top: 80%; left:60%;">
-                        <div class="icon"></div>
-                        <div class="tooltip">
-                            <h3>Bubble</h3>
-                            <p>blahblahblahblahblah</p>
-                        </div>
-                        
-                    </div>
+                <a href="#projects"> Projects</a>
 
-                    <div class="bubbletea_item milktea" style = "top: 35%; left:55%;">
-                        <div class="icon"></div>
-                        <div class="tooltip">
-                            <h3>Milk Tea</h3>
-                            <p>blahblahblahblahblah</p>
-                        </div>
-                        
-                    </div>
+                <a href="#contact"> Contact</a>
+            </nav> 
+        </div>   
+        <main class="welcome">
 
-                    <div class="bubbletea_item addtoppings" style = "top: 30%; left:30%;">
-                        <div class="icon"></div>
-                        <div class="tooltip">
-                            <h3>Additional Toppings</h3>
-                            <p>blahblahblahblahblah</p>
-                        </div>
-                        
-                    </div>
-
-                    <div class="bubbletea_item stand" style = "top: 90%; left:10%;">
-                        <div class="icon"></div>
-                        <div class="tooltip">
-                            <h3>The stand?!</h3>
-                            <p>blahblahblahblahblah</p>
-                        </div>
-                    
-                    </div>
+        <section class = "hero">
+            <div class = "hero-content">
+                <p class = "hero-greeting">Hello !</p>
+                <h1 class = "hero-name">I am Shayn</h1>
+                <p class = "hero-tagline">Aspiring Game Developer &amp; Designer</p>
+                <div class="hero-actions">
+                    <a href="#about" class = "hero-scroll">Scroll <span>↓</span></a>
+                    <a href="Files/Shayn_CV.pdf" download class="cv-download-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download CV
+                    </a>
                 </div>
             </div>
-            <div class = "OrderBBTGame">
-                <h1>Order your own bubble tea!</h1>
-                <div class="cafegame">
-                    <img  class ="cafebackground" src="Images/cafebackground.webp" alt="gameimg">
-                    <div class="startordering">
-                        <h2 id="placeOrderBtn">place order</h2>
-                    </div>
-                    <div class="ordering">
-                        <div class="imagetest" id ="bubble">
-                                <img src="Images/bubbles.png" alt = "bubbles" id="reveal_img">
-                                
-                            </div>
-                            <div class="drink" id = "drink"></div>
-                            <div class="syrup" id = "syrup"></div>
-                           <img class = "cupwithlid" src="Images/cupwithlid.png" alt ="cupwithlid">
-                           
-                        <div class="phase1">
-                           <!-- <button id="btn">Click</button>
-                           <button id="btn5">Target</button> -->
-                           <div class="sprite_container" id="sprite">
-                                
-                           </div>
-                                                      
-                           
-                        </div>
-                         <div class="phase2" id="teapot">
-                            <img class ="teapot" src="Images/teapot.png" alt ="teapot">
-                        </div>
-                        <div class="phase3">
-                            <div class ="syrupbottle" id="syrupbottle"></div>
-                        </div>
-                        <div class="phase4">
-
-                        </div>
-                    </div>
-                </div>
+            <div class = "hero-visual">
+                <div class = "hero-rings"></div>
+                <div class = "hero-blob"></div>
+                <img src="Images/facepic.jpg" alt="Shaynie" class = "hero-photo">
             </div>
         </section>
-        <section class="page" id="page2">
-            <h1 class = "timelineheader">Timeline</h1>
-            <div class = "timeline">
-                
-                
-                <div class="timelinecontainer left-container">
-                    <img src="Images/taiwanflag.png" alt="logo">
-                    <div class="timelinetextbox">
-                        <h2> Origins in Taiwan</h2>
-                        <small>1980s
-                            <br>
-                            Tea shops in Taiwan start experimenting by adding ingredients like fruit, syrup, and milk to tea.
-                        </small>
-                        
-                        <a href="#PriSch">Read More</a>
-                        <span class="left-container-arrow"></span>
-                    </div>
-                </div>
-                <div class="timelinecontainer right-container">
-                    <img  src="Images/taiwanlandscape.jpeg" alt="logo">
-                    <div class="timelinetextbox">
-                        <h2> Rapid popularity in Taiwan</h2>
-                        <small>Late 1980s - 1990s
-                            <br>
-                            Bubble tea explodes in popularity across Taiwan.
-                            Shops start competing with new flavors, sweeteners, and types of chewy pearls (black, white, mini).
-                            Becomes a staple of Taiwanese street food culture and night markets.
-                        </small>
-                        
-                        <a href="#internationalSch">Read More</a>
-                        <span class="right-container-arrow"></span>
-                    </div>
-                </div>
-                <div class="timelinecontainer left-container">
-                    <img  src="Images/asiamap.png" alt="logo">
-                    <div class="timelinetextbox">
-                        <h2> Spreading across Asia</h2>
-                        <small>1990s - Early 2000s
-                            <br>
-                            Bubble tea makes its way to Hong Kong, China, Japan, South Korea, and Southeast Asia.
-                            Flavors diversify with local ingredients like taro, matcha, coconut, and more.
-                            By the early 2000s, bubble tea is firmly rooted as a fun, youthful drink across East Asia.
-                        </small>
-                        
-                        <a href="#SecondarySch">Read More</a>
-                        <span class="left-container-arrow"></span>
-                    </div>
-                </div>
-                <div class="timelinecontainer right-container">
-                    <img  src="Images/worldmap.jpeg" alt="logo">
-                    <div class="timelinetextbox">
-                        <h2> Internation expansion</h2>
-                        <small>2000s - 2010s
-                            <br>
-                            Bubble tea chains and Taiwanese immigrants bring boba to the U.S., Canada, Australia, Europe.
-                            Major cities like Los Angeles, New York, and London see their first dedicated bubble tea shops.
-                            Social media helps popularize bubble tea’s colorful, photogenic appeal.
-                        </small>
-                        
-                        <a href="#Poly">Read More</a>
-                        <span class="right-container-arrow"></span>
-                    </div>
-                </div>
-                <div class="timelinecontainer left-container">
-                    <img  src="Images/bubbleteaaa.jpeg" alt="logo">
-                    <div class="timelinetextbox">
-                        <h2> Bubble Tea Boom & Innovation</h2>
-                        <small>2010s - Early 2020s
-                            <br>
-                            Huge global boom with Instagrammable variations:
-                            Cheese foam tea, brown sugar tiger milk tea, crystal boba, popping boba.
-                            Brands like Gong Cha, Tiger Sugar, and Coco become international giants.
-                            DIY kits and home machines become popular, especially during the COVID-19 lockdowns.
-                        </small>
-                        
-                        <a href="#SecondarySch">Read More</a>
-                        <span class="left-container-arrow"></span>
-                    </div>
-                </div>
-                <div class="timelinecontainer right-container">
-                    <img  src="Images/history-empire.jpg" alt="logo">
-                    <div class="timelinetextbox">
-                        <h2>Bubble Tea as Global culture Icon </h2>
-                        <small>2020s - present
-                            <br>
-                            Bubble tea evolves from a trend to a global cultural staple.
-                            Seen in ice cream, cakes, even fashion collaborations.
-                            International bubble tea festivals & competitions emerge.
-                            Now represents youth culture, Asian diaspora identity, and playful food experimentation worldwide.
-                        </small>
-                        
-                        <a href="#Poly">Read More</a>
-                        <span class="right-container-arrow"></span>
-                    </div>
-                </div>
-            </div>
 
-            <section class = "culture">
-                <div class="culture-container">
-                    <div class="culture_row">
-                        <div class="culture-section-title">
-                            <h2>Culture</h2>
+        <div class = "section-heading" id="about">
+            <span class = "section-eyebrow">Introduction</span>
+            <h2>About Me</h2>
+        </div>
+
+        <div class = "index-layout-wrapper">
+            <div class = "index-container">
+                <div class = "slider-wrapper">
+                    <div class = "slider">
+                        <img id = "slide-1" src="Images/facepic.jpg" alt = "face picture!">
+                    
+                    </div>
+                   
+                </div>
+            </div> 
+            <article class = "index-article">
+                <h2>Get to know me</h2>
+                <p>
+                    I’m Shayn, a game developer and designer based in Singapore, currently interning at Hiverlab as a Unity developer. I recently completed my Diploma in Game Development & Technology at Nanyang Polytechnic, where I built everything from a multiplayer co-op game to an educational VR experience for children with special needs.
+                    I’m drawn to games that make you feel something — the dread of a horror game, the quiet comfort of a cozy indie. That tension between emotion and interaction is what drives how I think about design: every mechanic, every scene should serve the experience.
+                    Outside of game projects, I also build for the web, which is how this portfolio came to life. I’m always looking for new problems to solve and new worlds to build — take a look at my projects to see what I’ve been working on.
+                </p>
+            </article>
+        </div>
+        <section class = "skills">
+                <div class = "skills-extra">
+                    <div class = "bar-skills">
+                        <h3>Technical Skills</h3>
+
+                        <div class = "bar-skill" data-pct="80">
+                            <div class = "bar-skill-top">
+                                <div class = "bar-skill-left">
+                                    <div class = "bar-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 19 7 19 17 12 22 5 17 5 7"/></svg>
+                                    </div>
+                                    <span>Unity</span>
+                                </div>
+                                <span class = "bar-label bar-label--proficient">Proficient</span>
+                            </div>
+                            <div class = "bar-track"><div class = "bar-fill"></div></div>
+                        </div>
+                        <div class = "bar-skill" data-pct="60">
+                            <div class = "bar-skill-top">
+                                <div class = "bar-skill-left">
+                                    <div class = "bar-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg>
+                                    </div>
+                                    <span>Unreal</span>
+                                </div>
+                                <span class = "bar-label bar-label--intermediate">Intermediate</span>
+                            </div>
+                            <div class = "bar-track"><div class = "bar-fill"></div></div>
+                        </div>
+                        <div class = "bar-skill" data-pct="70">
+                            <div class = "bar-skill-top">
+                                <div class = "bar-skill-left">
+                                    <div class = "bar-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 4v11.5a2.5 2.5 0 0 1-4.5 1.5"/><path d="M14 4v10a3 3 0 1 0 5.5 1.7c-.3-.6-1-1-1.7-1.2"/></svg>
+                                    </div>
+                                    <span>C++ / C#</span>
+                                </div>
+                                <span class = "bar-label bar-label--proficient">Proficient</span>
+                            </div>
+                            <div class = "bar-track"><div class = "bar-fill"></div></div>
+                        </div>
+
+                        <div class = "bar-skill" data-pct="75">
+                            <div class = "bar-skill-top">
+                                <div class = "bar-skill-left">
+                                    <div class = "bar-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+                                    </div>
+                                    <span>HTML / CSS</span>
+                                </div>
+                                <span class = "bar-label bar-label--proficient">Proficient</span>
+                            </div>
+                            <div class = "bar-track"><div class = "bar-fill"></div></div>
+                        </div>
+
+                        <div class = "bar-skill" data-pct="60">
+                            <div class = "bar-skill-top">
+                                <div class = "bar-skill-left">
+                                    <div class = "bar-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg>
+                                    </div>
+                                    <span>Javascript</span>
+                                </div>
+                                <span class = "bar-label bar-label--intermediate">Intermediate</span>
+                            </div>
+                            <div class = "bar-track"><div class = "bar-fill"></div></div>
                         </div>
                     </div>
-                    <div class="culture_row">
-                        <div class="culture-items">
-                            <div class="culture_row">
-                                <!-- item start-->
-                                 <div class="culture_item">
-                                    <div class="culture_item-inner">
-                                        <h3>Health Perceptions</h3>
-                                        <p>Bubble tea is often seen as a guilty pleasure...</p>
-                                        <div class = "culture_read-more-content">
-                                            <p>Bubble tea is often seen as a guilty pleasure. While it's loved for its sweet, chewy, and customizable appeal, it also faces criticism for:
-                                            High sugar content – Many standard bubble tea drinks contain as much sugar as soft drinks, especially those with syrup-based flavorings or brown sugar pearls.
-                                            Calorie-dense toppings – Tapioca pearls, cheese foam, and puddings are carbohydrate-heavy, contributing to high calorie counts.
-                                            Perceived "naturalness" – Some fruit teas and Yakult blends are seen as healthier options, especially when paired with fresh ingredients and lower sugar levels.
-                                            Modern brands often respond to these concerns by offering:
-                                            Reduced sugar/ice levels
-                                            Fresh fruit options
-                                            Probiotic or green tea-based blends
-                                            Plant-based milks
-                                            </p>
-                                        </div>
-                                        <button class = "culture_readmorebtn" type="button">Read More</button>
-                                    </div>
-                                 </div>
-                                 <!-- item end-->
-                                <!-- item start-->
-                                 <div class="culture_item">
-                                    <div class="culture_item-inner">
-                                        <h3>Aesthetic & Branding</h3>
-                                        <p>Bubble tea is not just a drink — it's a lifestyle product</p>
-                                        <div class = "culture_read-more-content">
-                                            <p>Bubble tea is not just a drink — it's a lifestyle product:
 
-Visual appeal is key: gradient layers, colorful pearls, and cheese foam caps make the drinks highly “Instagrammable.”
+                    <div class = "exp-cards">
+                        <h3>Work Experience</h3>
 
-Many brands focus on distinct cup designs, limited-edition collaborations (e.g., with anime or K-pop groups), and cute mascots to attract younger demographics.
+                        <div class = "exp-card">
+                            <div class = "exp-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                            </div>
+                            <div>
+                                <div class = "exp-role">Unity Intern</div>
+                                <div class = "exp-meta">
+                                    <span>Hiverlab</span>
+                                    <span>May 2026 – Aug 2026</span>
+                                </div>
+                                <p class="exp-desc">Developed XR/VR experiences using Unity, contributing to client projects involving interactive simulations and real-time 3D environments.</p>
+                            </div>
+                        </div>
+                        <h3 class = "exp-subheading">Education</h3>
 
-Interior design of bubble tea outlets often mirrors café culture — cozy, stylish, and youth-oriented.
-
-This branding strategy turns bubble tea from just a beverage into a cultural symbol of fun, youth, and trendiness.</p>
-                                            <img src="Images/aestheticbbt.jpg" alt = "bbt">
-                                        </div>
-                                        <button class = "culture_readmorebtn" type="button">Read More</button>
-                                    </div>
-                                 </div>
-                                 <!-- item end-->
-                                <!-- item start-->
-                                 <div class="culture_item">
-                                    <div class="culture_item-inner">
-                                        <h3>Global Spread</h3>
-                                        <p>Originally from Taiwan..</p>
-                                        <div class = "culture_read-more-content">
-                                            <p>Originally from Taiwan, bubble tea has rapidly spread across the globe:
-
-It’s now a staple in East and Southeast Asia, especially in cities like Singapore, Bangkok, Seoul, and Tokyo.
-
-It has also gained massive popularity in Western countries, such as the U.S., Canada, Australia, and parts of Europe, driven by Asian diaspora and global food curiosity.
-
-Chains like Gong Cha, KOI Thé, and Tiger Sugar have gone international, with localized menus and marketing strategies.
-
-New variations — such as bubble tea ice cream, mochi, or cake — have emerged, further expanding its global cultural footprint.
-
-Bubble tea’s global success is tied to its versatility, personalization, and youth-driven appeal.</p>
-                                        </div>
-                                        <button class = "culture_readmorebtn" type="button">Read More</button>
-                                    </div>
-                                 </div>
-                                 <!-- item end-->
+                        <div class = "exp-card">
+                            <div class = "exp-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/><path d="M22 10v6"/></svg>
+                            </div>
+                            <div>
+                                <div class = "exp-role">Diploma in Game Development & Technology</div>
+                                <div class = "exp-meta">
+                                    <span>Nanyang Polytechnic</span>
+                                    <span>Apr 2024 – Mar 2026</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </section>
-            <!--read more pop up start-->
-            <div class="popup-box">
-                <div class="popup-content">
-                    <div class="popup-header">
-                        <h3>hi</h3>
-                        <span class="popup-close-icon">&times;</span>
+            <div class = "section-heading" id="projects">
+                <span class = "section-eyebrow">Portfolio</span>
+                <h2>Projects</h2>
+            </div>
+            <div class = "cardcontainer">
+                <div class = "card">
+                    <img src="Images/TDS_tileSelection.png" alt="Project 1 thumbnail">
+                    <div class = "card-content">
+                        <h3>Total Defence Simulator</h3>
+                        <p>A Singapore themed inspired tower defence game made during my schools work-integrated unit over the course of 2 weeks in Unity.</p>
+                        <div class="card-actions">
+                            <button class = "project-toggle" aria-expanded="false">
+                                <span>View Details</span>
+                                <svg class = "project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <a href="https://youtu.be/3BmdpsL5Wcc" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Watch Video
+                            </a>
+                        </div>
+                        <div class = "project-details">
+                            <div class = "project-details-inner">
+                                <div class = "project-detail-images">
+                                    <img src="Images/TDS_power.png" alt="Project 1 detail">
+                                    <img src="Images/TDS_levelSelect.png" alt="Project 1 detail">
+                                </div>
+                                <p>A longer write-up for Project 1 goes here. Talk through the idea behind it, your role, the tools and techniques you used, any challenges you ran into, and what you took away from building it.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="popup-body">
-                        <p>hi</p>
+                </div>
+                <div class = "card">
+                    <img src="Images/BBT_MainMenu.png" alt="Project 2 thumbnail">
+                    <div class = "card-content">
+                        <h3>All about Bubble tea!</h3>
+                        <p>A user responsive bubble tea website that has different pages that relate to information about bubble tea.</p>
+                        <div class="card-actions">
+                            <button class = "project-toggle" aria-expanded="false">
+                                <span>View Details</span>
+                                <svg class = "project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <a href="https://your-link-here.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                View Project
+                            </a>
+                        </div>
+                        <div class = "project-details">
+                            <div class = "project-details-inner">
+                                <div class = "project-detail-images">
+                                    <img src="Images/BBT_Carousel.png" alt="Project 2 detail">
+                                    <img src="Images/BBT_Game.png" alt="Project 2 detail">
+                                </div>
+                                <p>A longer write-up for Project 2 goes here. Talk through the idea behind it, your role, the tools and techniques you used, any challenges you ran into, and what you took away from building it.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="popup-footer">
-                        <button class="btn popup-close-btn">Close</button>
+                </div>
+                <div class = "card">
+                    <img src="Images/OC_Assembly.png" alt="Project 3 thumbnail">
+                    <div class = "card-content">
+                        <h3>Unity Overcooked</h3>
+                        <p>A Unity Netcode multiplayer game that was inspired by overcooked, where players have to work together and complete orders.</p>
+                        <div class="card-actions">
+                            <button class = "project-toggle" aria-expanded="false">
+                                <span>View Details</span>
+                                <svg class = "project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <a href="https://youtu.be/ChOEQbdRXRI" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Watch Video
+                            </a>
+                        </div>
+                        <div class = "project-details">
+                            <div class = "project-details-inner">
+                                <div class = "project-detail-images">
+                                    <img src="Images/OC_Assembly.png" alt="Project 3 detail">
+                                    <img src="Images/OC_Emote.png" alt="Project 3 detail">
+                                </div>
+                                <p>A longer write-up for Project 3 goes here. Talk through the idea behind it, your role, the tools and techniques you used, any challenges you ran into, and what you took away from building it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <img src="Images/3DAC_Bow.png" alt="Project 4 thumbnail">
+                    <div class = "card-content">
+                        <h3>Unity 3rd Person Game</h3>
+                        <p>A 3D action unity game which makes use of the Unity 3D software and implements unique mechanics to make a fun combat based game</p>
+                        <div class="card-actions">
+                            <button class = "project-toggle" aria-expanded="false">
+                                <span>View Details</span>
+                                <svg class = "project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <a href="https://youtu.be/96YUA6OwlOc" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Watch Video
+                            </a>
+                        </div>
+                        <div class = "project-details">
+                            <div class = "project-details-inner">
+                                <div class = "project-detail-images">
+                                    <img src="Images/3DAC_Idle.png" alt="Project 4 detail">
+                                    <img src="Images/3DAC_Climb.png" alt="Project 4 detail">
+                                </div>
+                                <p>A longer write-up for Project 4 goes here. Talk through the idea behind it, your role, the tools and techniques you used, any challenges you ran into, and what you took away from building it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <img src="Images/CR_MainMenu.jpg" alt="Project 5 thumbnail">
+                    <div class = "card-content">
+                        <h3>Codeway Runner</h3>
+                        <p>A partnered assignment to make an Android scroller based game inspired by subway surfers with a unique modern twist.</p>
+                        <div class="card-actions">
+                            <button class = "project-toggle" aria-expanded="false">
+                                <span>View Details</span>
+                                <svg class = "project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <a href="https://youtube.com/shorts/A9VmSW5wZus?feature=share" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Watch Video
+                            </a>
+                        </div>
+                        <div class = "project-details">
+                            <div class = "project-details-inner">
+                                <div class = "project-detail-images">
+                                    <img src="Images/CR_Achievements.jpg" alt="Project 5 detail">
+                                    <img src="Images/CR_Obstacles.png" alt="Project 5 detail">
+                                </div>
+                                <p>A longer write-up for Project 5 goes here. Talk through the idea behind it, your role, the tools and techniques you used, any challenges you ran into, and what you took away from building it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "card">
+                    <img src="Images/GOS_Poster.png" alt="Project 6 thumbnail">
+                    <div class = "card-content">
+                        <h3>GO: Crossing</h3>
+                        <p>For my FYP, I made an educational VR road crossing game to help children with special needs learn how to cross the road.</p>
+                        <div class="card-actions">
+                            <button class = "project-toggle" aria-expanded="false">
+                                <span>View Details</span>
+                                <svg class = "project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <a href="https://youtu.be/P5vcXFI205Y" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Watch Video
+                            </a>
+                        </div>
+                        <div class = "project-details">
+                            <div class = "project-details-inner">
+                                <div class = "project-detail-images">
+                                    <img src="Images/GOS_Gameplay.png" alt="Project 6 detail">
+                                    <img src="Images/GOS_Pause.png" alt="Project 6 detail">
+                                </div>
+                                <p>A longer write-up for Project 6 goes here. Talk through the idea behind it, your role, the tools and techniques you used, any challenges you ran into, and what you took away from building it.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--read more pop up end-->
-        </section>
-        <section class="page" id="page3">
-            <div class="types_container">
-                <div class="types_slider">
-                    <div class="type_slides">
-                        <img src="Images/milktea.jpg" alt="1">
-                        <div class="type_content">
-                            <h2>Milk Tea</h2>
-                            <p>A creamy blend of tea and milk (or non-dairy creamer), often served with tapioca pearls. It's the most classic and popular type of bubble tea.</p>
-                        </div>
-                    </div>
-                    <div class="type_slides">
-                        <img src="Images/fruittea.jpg" alt="2">
-                        <div class="type_content">
-                            <h2>Fruit Tea</h2>
-                            <p>A refreshing tea-based drink infused with real fruit or fruit syrups. Typically lighter and served without milk, with options like lychee, mango, or passionfruit.</p>
-                        </div>
-                    </div>
-                    <div class="type_slides">
-                        <img src="Images/cheesetea.jpg" alt="3">
-                        <div class="type_content">
-                            <h2>Cheese Tea</h2>
-                            <p>A unique combination of cold tea topped with a thick, slightly salty cheese foam. The contrast between the creamy top and the tea base makes it rich and indulgent.</p>
-                        </div>
-                    </div>
-                    <div class="type_slides">
-                        <img src="Images/smoothietea.jpg" alt="4">
-                        <div class="type_content">
-                            <h2>Smoothie</h2>
-                            <p>A blended, icy drink similar to a milkshake or slushie, made with fruit or tea bases. Great for hot days and often served with popping boba or jelly.</p>
-                        </div>
-                    </div>
-                    <div class="type_slides">
-                        <img src="Images/yakulttea.jpg" alt="5">
-                        <div class="type_content">
-                            <h2>Probiotic Tea</h2>
-                            <p>A tangy, sweet tea mixed with probiotic drinks like Yakult or Vitagen. It's fizzy, light, and considered a healthier alternative by some.</p>
-                        </div>
-                    </div>
-                    <div class="type_slides">
-                        <img src="Images/sparklingtea.jpg" alt="6">
-                        <div class="type_content">
-                            <h2>Bubbly Tea</h2>
-                            <p>Tea combined with soda water or carbonated flavors, giving a fizzy twist to the usual bubble tea. Often paired with fruit syrups and popping pearls.</p>
-                        </div>
+        </main>
+        <section class = "contact">
+                <div class = "content">
+                    <div class = "section-heading" id="contact">
+                        <span class = "section-eyebrow">Get in Touch</span>
+                        <h2>Contact</h2>
                     </div>
                 </div>
-                <div class="types_buttons">
-                    <span class = "prev"></span>
-                    <span class = "next"></span>
-                </div>
-            </div>
-        </section>
-        <section class="page" id="page4">
-            <section class="review_slider_container">
-                <div class="review_slider_images">
-                    <!-- start -->
-                    <div class="review_slider_img">
-                        <img src="Images/gongchalogo.png" alt = "1">
-                        <h2>GongCha</h2>
-                        <div class="details">
-                            <h2>GongCha</h2>
-                            <p>Smooth milk teas and signature milk foam toppings</p>
+                <div class = "contact-container">
+                    <div class = "contactInfo">
+                        <div class = "box">
+                            <div class = "icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                            <div class = "text">
+                                <h3>Email</h3>
+                                <p>shayn.huang@gmail.com</p>
+                            </div>                           
                         </div>
-                        
-                    </div>
-                    <!-- end -->
-                    <!-- start -->
-                    <div class="review_slider_img">
-                        <img src="Images/koilogo.jpg" alt = "2">
-                        <h2>KOI</h2>
-                        <div class="details">
-                            <h2>KOI</h2>
-                            <p>Golden pearls and rich milk teas</p>
+                        <div class = "social-links">
+                            <h3 class = "social-links-heading">Find me online</h3>
+                            <div class = "social-icons">
+                                <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://your-username.itch.io" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="itch.io">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.104 2.41 2.434 2.41h.032c1.33 0 2.434-1.102 2.434-2.41 0 1.308 1.035 2.41 2.364 2.41 1.328 0 2.4-1.102 2.4-2.41 0 1.308 1.105 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.622-2.08-2.99-3.13-3.612C19.948 1.338 4.052 1.338 3.13 1.338zM8.5 10.258c-.282 0-.542.025-.79.073-.006.006-.012.006-.018.006-1.443.27-2.457 1.116-3.11 1.965-.654.85-1.018 1.762-1.018 1.762v5.48c0 .54.482 1.458 1.024 1.458h15.822c.543 0 1.09-.917 1.09-1.457v-5.48s-.364-.913-1.018-1.762c-.654-.85-1.665-1.697-3.11-1.965-.006 0-.012 0-.018-.006-.248-.048-.508-.073-.79-.073h-.022c-.013 0-.025 0-.038.003-.607.016-1.13.21-1.553.524-.41.308-.703.72-.866 1.19-.163-.47-.456-.882-.866-1.19-.423-.314-.946-.508-1.553-.524-.013-.003-.025-.003-.038-.003H8.5zm0 0"/></svg>
+                                    <span>itch.io</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <!-- end -->
-                    <!-- start -->
-                    <div class="review_slider_img">
-                        <img src="Images/lihologo.jpg" alt = "3">
-                        <h2>Liho</h2>
-                        <div class="details">
-                            <h2>Liho</h2>
-                            <p>Cheese teas and fresh fruit teas</p>
-                        </div>
-                    </div>
-                    <!-- end -->
-                    <!-- start -->
-                    <div class="review_slider_img active">
-                        <img src="Images/itealogo.png" alt = "4">
-                        <h2>ITea</h2>
-                        <div class="details">
-                            <h2>ITea</h2>
-                            <p>Affordable and large variety of drinks</p>
-                        </div>
-                    </div>
-                    <!-- end -->
-                    <!-- start -->
-                    <div class="review_slider_img">
-                        <img src="Images/r&blogo.png" alt = "5">
-                        <h2>R&B</h2>
-                        <div class="details">
-                            <h2>R&B</h2>
-                            <p>Brown sugar series and fruit teas with fresh fruit chunks</p>
-                        </div>
-                    </div>
-                    <!-- end -->
-                    <!-- start -->
-                    <div class="review_slider_img">
-                        <img src="Images/sanchenlogo.png" alt = "6">
-                        <h2>SanChen</h2>
-                        <div class="details">
-                            <h2>SanChen</h2>
-                            <p>High-quality & brewed-to-order teas</p>
-                        </div>
-                    </div>
-                    <!-- end -->
-                </div>
-            </section>
-            <h1 class = "reviewTitle"> REVIEWS</h1>
-            <section class = "reviews">
-                
-                <div class="review">
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/gongchamenu.jpeg" alt ="gongcha review1">
-                         </div>
-                         Review 1
-                        <div class="reviewDetails">
-                            <h2>GONGCHA</h2>
-                            <p>Yelp reviewer:
-
-“When this place first opened, the lines went on forever… it does taste pretty good—but there are other places that sell pretty okay Bubble Tea too.”</p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/gongchalocation.jpg" alt ="gongcha review2">
-                         </div>
-                         Review 2
-                        <div class="reviewDetails">
-                            <h2>GONGCHA</h2>
-                            <p>TripAdvisor (Plaza Singapura outlet):
-Rated around 4.1/5, with comments noting consistent milk tea quality and decent pearls. </p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/gongchadrinks.jpeg" alt ="gongcha review3">
-                         </div>
-                         Review 3
-                        <div class="reviewDetails">
-                            <h2>GONGCHA</h2>
-                            <p>Reddit comment: About toppings:
-
-“Toppings wise, you can't go wrong with mixed pearls, herbal jelly, aloe vera…”</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review">
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/koimoredrinks.jpg" alt ="koi review1">
-                         </div>
-                         Review 1
-                        <div class="reviewDetails">
-                            <h2>KOI</h2>
-                            <p>TripAdvisor:
-
-“The Koi tea is our favourite! It’s yummy. You can customise your tea with less sugar and ice. The service is good and quick.”</p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/koidrinks.jpeg" alt ="koi review2">
-                         </div>
-                         Review 2
-                        <div class="reviewDetails">
-                            <h2>KOI</h2>
-                            <p>Burpple review:
-
-“Glad that the queue wasn't that bad and I managed to get my order within 10 minutes.”</p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/koimenu.png" alt ="koi review3">
-                         </div>
-                         Review 3
-                        <div class="reviewDetails">
-                            <h2>KOI</h2>
-                            <p>Lemon8/Reddit snippet:
-
-“Many regulars at KOI have found this balance makes the drink not only enjoyable but also refreshing.”</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review">
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/lihodrinks.png" alt ="liho review1">
-                         </div>
-                         Review 1
-                        <div class="reviewDetails">
-                            <h2>LIHO</h2>
-                            <p>TripAdvisor:
-
-“Wanted to try the cheese tea… Service was quick, the drink was thick, frothy and nice. I enjoyed it.”</p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/liholocation.jpeg" alt ="liho review2">
-                         </div>
-                         Review 2
-                        <div class="reviewDetails">
-                            <h2>LIHO</h2>
-                            <p>Yelp profile: Emphasizes signature local offerings:
-
-“Brown Sugar Pearl, Avocado and Fruit Tea are what LIHO does best and it is the heart of our brand…”</p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/lihomenu.png" alt ="liho review3">
-                         </div>
-                         Review 3
-                        <div class="reviewDetails">
-                            <h2>LIHO</h2>
-                            <p>Reddit commentary:
-
-“Liho is ok, but used to be considered budget, now no longer budget so drink less.”</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review active">
-                    
-                    <div class="reviewHeader">
-                        <div class = "reviewImgBox">
-                             <img src="Images/itealocation.jpg" alt ="itea review1">
-                        </div>Review 1
-                        <div class="reviewDetails">
-                            <h2>ITEA</h2>
-                            <p>r/askSingapore (Reddit):
-
-“The new wintermelon tea w tea jelly is p good, else honey green tea. Also their taro ball desserts are p good.” </p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/iteamenu.jpeg" alt ="itea review2">
-                         </div>
-                         Review 2
-                        <div class="reviewDetails">
-                            <h2>ITEA</h2>
-                            <p>Tampines Hub review:
-
-“Very yummy drinks and friendly service… the drinks are very affordable, and they give you a stamp card for a free drink after 10 purchases.” </p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                             <img src="Images/iteadrinks.jpeg" alt ="itea review3">
-                         </div>
-                         Review 3
-                        <div class="reviewDetails">
-                            <h2>ITEA</h2>
-                            <p>Lemon8 review:
-
-“Itea Matcha Latte [...] light and refreshing” (rated ~3/5).</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review">
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/rnblocation.jpeg" alt ="r&b review1">
-                         </div>
-                         Review 1
-                        <div class="reviewDetails">
-                            <h2>R&B</h2>
-                            <p>TripAdvisor:
-Rated around 3.8/5 with mixed but moderate feedback.</p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/rnbtea23.jpg" alt ="r&b review2">
-                         </div>
-                         Review 2
-                        <div class="reviewDetails">
-                            <h2>R&B</h2>
-                            <p>Burpple (Marina Square):
-
-“Definitely my place to go for brown sugar bb tea! In my personal opinion, R&B got the best brown sugar bb tea because of their fragrance & thick brown sugar ...”</p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/r&bmenu.jpeg" alt ="r&b review3">
-                         </div>
-                         Review 3
-                        <div class="reviewDetails">
-                            <h2>R&B</h2>
-                            <p>Yelp/Toa Payoh outlet:
-
-“I opt for the 70% Level of Sugar and Golden Boba… My order comes with Orange Rinds, Pineapple Bits and I was surprised a WHOLE hollow orange was included…”</p>
-                        </div>
-                    </div>
-                </div>
-               <div class="review">
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/sanchendrinks.jpeg" alt ="SanChen review1">
-                         </div>
-                         Review 1
-                        <div class="reviewDetails">
-                            <h2>SanChen</h2>
-                            <p>TripAdvisor:
-
-“Love their traditional 国王奶茶 the most. Heavy milk tea taste. The pearls are very chewy and good to go with 0% sugar. Friendly staff.” </p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/sanchenlocation.jpg" alt ="SanChen review2">
-                         </div>
-                         Review 2
-                        <div class="reviewDetails">
-                            <h2>SanChen</h2>
-                            <p>Reddit user:
-
-“I tried the bubble milk tea less sugar less ice … guys I think I've just found my ultimate source of happiness!!!” </p>
-                        </div>
-                    </div>
-                    <div class="reviewHeader">
-                         <div class = "reviewImgBox">
-                            <img src="Images/sanchenmenu.jpeg" alt ="SanChen review3">
-                         </div>
-                         Review 3
-                        <div class="reviewDetails">
-                            <h2>SanChen</h2>
-                            <p>Yelp profile:
-
-“The preparation and presentation of the tea was so meticulous and graceful.… From the first taste of my sakura oat milk tea, it was undeniably perfect.”</p>
-                        </div>
+                    <div class = "contactForm">
+                        <form action="https://formspree.io/f/mykqgnej" method="POST">
+                            <h2>Send Message</h2>
+                            <div class = "inputBox">
+                                <input type = "text" name ="name" required = "required">
+                                <span>Full Name</span>
+                            </div>
+                            <div class = "inputBox">
+                                <input type = "text" name ="email" required = "required">
+                                <span>Email</span>
+                            </div>
+                            <div class = "inputBox">
+                                <textarea name = "message"required="required"></textarea>
+                                <span>Type your message...</span>
+                            </div>
+                            <div class = "inputBox">
+                                <input type = "submit" name ="" value = "Send">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </section>
-        </section>
+        </body>
         
-    </main>
-</body>
+        <footer>
+            <div class="index-footercontainer">
+                <div class="index-footernav">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://your-username.itch.io" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="itch.io">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.104 2.41 2.434 2.41h.032c1.33 0 2.434-1.102 2.434-2.41 0 1.308 1.035 2.41 2.364 2.41 1.328 0 2.4-1.102 2.4-2.41 0 1.308 1.105 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.622-2.08-2.99-3.13-3.612C19.948 1.338 4.052 1.338 3.13 1.338zM8.5 10.258c-.282 0-.542.025-.79.073-.006.006-.012.006-.018.006-1.443.27-2.457 1.116-3.11 1.965-.654.85-1.018 1.762-1.018 1.762v5.48c0 .54.482 1.458 1.024 1.458h15.822c.543 0 1.09-.917 1.09-1.457v-5.48s-.364-.913-1.018-1.762c-.654-.85-1.665-1.697-3.11-1.965-.006 0-.012 0-.018-.006-.248-.048-.508-.073-.79-.073h-.022c-.013 0-.025 0-.038.003-.607.016-1.13.21-1.553.524-.41.308-.703.72-.866 1.19-.163-.47-.456-.882-.866-1.19-.423-.314-.946-.508-1.553-.524-.013-.003-.025-.003-.038-.003H8.5zm0 0"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="index-footerbottom">
+                <p> Designed by <span class="designer">Shayn  &#40643;&#38745;&#33841;</span></p>
+            </div>
+        </footer>
+        <script src="custom.js"></script>
+        
+    </body>
 </html>
