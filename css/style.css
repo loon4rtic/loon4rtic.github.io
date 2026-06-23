@@ -1,5 +1,19 @@
 *{box-sizing: border-box;margin:0;}
-body{color:#ffe5e5;background:#756ab6; border:#95b588 3px solid;}
+body{color:#ffe5e5;background:#756ab6;}
+
+/* ── Page-wide max-width cap for very large screens ── */
+.top-bar,
+.welcome,
+.contact,
+footer{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Body background still fills full viewport width */
+body{
+    background:#756ab6;
+}
 
 table, th, td {
     border: 1px solid #5f5695;
@@ -44,7 +58,8 @@ header, h2, h3, p, li, table, th, td {
     text-align: left;
     padding: 20px;
     background-color: #A888B5;
-    width: 20%;
+    width: auto;
+    flex-shrink: 0;
 }
 .site-logo{
     height: 70px;
@@ -227,15 +242,15 @@ header, h2, h3, p, li, table, th, td {
 
 .index-container {
     padding: 2rem;
-    max-width: 48rem; /* or whatever fits your layout */
+    width: 100%;
+    max-width: 480px;
     flex-shrink: 0;
 }
-.slidder-wrapper{
-    position:relative;
-    max-width: 10rem;
+.slider-wrapper{
+    position: relative;
     width: 100%;
+    max-width: 420px;
     margin: 0 auto;
-    justify-content: center;
 }
 .index-layout-wrapper .slider{
     display:flex;
@@ -319,12 +334,17 @@ header, h2, h3, p, li, table, th, td {
 }
 .cardcontainer{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     align-items: start;
     gap: 2rem;
-    max-width: 1100px;
+    max-width: 900px;
     margin: 2.5rem auto 5rem;
     padding: 0 6%;
+}
+@media (max-width: 640px){
+    .cardcontainer{
+        grid-template-columns: 1fr;
+    }
 }
 .card{
     background-color:#574d8a;
@@ -465,11 +485,12 @@ header, h2, h3, p, li, table, th, td {
 {
   position:relative;
   min-height: 100vh;
-  padding: 50px 100px;
+  padding: 50px 6%;
   display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-sizing: border-box;
 }
 .contact .content
 {
@@ -484,10 +505,12 @@ header, h2, h3, p, li, table, th, td {
 .contact-container
 {
   width:100%;
+  max-width: 900px;
   display:flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  gap: 2rem;
 }
 .contact-container .contactInfo
 {
@@ -861,30 +884,28 @@ footer{
   }
 }
   
-@media(max-width:1280px){
-  .top-bar header{
-    width: 40%;
-  }
-
-}
+/* top-bar header width handled by auto sizing */
 /* i did education first and didnt think it through */
 @media  (min-width: 768px)
 {
 }
-@media  (min-width:1280px)
+@media (min-width: 900px)
 {
-  
   .index-layout-wrapper {
-    flex-direction: row;  /* side-by-side layout */
+    flex-direction: row;
     align-items: flex-start;
     justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 6%;
+    gap: 3rem;
   }
 
   .index-container {
-    max-width: 48rem;
+    max-width: 380px;
     flex-shrink: 0;
+    padding: 1rem 0;
   }
-  
 }
 
 @media (max-width: 991px) {
