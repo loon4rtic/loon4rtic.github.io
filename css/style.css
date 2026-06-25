@@ -49,11 +49,13 @@ header, h2, h3, p, li, table, th, td, a, svg {
     align-items: center;
     gap: .8rem;
     text-align: left;
-    padding: 20px;
     background-color: #A888B5;
     width: auto;
     min-width: 180px;
+    padding: 15px;        /* ← was 20px, reduce it */
+    min-width: unset;
 }
+
 .site-logo{
     height: 70px;
     width: 70px;
@@ -210,20 +212,6 @@ header, h2, h3, p, li, table, th, td, a, svg {
   color: #ffe5e5;
 }
 
-@media (max-width: 768px){
-  .hero{
-    flex-direction: column;
-    text-align: center;
-    min-height: auto;
-    padding: 3rem 6%;
-  }
-  .hero-content{
-    max-width: 100%;
-  }
-  .hero-scroll{
-    margin: 0 auto;
-  }
-}
 
 
 .index-layout-wrapper {
@@ -640,64 +628,14 @@ header, h2, h3, p, li, table, th, td, a, svg {
     border-color: #95b588;
 }
 
-/* Footer social icons */
-.footer-social{
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    margin-bottom: 1rem;
-}
-.footer-social-icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #574d8a;
-    color: #e8cadf;
-    text-decoration: none;
-    border: 1px solid #8174A0;
-    transition: background .25s ease, color .25s ease, transform .2s ease;
-}
-.footer-social-icon svg{
-    width: 20px;
-    height: 20px;
-}
-.footer-social-icon:hover{
-    background: #95b588;
-    color: #574d8a;
-    transform: translateY(-3px);
-}
+
 
 /* Footer for all pages */
-.index-footercontainer{
-    width:100%;
-    padding:70px 30px 20px;
-}
+
 footer{
     background-color:#5f5595; 
 }
-.index-footernav{
-    margin:30px 0;
-}
-.index-footernav ul{
-    display:flex;
-    justify-content: center;
-    list-style-type: none;
 
-}
-.index-footernav ul li a{
-    color:#e8cadf;
-    margin: 20px;
-    text-decoration: none;
-    font-size: 1.3em;
-    opacity: 0.7;
-    transition: 0.5s ;
-}
-.index-footernav ul li a:hover{
-    opacity: 1;
-}
 .index-footerbottom{
     background-color:#8174A0;
     padding:20px;
@@ -876,37 +814,95 @@ footer{
   }
 }
   
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    width: 34px;
+    background: transparent;
+    border: none;
+    padding: 4px;
+    -webkit-appearance: none;  /* ← strips Safari/Chrome default button style */
+    appearance: none;
+}
+
+.nav-toggle .bar {
+    display: block;            /* ← force each bar to render as a block */
+    width: 100%;
+    height: 4px;
+    background-color: #ffe5e5;
+    margin: 3px 0;
+}
+
+
 @media(max-width:600px){
-  .top-bar header{
-    width: 100%;
-    justify-content: center;
+    .top-bar {
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .top-bar header{
+        flex: 1;
+    }
+    /* Show hamburger button */
+    .nav-toggle {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* Nav hidden by default on mobile */
+    .top-bar nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        background-color: #886da6;
+        padding: 0.5rem 0 1rem;
+        gap: 0;
+    }
+    .top-bar nav.open {
+        display: flex;
+    }
+    .top-bar nav a {
+        padding: 12px 5%;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        font-size: 1rem;
+    }
+    .top-bar nav a:last-child {
+        border-bottom: none;
+    }
+}
+@media (max-width: 768px){
+  .hero{
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+    padding: 3rem 6%;
   }
-  .top-bar nav {
-    width: 100%;
-    justify-content: center;
+  .hero-content{
+    max-width: 100%;
+  }
+  .hero-scroll{
+    margin: 0 auto;
   }
 }
-/* i did education first and didnt think it through */
-@media  (min-width: 768px)
-{
-}
+
 @media (min-width: 900px) {
   .index-layout-wrapper {
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    max-width: 1400px; /* ADDED: Increases the overall container width to allow the text box to stretch */
+    max-width: 1400px; 
   }
   
   .index-container {
-    flex: 0 0 450px; /* CHANGED: Locks the image container to a fixed 450px width so it never shrinks */
-    max-width: 450px; /* CHANGED: Prevents the image container from scaling based on percentages */
+    flex: 0 0 450px; 
+    max-width: 450px;
   }
   
   .index-article {
-    flex: 1 1 auto; /* Keeps the text area flexible so it fills the remaining space */
+    flex: 1 1 auto; 
     min-width: 0;
-    margin-left: 4rem; /* CHANGED: Increased from 2rem to push the dark purple box further to the right */
+    margin-left: 4rem; 
   }
 }
 
@@ -946,10 +942,8 @@ footer{
   }
 }
 
-/* ── Large screen (1400px+) caps ─────────────────────────────── */
 @media (min-width: 1400px) {
   .cardcontainer {
-    /* Lock to 3 columns max so cards don't become unreadably wide */
     grid-template-columns: repeat(3, 1fr);
     max-width: 1500px;
   }
@@ -961,12 +955,10 @@ footer{
   }
 }
 
-/* ── Wrap body content so nothing bleeds edge-to-edge ─────────── */
 .welcome {
   width: 100%;
   overflow-x: hidden;
 }
-/* ── Individual project pages ─────────────────────────────────── */
 .proj-page{
   max-width: 1000px;
   margin: 0 auto;

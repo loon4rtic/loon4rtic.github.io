@@ -1,3 +1,10 @@
+const hamburger = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('#mainNav');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+});
+
 // "View Details" toggle for each project card in the grid — each card's
 // button independently expands/collapses its own .project-details panel.
 // We search within the card for ".project-details" rather than assuming
