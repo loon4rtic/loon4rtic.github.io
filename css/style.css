@@ -980,3 +980,138 @@ footer{
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+/* ── Project detail page – new layout sections ── */
+
+.proj-hero-img{
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: .75rem;
+  border: 2px solid #5f5595;
+  margin-top: 1.2rem;
+}
+
+.proj-meta-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin: .6rem 0 .9rem;
+}
+.proj-meta-item{
+  font-size: .85rem;
+  color: #e0aed0;
+  letter-spacing: 1px;
+}
+
+/* Two-column card row (overview/role, challenges/reflection) */
+.proj-two-col{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+.proj-col-card{
+  background: #574d8a;
+  border-radius: .75rem;
+  padding: 1.5rem 1.8rem;
+}
+.proj-col-card h3{
+  font-size: 1.1rem;
+  color: #e0aed0;
+  margin-bottom: .6rem;
+}
+.proj-col-card p{
+  font-size: .95rem;
+  line-height: 1.7;
+  color: #e8cadf;
+}
+
+/* Generic section block */
+.proj-section{
+  margin-bottom: 2.5rem;
+}
+.proj-section-heading{
+  font-size: 1.3rem;
+  color: #e0aed0;
+  margin-bottom: 1rem;
+}
+.proj-section > p{
+  font-size: .95rem;
+  line-height: 1.7;
+  color: #e8cadf;
+  margin-top: .9rem;
+}
+
+/* Process 2-up image grid */
+.proj-process-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: .5rem;
+}
+.proj-process-img img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: .6rem;
+  border: 2px solid #5f5595;
+}
+.proj-img-caption{
+  font-size: .8rem;
+  color: #8174A0;
+  margin-top: .4rem;
+  letter-spacing: 1px;
+}
+
+/* Metrics row */
+.proj-metrics{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.proj-metric-box{
+  flex: 1 1 120px;
+  background: #574d8a;
+  border-radius: .75rem;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.proj-metric-num{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #95b588;
+  font-family: 'MyCustomFont', sans-serif;
+  letter-spacing: 1px;
+}
+.proj-metric-label{
+  font-size: .8rem;
+  color: #e0aed0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Footer CTA */
+.proj-footer{
+  background-color: #5f5595;
+  padding: 2rem 6%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.proj-back--footer{
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 640px){
+  .proj-two-col,
+  .proj-process-grid{
+    grid-template-columns: 1fr;
+  }
+}
