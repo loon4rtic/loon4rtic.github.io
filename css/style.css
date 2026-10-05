@@ -358,6 +358,10 @@ header, h2, h3, p, li, table, th, td, a, svg {
     max-width: 260px;
     grid-row: 1;
   }
+  /* smaller floating badges so they cover less of the photo */
+  .hero-badge{ font-size: .66rem; padding: .5rem .75rem; gap: .5rem; border-radius: .8rem; }
+  .hero-badge strong{ font-size: .74rem; }
+  .hero-badge-icon{ width: 28px; height: 28px; border-radius: .55rem; font-size: .9rem; }
   .hero-badge--top{ left: -10%; }
   .hero-badge--bottom{ right: -10%; }
 }
@@ -366,7 +370,9 @@ header, h2, h3, p, li, table, th, td, a, svg {
   .hero{ gap: 2.5rem; padding-top: 2rem; }
   .hero-visual{ max-width: 220px; }
   .hero-photo-frame{ aspect-ratio: 1 / 1; }
-  .hero-badge{ font-size: .68rem; padding: .55rem .75rem; }
+  .hero-badge{ font-size: .6rem; padding: .4rem .6rem; gap: .4rem; }
+  .hero-badge strong{ font-size: .68rem; }
+  .hero-badge-icon{ width: 24px; height: 24px; font-size: .8rem; }
   .hero-badge--top{ left: -6%; }
   .hero-badge--bottom{ right: -6%; }
 }
