@@ -5,67 +5,203 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GO: Crossing — Shayn's Portfolio</title>
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/whimsy.css" type="text/css" rel="stylesheet">
     </head>
-    <body>
-        <div class="top-bar">
+    <body class="whimsy">
+        <div class="top-bar top-bar--project">
             <header>
-                <h1>Shayn's Portfolio!</h1>
+                <a href="index.html" class="topbar-home"><h1>Shayn's Portfolio!</h1></a>
             </header>
-            <nav>
-                <a href="index.html#about">About me</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#contact">Contact</a>
-            </nav>
+            <a href="index.html#projects" class="topbar-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                <span>All projects</span>
+            </a>
         </div>
 
-        <main class="proj-page">
+        <main class="proj-page cs-page">
 
-            <a href="index.html#projects" class="proj-back">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-                Back to Projects
-            </a>
-
-            <div class="proj-hero">
-                <span class="section-eyebrow">VR Educational Game · Final Year Project</span>
-                <h2 class="proj-title">GO: Crossing</h2>
-            </div>
-
-            <div class="proj-gallery">
-                    <img src="Images/GOS_Poster.png" alt="GO: Crossing">
-                    <img src="Images/GOS_Gameplay.png" alt="GO: Crossing">
-                    <img src="Images/GOS_Pause.png" alt="GO: Crossing">
-            </div>
-
-            <div class="proj-body">
-                <div class="proj-overview">
-                    <h3>Overview</h3>
-                    <p>For my FYP, an educational VR road-crossing game to help children with special needs learn how to cross the road safely.</p>
+            <!-- HERO -->
+            <section class="cs-hero">
+                <div class="cs-hero-text">
+                    <span class="section-eyebrow">VR Educational Game · Final Year Project</span>
+                    <h2 class="cs-title">GO: Crossing</h2>
+                    <p class="cs-tagline">An educational VR road-crossing game that helps children with special needs learn how to cross the road safely.</p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Unity</span>
+                        <span class="proj-tag">C#</span>
+                        <span class="proj-tag">VR</span>
+                        <span class="proj-tag">XR Toolkit</span>
+                    </div>
+                    <div class="cs-hero-actions">
+                        <a href="https://youtu.be/P5vcXFI205Y" target="_blank" rel="noopener noreferrer" class="cs-btn cs-btn--primary">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                            Watch gameplay
+                        </a>
+                        <a href="#features" class="cs-btn cs-btn--ghost">Key features</a>
+                    </div>
                 </div>
-                <div class="proj-tags">
-                    <span class="proj-tag">Unity</span>
-                    <span class="proj-tag">C#</span>
-                    <span class="proj-tag">VR</span>
-                    <span class="proj-tag">XR Toolkit</span>
+                <div class="cs-poster">
+                    <img src="Images/GOS_Poster.png" alt="GO: Crossing key art poster">
                 </div>
-                <div class="proj-writeup">
-                    <h3>About This Project</h3>
-                    <p>Write a full description here — the concept, your role, tools used, challenges, and what you learned.</p>
+            </section>
+
+            <!-- AT A GLANCE -->
+            <dl class="cs-glance">
+                <div class="cs-glance-item">
+                    <dt>Year</dt>
+                    <dd>2026</dd>
                 </div>
-                <div class="proj-links">
-                    <a href="https://youtu.be/P5vcXFI205Y" target="_blank" rel="noopener noreferrer" class="project-toggle">
-                        <span>Watch Video</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    </a>
+                <div class="cs-glance-item">
+                    <dt>Duration</dt>
+                    <dd>3 months</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Team</dt>
+                    <dd>7 people (3 programmers, 4 artists)</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>My role</dt>
+                    <dd>Programmer</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Platform</dt>
+                    <dd>VR · Unity</dd>
+                </div>
+            </dl>
+
+            <div class="cs-layout">
+
+                <nav class="cs-toc" aria-label="On this page">
+                    <span class="cs-toc-label">On this page</span>
+                    <a href="#overview">Overview</a>
+                    <a href="#features">Key features</a>
+                    <a href="#role">My role</a>
+                    <a href="#challenge">Challenge</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#reflection">Reflection</a>
+                </nav>
+
+                <div class="cs-content">
+
+                    <section id="overview" class="cs-section">
+                        <span class="cs-num">01</span>
+                        <h3 class="cs-heading">Overview</h3>
+                        <p>For my Final Year Project, I worked on GO: Crossing, an educational VR game where children with special needs practise crossing the road safely in a realistic but risk-free street environment.</p>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">The goal</span>
+                            <p>Grace Orchard School, a special needs school, wanted a VR road-crossing game that simulates real-life scenarios, to help teach their students how to cross the road safely.</p>
+                        </div>
+                    </section>
+
+                    <section id="features" class="cs-section">
+                        <span class="cs-num">02</span>
+                        <h3 class="cs-heading">Key features</h3>
+                        <div class="cs-contrib-grid">
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                </div>
+                                <h4>Guide character</h4>
+                                <p>Conney walks players through each step with friendly, colour-coded dialogue and encouragement.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="20" rx="2"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="17" r="1.5"/></svg>
+                                </div>
+                                <h4>Real crossing routine</h4>
+                                <p>Players press the button for the green man and learn to wait patiently before crossing.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="8" x2="20" y2="8"/><circle cx="9" cy="8" r="2"/><line x1="4" y1="16" x2="20" y2="16"/><circle cx="15" cy="16" r="2"/></svg>
+                                </div>
+                                <h4>In-world VR menus</h4>
+                                <p>An animated pause menu styled as a stop sign, with volume, weather, effect and time settings built into the scene.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="role" class="cs-section">
+                        <span class="cs-num">03</span>
+                        <h3 class="cs-heading">My role</h3>
+                        <p>I was one of three programmers on a team of seven, alongside four artists. I built most of the step-by-step crossing gameplay and the menus, and handled much of the audio and cinematic work. I was also the main point of contact between the programmers and the art team, telling the artists what assets the programmers needed and keeping both sides updated on how the project was pacing.</p>
+                        <div class="cs-split">
+                            <div class="cs-split-col cs-split-col--me">
+                                <span class="cs-split-label">Gameplay systems</span>
+                                <ul>
+                                    <li>Step-by-step system: red man, green man, pressing the button, waiting, gaze, raising a hand, crossing, looking around and moving around</li>
+                                    <li>Gaze check for looking left and right</li>
+                                    <li>Tutorial level and its steps</li>
+                                    <li>Arrow tooltips</li>
+                                    <li>Read With Me function</li>
+                                    <li>Weather: rain, cloudy and clear</li>
+                                </ul>
+                            </div>
+                            <div class="cs-split-col">
+                                <span class="cs-split-label">UI, media &amp; production</span>
+                                <ul>
+                                    <li>Animated pause and settings menu: volume, weather, effect toggles and time</li>
+                                    <li>Controller diagrams</li>
+                                    <li>Audio recording and clean-up</li>
+                                    <li>Recorded and animated Unity cinematic shots</li>
+                                    <li>Animated Conney's sprite sheet</li>
+                                    <li>Merged the team's work into the first demo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="challenge" class="cs-section">
+                        <span class="cs-num">04</span>
+                        <h3 class="cs-heading">Biggest challenge</h3>
+                        <div class="cs-problem">
+                            <div class="cs-problem-card">
+                                <span class="cs-problem-label">Problem</span>
+                                <p>Designing systems that help the students understand the instructions and tasks clearly. Some of our original ideas didn't work out or were too hard for the students and teachers to follow.</p>
+                            </div>
+                            <div class="cs-problem-arrow" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                            <div class="cs-problem-card cs-problem-card--solution">
+                                <span class="cs-problem-label">Solution</span>
+                                <p>We ran multiple playtest sessions with the students and teachers, watched how they interacted with the environment and instructions, and adjusted our design to match.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="gallery" class="cs-section">
+                        <span class="cs-num">05</span>
+                        <h3 class="cs-heading">Gallery</h3>
+                        <div class="cs-gallery cs-gallery--wide">
+                            <figure class="cs-figure">
+                                <img src="Images/GOS_Gameplay.png" alt="Conney guiding the player at a pedestrian crossing">
+                                <figcaption>Conney guiding the player</figcaption>
+                            </figure>
+                            <figure class="cs-figure">
+                                <img src="Images/GOS_Pause.png" alt="Stop-sign pause menu in VR">
+                                <figcaption>Stop-sign pause menu</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section id="reflection" class="cs-section">
+                        <span class="cs-num">06</span>
+                        <h3 class="cs-heading">Reflection</h3>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">What I learned</span>
+                            <p>I learned how important playtesting is. Watching playtesters gave me much better insight into how to design the game so the instructions and gameplay were clear for the students.</p>
+                        </div>
+                    </section>
+
                 </div>
             </div>
 
         </main>
-
-        <footer>
-            
-        </footer>
         <div class="index-footerbottom">
             <p>Designed by <span class="designer">Shayn &#40643;&#38745;&#33841;</span></p>
         </div>
+        <script src="lightbox.js"></script>
+        <script src="project.js"></script>
+        <script src="whimsy.js"></script>
     </body>
 </html>

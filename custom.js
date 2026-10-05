@@ -47,3 +47,24 @@ if('IntersectionObserver' in window){
 } else {
     barSkills.forEach(fillBar);
 }
+// Project filters: show only cards whose data-tags include the chosen filter
+var filterBtns = document.querySelectorAll('.filter-btn');
+var projectCards = document.querySelectorAll('.cardcontainer .card');
+
+filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+        var filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach(function(b){
+            var on = b === btn;
+            b.classList.toggle('active', on);
+            b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+
+        projectCards.forEach(function(card){
+            var tags = (card.getAttribute('data-tags') || '').split(' ');
+            var show = filter === 'all' || tags.indexOf(filter) !== -1;
+            card.classList.toggle('is-hidden', !show);
+        });
+    });
+});

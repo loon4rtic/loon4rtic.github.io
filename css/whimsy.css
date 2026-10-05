@@ -1,0 +1,613 @@
+/* ─────────────────────────────────────────────
+   Whimsy layer — home page only (body.whimsy).
+   Remove the <link> to css/whimsy.css and the whimsy.js
+   script in index.html to turn it all off.
+   ───────────────────────────────────────────── */
+
+.whimsy{
+  --bouncy: cubic-bezier(.34, 1.56, .64, 1);
+  --sparkle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffe5e5' d='M12 0c.8 6.2 5 10.6 12 12-7 1.4-11.2 5.8-12 12-.8-6.2-5-10.6-12-12C7 10.6 11.2 6.2 12 0z'/%3E%3C/svg%3E");
+  --sparkle-pink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e0aed0' d='M12 0c.8 6.2 5 10.6 12 12-7 1.4-11.2 5.8-12 12-.8-6.2-5-10.6-12-12C7 10.6 11.2 6.2 12 0z'/%3E%3C/svg%3E");
+  --sparkle-green: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2395b588' d='M12 0c.8 6.2 5 10.6 12 12-7 1.4-11.2 5.8-12 12-.8-6.2-5-10.6-12-12C7 10.6 11.2 6.2 12 0z'/%3E%3C/svg%3E");
+  --squiggle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23e0aed0' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  --squiggle-green: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%2395b588' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* ── 1. Hand-drawn touches ── */
+
+/* Section titles: squiggly underline + doodle sparkles either side */
+.whimsy .section-heading h2{
+  position: relative;
+  display: inline-block;
+  padding-bottom: .55rem;
+}
+.whimsy .section-heading h2::after{
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  height: 10px;
+  background: var(--squiggle) repeat-x left center / 20px 10px;
+}
+.whimsy .section-heading h2::before{
+  content: '';
+  position: absolute;
+  top: -.2rem;
+  right: -1.9rem;
+  width: 22px;
+  height: 22px;
+  background: var(--sparkle-pink) center / contain no-repeat;
+  box-shadow: none;
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+.whimsy .section-heading .section-eyebrow::before{
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: .5rem;
+  vertical-align: -1px;
+  background: var(--sparkle-green) center / contain no-repeat;
+}
+@keyframes twinkle{
+  0%, 100%{ transform: scale(1) rotate(0deg); opacity: 1; }
+  50%{ transform: scale(.65) rotate(25deg); opacity: .6; }
+}
+
+/* "feel" in the hero gets a hand-drawn underline */
+.whimsy .hero-name-sub em{
+  background: var(--squiggle-green) repeat-x left bottom / 16px 6px;
+  padding-bottom: .15em;
+}
+/* little sparkle next to the hero name */
+.whimsy .hero-greeting::after{
+  content: '';
+  display: inline-block;
+  margin-left: .5rem;
+  vertical-align: .4em;
+  width: 16px;
+  height: 16px;
+  background: var(--sparkle) center / contain no-repeat;
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+
+/* Stitched (dashed) borders, like a sewn-on patch */
+.whimsy .card-content,
+.whimsy .featured-content,
+.whimsy .aboutme_article,
+.whimsy .exp-card{
+  position: relative;
+}
+.whimsy .card-content::before,
+.whimsy .featured-content::before,
+.whimsy .aboutme_article::before,
+.whimsy .exp-card::before{
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 2px dashed rgba(255, 229, 229, .22);
+  border-radius: .6rem;
+  pointer-events: none;
+}
+
+/* ── 2. Bouncier motion ── */
+
+/* Project cards tilt and lift with a little overshoot */
+.whimsy .card,
+.whimsy .featured{
+  transition:
+    transform .45s var(--bouncy),
+    box-shadow .3s ease,
+    opacity .6s ease var(--reveal-delay, 0s),
+    translate .8s var(--bouncy) var(--reveal-delay, 0s);
+}
+.whimsy .card:hover{
+  transform: translateY(-8px) rotate(-1.2deg);
+  box-shadow: 0 16px 30px rgba(43, 37, 64, .35);
+}
+.whimsy .card:nth-child(even):hover{ transform: translateY(-8px) rotate(1.2deg); }
+.whimsy .featured:hover{ transform: translateY(-6px) rotate(-.5deg); }
+
+/* Buttons squish and wiggle */
+.whimsy .hero-btn-primary,
+.whimsy .cv-download-btn,
+.whimsy .project-toggle,
+.whimsy .project-link,
+.whimsy .project-play,
+.whimsy .filter-btn{
+  transition: transform .35s var(--bouncy), background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.whimsy .hero-btn-primary:hover,
+.whimsy .cv-download-btn:hover,
+.whimsy .project-toggle:hover,
+.whimsy .project-link:hover,
+.whimsy .project-play:hover{
+  animation: wiggle .5s ease;
+  transform: scale(1.06);
+}
+.whimsy .filter-btn:hover{ transform: scale(1.08) rotate(-2deg); }
+.whimsy .filter-btn:active,
+.whimsy .hero-btn-primary:active{ transform: scale(.94); }
+@keyframes wiggle{
+  0%, 100%{ rotate: 0deg; }
+  25%{ rotate: -3deg; }
+  50%{ rotate: 3deg; }
+  75%{ rotate: -1.5deg; }
+}
+
+/* About Me photo becomes a taped-on polaroid */
+.whimsy .aboutme_imgsection{
+  display: grid;
+  place-items: center;
+  padding: 2.4rem 2rem;
+  min-height: 0;
+}
+.whimsy .aboutme_imgsection img{
+  position: relative;
+  inset: auto;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 42% center;
+  background: #ffe5e5;
+  border: 10px solid #ffe5e5;
+  border-bottom-width: 44px;
+  border-radius: 4px;
+  box-shadow: 0 18px 30px rgba(43, 37, 64, .4);
+  transform: rotate(3deg);
+  transition: transform .5s var(--bouncy);
+}
+.whimsy .aboutme_imgsection:hover img{ transform: rotate(-1deg) scale(1.03); }
+.whimsy .polaroid{
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+}
+/* washi tape strip */
+.whimsy .polaroid::after{
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 110px;
+  height: 30px;
+  translate: -50% 0;
+  rotate: -4deg;
+  background: repeating-linear-gradient(45deg, rgba(149, 181, 136, .75) 0 8px, rgba(149, 181, 136, .55) 8px 16px);
+  box-shadow: 0 2px 4px rgba(43, 37, 64, .2);
+  z-index: 1;
+}
+@media (max-width: 900px){
+  .whimsy .aboutme_imgsection{
+    height: auto;
+    padding: 2.2rem 1.6rem .4rem;
+  }
+  .whimsy .polaroid{ max-width: 240px; }
+}
+
+/* Scroll-in reveal with a little overshoot (classes added by whimsy.js) */
+.whimsy .reveal{
+  opacity: 0;
+  translate: 0 28px;
+  transition: opacity .6s ease var(--reveal-delay, 0s), translate .8s var(--bouncy) var(--reveal-delay, 0s);
+}
+.whimsy .reveal.is-visible{
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* ── 4. Sticker-style tags ── */
+.whimsy .card-chip,
+.whimsy .aboutme_facts li,
+.whimsy .featured-badge{
+  display: inline-block;
+  color: #574d8a;
+  background: #e0aed0;
+  border: 2px solid #ffe5e5;
+  border-radius: 999px;
+  box-shadow: 0 3px 0 rgba(43, 37, 64, .25);
+  font-weight: 700;
+  rotate: -2deg;
+  transition: rotate .3s var(--bouncy), scale .3s var(--bouncy);
+}
+.whimsy .card-chip:nth-child(3n+2),
+.whimsy .aboutme_facts li:nth-child(3n+2){
+  background: #95b588;
+  rotate: 2deg;
+}
+.whimsy .card-chip:nth-child(3n),
+.whimsy .aboutme_facts li:nth-child(3n){
+  background: #ffe5e5;
+  border-color: #e0aed0;
+  rotate: -1deg;
+}
+.whimsy .featured-badge{ background: #95b588; rotate: -3deg; }
+.whimsy .card-chip:hover,
+.whimsy .aboutme_facts li:hover,
+.whimsy .featured-badge:hover{
+  rotate: 0deg;
+  scale: 1.1;
+}
+
+/* ── 5. Floating bubbles, sparkles and hearts behind the hero ── */
+.whimsy-floaters{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.floater{
+  position: absolute;
+  bottom: -40px;
+  opacity: 0;
+  animation: float-up var(--dur, 18s) linear var(--delay, 0s) infinite;
+}
+.floater > span{
+  display: block;
+  animation: sway var(--sway, 4s) ease-in-out infinite alternate;
+}
+.floater--bubble > span{
+  width: var(--size, 18px);
+  height: var(--size, 18px);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 229, 229, .45);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .55) 0 18%, rgba(224, 174, 208, .15) 19%);
+}
+.floater--sparkle > span{
+  width: var(--size, 14px);
+  height: var(--size, 14px);
+  background: var(--sparkle) center / contain no-repeat;
+}
+.floater--heart > span{
+  width: var(--size, 14px);
+  height: var(--size, 14px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23e0aed0' d='M1 0h2v1H1zM4 0h2v1H4zM0 1h7v2H0zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3z'/%3E%3C/svg%3E") center / contain no-repeat;
+  image-rendering: pixelated;
+}
+@keyframes float-up{
+  0%{ transform: translateY(0); opacity: 0; }
+  10%{ opacity: var(--alpha, .8); }
+  85%{ opacity: var(--alpha, .8); }
+  100%{ transform: translateY(calc(-1 * var(--rise, 700px))); opacity: 0; }
+}
+@keyframes sway{
+  from{ transform: translateX(-12px) rotate(-10deg); }
+  to{ transform: translateX(12px) rotate(10deg); }
+}
+
+/* ── Respect reduced motion: keep the look, drop the movement ── */
+@media (prefers-reduced-motion: reduce){
+  .whimsy .section-heading h2::before,
+  .whimsy .hero-greeting::after{ animation: none; }
+  .whimsy-floaters{ display: none; }
+  .whimsy .reveal{ opacity: 1; translate: none; transition: none; }
+  .whimsy .card,
+  .whimsy .featured,
+  .whimsy .aboutme_imgsection img{ transition: none; }
+  .whimsy .hero-btn-primary:hover,
+  .whimsy .cv-download-btn:hover,
+  .whimsy .project-toggle:hover,
+  .whimsy .project-link:hover,
+  .whimsy .project-play:hover{ animation: none; }
+}
+
+/* ─────────────────────────────────────────────
+   Project pages — a lighter dose of the same whimsy
+   ───────────────────────────────────────────── */
+
+/* Section headings: squiggle underline + a small sparkle */
+.whimsy .cs-heading{
+  position: relative;
+  display: inline-block;
+  padding-bottom: .5rem;
+}
+.whimsy .cs-heading::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 15%;
+  bottom: 0;
+  height: 10px;
+  background: var(--squiggle) repeat-x left center / 20px 10px;
+}
+.whimsy .cs-heading::before{
+  content: '';
+  position: absolute;
+  top: -.1rem;
+  right: -1.5rem;
+  width: 16px;
+  height: 16px;
+  background: var(--sparkle-pink) center / contain no-repeat;
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+.whimsy .cs-hero .section-eyebrow::before{
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: .5rem;
+  vertical-align: -1px;
+  background: var(--sparkle-green) center / contain no-repeat;
+}
+
+/* Stitched borders on feature cards and problem/solution cards */
+.whimsy .cs-contrib,
+.whimsy .cs-problem-card{ position: relative; }
+.whimsy .cs-contrib::after,
+.whimsy .cs-problem-card::after{
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 2px dashed rgba(255, 229, 229, .2);
+  border-radius: .5rem;
+  pointer-events: none;
+}
+
+/* Bouncy feature cards */
+.whimsy .cs-contrib{ transition: transform .45s var(--bouncy), border-color .25s ease; }
+.whimsy .cs-contrib:hover{ transform: translateY(-6px) rotate(-1deg); }
+.whimsy .cs-contrib:nth-child(even):hover{ transform: translateY(-6px) rotate(1deg); }
+
+/* Buttons wiggle */
+.whimsy .cs-btn,
+.whimsy .topbar-back{
+  transition: transform .35s var(--bouncy), background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.whimsy .cs-btn:hover,
+.whimsy .topbar-back:hover{
+  animation: wiggle .5s ease;
+  transform: scale(1.05);
+}
+.whimsy .cs-btn:active{ transform: scale(.94); }
+
+/* Screenshots tilt playfully when hovered */
+.whimsy .zoomable{ transition: transform .4s var(--bouncy), box-shadow .25s ease; }
+.whimsy .zoomable:hover,
+.whimsy .zoomable:focus-visible{ transform: scale(1.03) rotate(-1deg); }
+.whimsy .cs-figure:nth-child(even) .zoomable:hover{ transform: scale(1.03) rotate(1deg); }
+.whimsy .cs-screen .zoomable:hover,
+.whimsy .cs-screen .zoomable:focus-visible{ transform: none; }
+
+/* Sticker tags */
+.whimsy .proj-tag{
+  display: inline-block;
+  color: #574d8a;
+  background: #e0aed0;
+  border: 2px solid #ffe5e5;
+  box-shadow: 0 3px 0 rgba(43, 37, 64, .25);
+  font-weight: 700;
+  rotate: -2deg;
+  transition: rotate .3s var(--bouncy), scale .3s var(--bouncy);
+}
+.whimsy .proj-tag:nth-child(3n+2){ background: #95b588; rotate: 2deg; }
+.whimsy .proj-tag:nth-child(3n){ background: #ffe5e5; border-color: #e0aed0; rotate: -1deg; }
+.whimsy .proj-tag:hover{ rotate: 0deg; scale: 1.1; }
+
+/* Room for the floating bubbles behind the project hero */
+.whimsy .cs-hero{
+  position: relative;
+  isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .whimsy .cs-heading::before{ animation: none; }
+  .whimsy .cs-contrib,
+  .whimsy .zoomable{ transition: none; }
+  .whimsy .cs-btn:hover,
+  .whimsy .topbar-back:hover{ animation: none; }
+}
+
+/* ─────────────────────────────────────────────
+   Home page extras: handwritten notes and click sparkles
+   ───────────────────────────────────────────── */
+
+/* Handwritten margin notes */
+.doodle-note{
+  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  font-weight: 600;
+  color: #95b588;
+  letter-spacing: .5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.doodle-note--photo{
+  position: absolute;
+  left: -2%;
+  bottom: -3.4rem;
+  display: flex;
+  align-items: flex-end;
+  gap: .3rem;
+  font-size: 1.6rem;
+  color: #ffe5e5;
+  rotate: -6deg;
+}
+.doodle-note--photo svg{
+  width: 46px;
+  height: 36px;
+  margin-bottom: .6rem;
+  color: #95b588;
+}
+.doodle-note--inline{
+  display: inline-block;
+  margin-left: .5rem;
+  font-size: 1.35rem;
+  color: #e0aed0;
+  rotate: -4deg;
+  vertical-align: middle;
+}
+.doodle-note--contact{
+  display: block;
+  margin-top: .8rem;
+  font-size: 1.6rem;
+  color: #e0aed0;
+  rotate: -2deg;
+}
+@media (max-width: 900px){
+  .doodle-note--photo{
+    left: auto;
+    right: 50%;
+    translate: 50% 0;
+    bottom: -3rem;
+    font-size: 1.4rem;
+  }
+  .doodle-note--photo svg{ display: none; }
+  .whimsy .hero-visual{ margin-bottom: 1rem; }
+}
+
+/* Click sparkles */
+.click-spark{
+  position: fixed;
+  z-index: 9999;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  pointer-events: none;
+  background: var(--sparkle-pink) center / contain no-repeat;
+  animation: spark-fly .6s ease-out forwards;
+}
+.click-spark--green{ background-image: var(--sparkle-green); }
+.click-spark--cream{ background-image: var(--sparkle); }
+@keyframes spark-fly{
+  0%{ transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
+  100%{ transform: translate(var(--dx), var(--dy)) scale(.2) rotate(140deg); opacity: 0; }
+}
+
+/* ─────────────────────────────────────────────
+   Mini Shayn — Minecraft-skin mascot (home page, built by whimsy.js)
+   Parts are rendered from Images/mascot/skin.png; 1 skin pixel = --px
+   ───────────────────────────────────────────── */
+.mascot{
+  --px: 5px;
+  position: fixed;
+  right: 1.6rem;
+  bottom: 0;
+  z-index: 90;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  translate: 0 52%;
+  transition: translate .5s var(--bouncy);
+  -webkit-tap-highlight-color: transparent;
+}
+.mascot:hover,
+.mascot:focus-visible,
+.mascot.is-talking{ translate: 0 22%; }
+.mascot:focus-visible{ outline: none; }
+.mascot:focus-visible .mascot-figure{
+  filter:
+    drop-shadow(2px 0 0 #95b588) drop-shadow(-2px 0 0 #95b588)
+    drop-shadow(0 2px 0 #95b588) drop-shadow(0 -2px 0 #95b588);
+}
+
+.mascot-figure{
+  display: block;
+  position: relative;
+  width: calc(16 * var(--px));
+  height: calc(32 * var(--px));
+  /* pixel outline so the pale skin stands out on lavender */
+  filter:
+    drop-shadow(2px 0 0 #574d8a) drop-shadow(-2px 0 0 #574d8a)
+    drop-shadow(0 2px 0 #574d8a) drop-shadow(0 -2px 0 #574d8a)
+    drop-shadow(0 8px 10px rgba(43, 37, 64, .35));
+  animation: mascot-bob 2.6s ease-in-out infinite;
+}
+.mascot-figure img{
+  position: absolute;
+  display: block;
+  image-rendering: pixelated;
+  pointer-events: none;
+  user-select: none;
+}
+.mascot-head{ left: calc(4 * var(--px)); top: 0; width: calc(8 * var(--px)); height: calc(8 * var(--px)); z-index: 2; }
+.mascot-body{ left: calc(4 * var(--px)); top: calc(8 * var(--px)); width: calc(8 * var(--px)); height: calc(12 * var(--px)); z-index: 1; }
+.mascot-armR,
+.mascot-armL{ top: calc(8 * var(--px)); width: calc(4 * var(--px)); height: calc(12 * var(--px)); transform-origin: 50% calc(2 * var(--px)); }
+.mascot-armR{ left: 0; }
+.mascot-armL{ left: calc(12 * var(--px)); transition: rotate .4s var(--bouncy); }
+.mascot-legR,
+.mascot-legL{ top: calc(20 * var(--px)); width: calc(4 * var(--px)); height: calc(12 * var(--px)); }
+.mascot-legR{ left: calc(4 * var(--px)); }
+.mascot-legL{ left: calc(8 * var(--px)); }
+
+/* wave hello when hovered, focused or talking */
+.mascot:hover .mascot-armL,
+.mascot:focus-visible .mascot-armL,
+.mascot.is-talking .mascot-armL{ animation: mascot-wave .5s ease-in-out infinite alternate; }
+
+.mascot.is-jumping .mascot-figure{ animation: mascot-jump .55s var(--bouncy); }
+
+@keyframes mascot-bob{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-4px); }
+}
+@keyframes mascot-wave{
+  from{ rotate: -150deg; }
+  to{ rotate: -115deg; }
+}
+@keyframes mascot-jump{
+  0%{ transform: translateY(0); }
+  40%{ transform: translateY(-34px); }
+  100%{ transform: translateY(0); }
+}
+
+/* speech bubble */
+.mascot-bubble{
+  position: absolute;
+  right: 50%;
+  bottom: calc(100% + 14px);
+  translate: 15% 0;
+  width: max-content;
+  max-width: 220px;
+  padding: .55rem .9rem;
+  border-radius: 1rem;
+  background: #ffe5e5;
+  color: #574d8a;
+  border: 2px solid #574d8a;
+  box-shadow: 0 6px 14px rgba(43, 37, 64, .3);
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  text-align: left;
+  opacity: 0;
+  scale: .6;
+  transform-origin: 85% 100%;
+  transition: opacity .25s ease, scale .35s var(--bouncy);
+  pointer-events: none;
+}
+.mascot-bubble::after{
+  content: '';
+  position: absolute;
+  right: calc(15% - 8px);
+  bottom: -9px;
+  width: 14px;
+  height: 14px;
+  background: #ffe5e5;
+  border-right: 2px solid #574d8a;
+  border-bottom: 2px solid #574d8a;
+  rotate: 45deg;
+}
+.mascot.is-talking .mascot-bubble{ opacity: 1; scale: 1; }
+
+@media (max-width: 700px){
+  .mascot{ --px: 3.5px; right: .8rem; translate: 0 58%; }
+  .mascot:hover,
+  .mascot:focus-visible,
+  .mascot.is-talking{ translate: 0 30%; }
+  .mascot-bubble{ font-size: 1.15rem; max-width: 170px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .mascot,
+  .mascot-bubble{ transition: none; }
+  .mascot-figure,
+  .mascot.is-jumping .mascot-figure,
+  .mascot:hover .mascot-armL,
+  .mascot:focus-visible .mascot-armL,
+  .mascot.is-talking .mascot-armL{ animation: none; }
+}

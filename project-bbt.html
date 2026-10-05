@@ -5,67 +5,205 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>All About Bubble Tea! — Shayn's Portfolio</title>
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/whimsy.css" type="text/css" rel="stylesheet">
     </head>
-    <body>
-        <div class="top-bar">
+    <body class="whimsy">
+        <div class="top-bar top-bar--project">
             <header>
-                <h1>Shayn's Portfolio!</h1>
+                <a href="index.html" class="topbar-home"><h1>Shayn's Portfolio!</h1></a>
             </header>
-            <nav>
-                <a href="index.html#about">About me</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#contact">Contact</a>
-            </nav>
+            <a href="index.html#projects" class="topbar-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                <span>All projects</span>
+            </a>
         </div>
 
-        <main class="proj-page">
+        <main class="proj-page cs-page">
 
-            <a href="index.html#projects" class="proj-back">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-                Back to Projects
-            </a>
-
-            <div class="proj-hero">
-                <span class="section-eyebrow">Responsive Website · HTML / CSS / JS</span>
-                <h2 class="proj-title">All About Bubble Tea!</h2>
-            </div>
-
-            <div class="proj-gallery">
-                    <img src="Images/BBT_MainMenu.png" alt="All About Bubble Tea!">
-                    <img src="Images/BBT_Carousel.png" alt="All About Bubble Tea!">
-                    <img src="Images/BBT_Game.png" alt="All About Bubble Tea!">
-            </div>
-
-            <div class="proj-body">
-                <div class="proj-overview">
-                    <h3>Overview</h3>
-                    <p>A user responsive bubble tea website with different pages relating to information about bubble tea.</p>
+            <!-- HERO -->
+            <section class="cs-hero cs-hero--wide">
+                <div class="cs-hero-text">
+                    <span class="section-eyebrow">Responsive Website · HTML / CSS / JS</span>
+                    <h2 class="cs-title">All About Bubble Tea!</h2>
+                    <p class="cs-tagline">A responsive website about bubble tea, with pages covering its culture, the different types, and reviews.</p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">HTML</span>
+                        <span class="proj-tag">CSS</span>
+                        <span class="proj-tag">JavaScript</span>
+                        <span class="proj-tag">Responsive Design</span>
+                    </div>
+                    <div class="cs-hero-actions">
+                        <a href="https://loon4rtic.github.io/bubbletea/" target="_blank" rel="noopener noreferrer" class="cs-btn cs-btn--primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View live site
+                        </a>
+                        <a href="#features" class="cs-btn cs-btn--ghost">Key features</a>
+                    </div>
                 </div>
-                <div class="proj-tags">
-                    <span class="proj-tag">HTML</span>
-                    <span class="proj-tag">CSS</span>
-                    <span class="proj-tag">JavaScript</span>
-                    <span class="proj-tag">Responsive Design</span>
+                <div class="cs-screen">
+                    <div class="cs-screen-bar"><span></span><span></span><span></span></div>
+                    <img src="Images/BBT_MainMenu.png" alt="Bubble tea website landing page">
                 </div>
-                <div class="proj-writeup">
-                    <h3>About This Project</h3>
-                    <p>Write a full description here — the concept, your role, tools used, challenges, and what you learned.</p>
+            </section>
+
+            <!-- AT A GLANCE -->
+            <dl class="cs-glance">
+                <div class="cs-glance-item">
+                    <dt>Year</dt>
+                    <dd>2025</dd>
                 </div>
-                <div class="proj-links">
-                    <a href="https://loon4rtic.github.io/bubbletea/" target="_blank" rel="noopener noreferrer" class="project-toggle">
-                        <span>View Project</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    </a>
+                <div class="cs-glance-item">
+                    <dt>Duration</dt>
+                    <dd>1 month</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Team</dt>
+                    <dd>Solo</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>My role</dt>
+                    <dd>Programmer</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Platform</dt>
+                    <dd>Web</dd>
+                </div>
+            </dl>
+
+            <div class="cs-layout">
+
+                <nav class="cs-toc" aria-label="On this page">
+                    <span class="cs-toc-label">On this page</span>
+                    <a href="#overview">Overview</a>
+                    <a href="#features">Key features</a>
+                    <a href="#role">My role</a>
+                    <a href="#challenge">Challenge</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#reflection">Reflection</a>
+                </nav>
+
+                <div class="cs-content">
+
+                    <section id="overview" class="cs-section">
+                        <span class="cs-num">01</span>
+                        <h3 class="cs-heading">Overview</h3>
+                        <p>All About Bubble Tea! is a responsive website with multiple pages of information about bubble tea, from its culture to the different types of drinks, plus an interactive ordering mini-game.</p>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">The brief</span>
+                            <p>Create a responsive website on a topic of our choice, using what we had learned in the module.</p>
+                        </div>
+                    </section>
+
+                    <section id="features" class="cs-section">
+                        <span class="cs-num">02</span>
+                        <h3 class="cs-heading">Key features</h3>
+                        <div class="cs-contrib-grid">
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+                                </div>
+                                <h4>Responsive layout</h4>
+                                <p>Pages adapt across desktop and mobile screen sizes.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="5" width="12" height="14" rx="1"/><polyline points="3 9 1 12 3 15"/><polyline points="21 9 23 12 21 15"/></svg>
+                                </div>
+                                <h4>Drinks carousel</h4>
+                                <p>An image carousel showcasing different types of bubble tea, each with a short description.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l-1.5 13h-9z"/><line x1="12" y1="2" x2="14" y2="8"/></svg>
+                                </div>
+                                <h4>Ordering mini-game</h4>
+                                <p>An interactive "Order your own bubble tea!" game built into the site.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="role" class="cs-section">
+                        <span class="cs-num">03</span>
+                        <h3 class="cs-heading">My role</h3>
+                        <p>This was a solo project, so I designed and programmed the whole site myself.</p>
+                        <div class="cs-split">
+                            <div class="cs-split-col cs-split-col--me">
+                                <span class="cs-split-label">Interactive features</span>
+                                <ul>
+                                    <li>Make Your Own Bubble Tea mini-game</li>
+                                    <li>Form submission</li>
+                                    <li>Fullscreen mode</li>
+                                    <li>Refresh button</li>
+                                    <li>UI hover tooltips</li>
+                                </ul>
+                            </div>
+                            <div class="cs-split-col">
+                                <span class="cs-split-label">Content &amp; animation</span>
+                                <ul>
+                                    <li>Types of bubble tea carousel</li>
+                                    <li>Bubble tea reviews</li>
+                                    <li>Timeline animation</li>
+                                    <li>Pop-up bubbles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="challenge" class="cs-section">
+                        <span class="cs-num">04</span>
+                        <h3 class="cs-heading">Biggest challenge</h3>
+                        <div class="cs-problem">
+                            <div class="cs-problem-card">
+                                <span class="cs-problem-label">Problem</span>
+                                <p>Designing a layout that stayed responsive across screen sizes while still feeling fun and interesting.</p>
+                            </div>
+                            <div class="cs-problem-arrow" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                            <div class="cs-problem-card cs-problem-card--solution">
+                                <span class="cs-problem-label">Solution</span>
+                                <p>I chose simpler designs so the pages would adapt more reliably, then kept them fun with interactive touches like the mini-game, animations and pop-up bubbles.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="gallery" class="cs-section">
+                        <span class="cs-num">05</span>
+                        <h3 class="cs-heading">Gallery</h3>
+                        <div class="cs-gallery cs-gallery--wide">
+                            <figure class="cs-figure">
+                                <img src="Images/BBT_MainMenu.png" alt="Landing page">
+                                <figcaption>Landing page</figcaption>
+                            </figure>
+                            <figure class="cs-figure">
+                                <img src="Images/BBT_Carousel.png" alt="Drinks carousel showing fruit tea">
+                                <figcaption>Drinks carousel</figcaption>
+                            </figure>
+                            <figure class="cs-figure">
+                                <img src="Images/BBT_Game.png" alt="Bubble tea ordering mini-game">
+                                <figcaption>Ordering mini-game</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section id="reflection" class="cs-section">
+                        <span class="cs-num">06</span>
+                        <h3 class="cs-heading">Reflection</h3>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">What I learned</span>
+                            <p>Next time, I would plan a structured layout for the whole website before writing any code. Along the way I kept running into problems figuring out how to make designs both responsive and appealing, and planning first would have avoided a lot of that.</p>
+                        </div>
+                    </section>
+
                 </div>
             </div>
 
         </main>
-
-        <footer>
-            
-        </footer>
         <div class="index-footerbottom">
             <p>Designed by <span class="designer">Shayn &#40643;&#38745;&#33841;</span></p>
         </div>
+        <script src="lightbox.js"></script>
+        <script src="project.js"></script>
+        <script src="whimsy.js"></script>
     </body>
 </html>

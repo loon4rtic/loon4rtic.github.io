@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2D Game Design — Shayn's Portfolio</title>
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/whimsy.css" type="text/css" rel="stylesheet">
+    </head>
+    <body class="whimsy">
+        <div class="top-bar top-bar--project">
+            <header>
+                <a href="index.html" class="topbar-home"><h1>Shayn's Portfolio!</h1></a>
+            </header>
+            <a href="index.html#projects" class="topbar-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                <span>All projects</span>
+            </a>
+        </div>
+
+        <main class="proj-page cs-page">
+
+            <!-- HERO -->
+            <section class="cs-hero cs-hero--wide">
+                <div class="cs-hero-text">
+                    <span class="section-eyebrow">Level Design · PICO-8</span>
+                    <h2 class="cs-title">2D Game Design</h2>
+                    <p class="cs-tagline">Three platformer levels for PICO-8, each redesigned over several iterations based on playtesting, feedback and research.</p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">PICO-8</span>
+                        <span class="proj-tag">Level Design</span>
+                        <span class="proj-tag">Playtesting</span>
+                        <span class="proj-tag">Iteration</span>
+                    </div>
+                    <div class="cs-hero-actions">
+                        <a href="#iterations" class="cs-btn cs-btn--primary">See the iterations</a>
+                        <a href="#testing" class="cs-btn cs-btn--ghost">How I tested</a>
+                    </div>
+                </div>
+                <div class="cs-screen cs-screen--diagram">
+                    <div class="cs-screen-bar"><span></span><span></span><span></span></div>
+                    <img src="Images/P8_L1_final.png" alt="Final annotated level design for Level 1">
+                </div>
+            </section>
+
+            <!-- AT A GLANCE -->
+            <dl class="cs-glance">
+                <div class="cs-glance-item">
+                    <dt>Year</dt>
+                    <dd class="cs-todo">Add year</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Team</dt>
+                    <dd>Solo</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>My role</dt>
+                    <dd>Level designer</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Levels</dt>
+                    <dd>3</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Design versions</dt>
+                    <dd>11</dd>
+                </div>
+            </dl>
+
+            <div class="cs-layout">
+
+                <nav class="cs-toc" aria-label="On this page">
+                    <span class="cs-toc-label">On this page</span>
+                    <a href="#overview">Overview</a>
+                    <a href="#levels">Level goals</a>
+                    <a href="#testing">How I tested</a>
+                    <a href="#iterations">Iterations</a>
+                    <a href="#challenge">Challenge</a>
+                    <a href="#reflection">Reflection</a>
+                </nav>
+
+                <div class="cs-content">
+
+                    <section id="overview" class="cs-section">
+                        <span class="cs-num">01</span>
+                        <h3 class="cs-heading">Overview</h3>
+                        <p>For this 2D game design project, I designed three platformer levels for PICO-8. I started each level by setting a goal for what the player should learn, then sketched the layout and kept reworking it as I gathered feedback. By the end, the three levels had gone through 11 design versions between them.</p>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">The brief</span>
+                            <p>Design three levels in PICO-8 that make use of game design fundamentals.</p>
+                        </div>
+                    </section>
+
+                    <section id="levels" class="cs-section">
+                        <span class="cs-num">02</span>
+                        <h3 class="cs-heading">Level goals</h3>
+                        <p>Before drawing anything, I set a goal for each level and the pacing I wanted. Every later change was checked against these goals.</p>
+                        <div class="cs-contrib-grid">
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+                                </div>
+                                <h4>Level 1 · Learn</h4>
+                                <p>Teach new players the basics (dashing, long jumps and wall jumps) and introduce spikes. Slow, calm pacing with little suspense.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+                                </div>
+                                <h4>Level 2 · Refine</h4>
+                                <p>Push for more precise jumps and long dashes through tight spaces, and introduce the spring.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 20 9 14 13 17 21 7"/><polyline points="15 7 21 7 21 13"/></svg>
+                                </div>
+                                <h4>Level 3 · Test</h4>
+                                <p>Revise everything, testing the player by making them combine mechanics in new ways to get through.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="testing" class="cs-section">
+                        <span class="cs-num">03</span>
+                        <h3 class="cs-heading">How I tested</h3>
+                        <p>I used four different sources of feedback, and each one caught problems the others missed.</p>
+                        <div class="cs-contrib-grid">
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="15" height="14" rx="2"/><polygon points="22 7 17 12 22 17 22 7"/></svg>
+                                </div>
+                                <h4>Research</h4>
+                                <p>Watching people play similar games showed me they tend to head towards wherever the key is. I used key and chest placement to guide players down my intended path without it feeling forced.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a6 6 0 0 1 12 0v1"/><circle cx="17" cy="9" r="2.5"/><path d="M16 15a5 5 0 0 1 6 5v1"/></svg>
+                                </div>
+                                <h4>Peer playtests</h4>
+                                <p>Friends playtested my levels and found shortcuts I hadn't intended, and told me where a level was too easy for its goal.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                </div>
+                                <h4>Teacher feedback</h4>
+                                <p>I brought each draft to my teacher, who helped me cut options that overwhelmed new players and remove spaces with no clear purpose.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                                </div>
+                                <h4>Learning by teaching</h4>
+                                <p>Reviewing friends' levels, and explaining my own design choices out loud, made me spot the same mistakes in my own work.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="iterations" class="cs-section">
+                        <span class="cs-num">04</span>
+                        <h3 class="cs-heading">Iterations</h3>
+                        <p>Every version of each level, what changed, and the feedback that led to it. Click any design to see it full size.</p>
+                        <p class="cs-iter-key">
+                            <span><i class="key-dot key-dot--player"></i>Player</span>
+                            <span><i class="key-dot key-dot--spike"></i>Spike</span>
+                            <span><i class="key-dot key-dot--spring"></i>Spring</span>
+                            <span><i class="key-dot key-dot--key"></i>Key (4-point star)</span>
+                            <span><i class="key-dot key-dot--key"></i>Chest (6-point star)</span>
+                        </p>
+
+                        <div class="cs-iter-level">
+                            <h4>Level 1 · Learn the basics</h4>
+                            <ol class="cs-iter">
+                                <li class="cs-iter-step">
+                                    <img src="Images/P8_L1_v1.png" alt="Level 1, first iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 1</strong><span class="cs-iter-tag">First draft</span></div>
+                                        <p>The first layout, built around teaching dashing, long jumps and wall jumps while introducing spikes.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step">
+                                    <img src="Images/P8_L1_v2.png" alt="Level 1, second iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 2</strong><span class="cs-iter-tag">Teacher feedback</span></div>
+                                        <p>I was worried the level would overwhelm new players. My teacher agreed and suggested removing elements and giving players fewer possible routes to the exit. I removed the optional wall jump at the top, since it didn't fit what I wanted players to learn by the end.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step">
+                                    <img src="Images/P8_L1_v3.png" alt="Level 1, third iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 3</strong><span class="cs-iter-tag">Pacing pass</span></div>
+                                        <p>I set the pacing for the level: slow and calm with little to no suspense, so new players could get a good grasp of the basics before anything harder.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step">
+                                    <img src="Images/P8_L1_v4.png" alt="Level 1, fourth iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 4</strong><span class="cs-iter-tag">Peer playtest</span><span class="cs-iter-tag">Learning by teaching</span></div>
+                                        <p>Friends found alternative ways through parts of the level, so I added spikes to block those shortcuts and push players onto the mechanic each section was meant to teach. While giving feedback on a friend's level, I noticed they asked for a jump + dash before ever teaching the dash. Then I realised my own level did the same, so I reworked the start so players learn to dash first.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step cs-iter-step--final">
+                                    <img src="Images/P8_L1_final.png" alt="Level 1, final iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Final</strong><span class="cs-iter-tag">Teacher feedback</span></div>
+                                        <p>My teacher pointed out some odd, empty spaces and areas without a clear intention. I removed them and reshaped parts of the map so the path is clearer and every section has a purpose.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="cs-iter-level">
+                            <h4>Level 2 · Precision and the spring</h4>
+                            <ol class="cs-iter">
+                                <li class="cs-iter-step">
+                                    <img src="Images/P8_L2_v1.png" alt="Level 2, first iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 1</strong><span class="cs-iter-tag">First draft</span></div>
+                                        <p>Tight spaces with little room to land, to train more precise jumps and long dashes, and the first appearance of the spring.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step">
+                                    <img src="Images/P8_L2_v2.png" alt="Level 2, second iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 2</strong><span class="cs-iter-tag">Research</span></div>
+                                        <p>After learning that players naturally follow the key, I saw that my first layout didn't lead players along the path I wanted. I redesigned the layout around where the key and chest sit.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step cs-iter-step--final">
+                                    <img src="Images/P8_L2_final.png" alt="Level 2, final iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Final</strong><span class="cs-iter-tag">Explaining my design</span></div>
+                                        <p>While explaining to friends how I introduced the spring, I realised it was only used once. A one-off use made it feel unimportant, so I added more chances to use the spring in meaningful ways. That way, players build familiarity with it and it feels rewarding.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="cs-iter-level">
+                            <h4>Level 3 · Put it all together</h4>
+                            <ol class="cs-iter">
+                                <li class="cs-iter-step">
+                                    <img src="Images/P8_L3_v1.png" alt="Level 3, first iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 1</strong><span class="cs-iter-tag">First draft</span></div>
+                                        <p>A spiral layout meant to test everything the player has learned by combining mechanics to find a way through.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step">
+                                    <img src="Images/P8_L3_v2.png" alt="Level 3, second iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 2</strong><span class="cs-iter-tag">Peer playtest</span></div>
+                                        <p>Friends felt the level didn't fully meet its goal, because it wasn't challenging enough and didn't make players combine mechanics. I added more demanding sections that require several mechanics together.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step cs-iter-step--final">
+                                    <img src="Images/P8_L3_final.png" alt="Level 3, final iteration">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Final</strong><span class="cs-iter-tag">Learning by teaching</span></div>
+                                        <p>While reviewing friends' levels, I found parts that were impossible because of miscounted blocks. That made me re-check my own level, and I found some paths that were overly tricky or not possible at all, so I fixed them.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section id="challenge" class="cs-section">
+                        <span class="cs-num">05</span>
+                        <h3 class="cs-heading">Biggest challenge</h3>
+                        <div class="cs-problem">
+                            <div class="cs-problem-card">
+                                <span class="cs-problem-label">Problem</span>
+                                <p>Making Level 1 teach the basics without overwhelming new players. My early drafts offered too many routes, allowed shortcuts past the mechanics I wanted to teach, and asked for a jump + dash before teaching the dash.</p>
+                            </div>
+                            <div class="cs-problem-arrow" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                            <div class="cs-problem-card cs-problem-card--solution">
+                                <span class="cs-problem-label">Solution</span>
+                                <p>I took it through five versions, combining feedback from my teacher, playtests with friends and lessons from reviewing their levels. I cut optional paths, blocked shortcuts with spikes, reordered the opening and removed areas without a clear purpose.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="reflection" class="cs-section">
+                        <span class="cs-num">06</span>
+                        <h3 class="cs-heading">Reflection</h3>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">What I learned</span>
+                            <p>Explaining my design to others helped me see it more clearly and catch problems I would have missed on my own. Giving feedback was just as useful as receiving it: spotting a mistake in a friend's level often meant finding the same one in mine.</p>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+        </main>
+
+        <div class="index-footerbottom">
+            <p>Designed by <span class="designer">Shayn &#40643;&#38745;&#33841;</span></p>
+        </div>
+        <script src="lightbox.js"></script>
+        <script src="project.js"></script>
+        <script src="whimsy.js"></script>
+    </body>
+</html>

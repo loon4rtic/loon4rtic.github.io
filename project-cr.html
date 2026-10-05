@@ -5,122 +5,219 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Codeway Runner — Shayn's Portfolio</title>
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/whimsy.css" type="text/css" rel="stylesheet">
     </head>
-    <body>
-        <div class="top-bar">
+    <body class="whimsy">
+        <div class="top-bar top-bar--project">
             <header>
-                <h1>Shayn's Portfolio!</h1>
+                <a href="index.html" class="topbar-home"><h1>Shayn's Portfolio!</h1></a>
             </header>
-            <a href="index.html#projects" class="proj-back">
+            <a href="index.html#projects" class="topbar-back">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-                Back to Projects
+                <span>All projects</span>
             </a>
-            
         </div>
 
-        <main class="proj-page">
+        <main class="proj-page cs-page">
 
-            <!-- ① HERO -->
-            <div class="proj-hero">
-                <span class="section-eyebrow">Android Endless Runner · Android Studio</span>
-                <h2 class="proj-title">Codeway Runner</h2>
-                <div class="proj-meta-row">
-                    <span class="proj-meta-item">📅 2025</span>
-                    <span class="proj-meta-item">⏱ 2 weeks</span>
-                    <span class="proj-meta-item">👥 Pair project</span>
-                </div>
-                <div class="proj-tags">
-                    <span class="proj-tag">Javascript</span>
-                    <span class="proj-tag">Android</span>
-                    <span class="proj-tag">Mobile</span>
-                </div>
-                <img class="proj-hero-img" src="Images/CR_MainMenu.jpg" alt="Codeway Runner main menu screenshot">
-            </div>
-
-            <!-- ② OVERVIEW + ROLE -->
-            <div class="proj-two-col">
-                <div class="proj-col-card">
-                    <h3>What is it?</h3>
-                    <p>A partnered assignment to make an Android scroller game inspired by Subway Surfers with a unique modern twist — a coding-themed world where players dodge bugs and collect syntax tokens.</p>
-                </div>
-                <div class="proj-col-card">
-                    <h3>My role</h3>
-                    <p>I handled the player physics, obstacle spawning system, and overall game loop. My partner focused on UI screens and the achievement system.</p>
-                </div>
-            </div>
-
-            <!-- ③ PROCESS -->
-            <div class="proj-section">
-                <h3 class="proj-section-heading">Design process</h3>
-                <div class="proj-process-grid">
-                    <div class="proj-process-img">
-                        <img src="Images/CR_MainMenu.jpg" alt="Early sketch or wireframe">
-                        <p class="proj-img-caption">Early concept sketch</p>
+            <!-- HERO -->
+            <section class="cs-hero">
+                <div class="cs-hero-text">
+                    <span class="section-eyebrow">Android Endless Runner · Android Studio</span>
+                    <h2 class="cs-title">Codeway Runner</h2>
+                    <p class="cs-tagline">A Subway Surfers–inspired endless runner set in a coding-themed world, where players dodge bugs and collect syntax tokens.</p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Javascript</span>
+                        <span class="proj-tag">Android</span>
+                        <span class="proj-tag">Mobile</span>
                     </div>
-                    <div class="proj-process-img">
-                        <img src="Images/CR_Achievements.jpg" alt="First prototype screenshot">
-                        <p class="proj-img-caption">First playable build</p>
+                    <div class="cs-hero-actions">
+                        <a href="https://youtube.com/shorts/A9VmSW5wZus?feature=share" target="_blank" rel="noopener noreferrer" class="cs-btn cs-btn--primary">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                            Watch gameplay
+                        </a>
+                        <a href="#contributions" class="cs-btn cs-btn--ghost">My contributions</a>
                     </div>
                 </div>
-                <p>We started with rough sketches of the lane-switching mechanic before moving into Android Studio. The biggest early decision was whether to use Unity or build natively — we chose Android Studio to meet the assignment brief and get hands-on with Java/Kotlin.</p>
-            </div>
+                <div class="cs-phone">
+                    <img src="Images/CR_MainMenu.jpg" alt="Codeway Runner main menu screenshot">
+                </div>
+            </section>
 
-            <!-- ④ FINAL GAME GALLERY -->
-            <div class="proj-section">
-                <h3 class="proj-section-heading">Final game</h3>
-                <div class="proj-gallery">
-                    <img src="Images/CR_MainMenu.jpg" alt="Codeway Runner main menu">
-                    <img src="Images/CR_Achievements.jpg" alt="Codeway Runner achievements screen">
-                    <img src="Images/CR_Obstacles.png" alt="Codeway Runner obstacles gameplay">
+            <!-- AT A GLANCE -->
+            <dl class="cs-glance">
+                <div class="cs-glance-item">
+                    <dt>Year</dt>
+                    <dd>2025</dd>
                 </div>
-            </div>
+                <div class="cs-glance-item">
+                    <dt>Duration</dt>
+                    <dd>2 weeks</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Team</dt>
+                    <dd>Pair project</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>My role</dt>
+                    <dd>Gameplay programmer</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Platform</dt>
+                    <dd>Android</dd>
+                </div>
+            </dl>
 
-            <!-- ⑤ CHALLENGES + REFLECTION -->
-            <div class="proj-two-col">
-                <div class="proj-col-card">
-                    <h3>Biggest challenge</h3>
-                    <p>Syncing obstacle spawn timing with the player's increasing speed was tricky — early playtests felt either too slow or impossible. We solved it by tying spawn rate to a difficulty curve variable rather than hardcoding values.</p>
-                </div>
-                <div class="proj-col-card">
-                    <h3>What I'd do differently</h3>
-                    <p>I'd plan the achievement system earlier. It was added late and required us to refactor the scoring system, which cost us time we could have spent on polish.</p>
-                </div>
-            </div>
+            <div class="cs-layout">
 
-            <!-- ⑥ METRICS -->
-            <div class="proj-metrics">
-                <div class="proj-metric-box">
-                    <span class="proj-metric-num">2 wks</span>
-                    <span class="proj-metric-label">Build time</span>
-                </div>
-                <div class="proj-metric-box">
-                    <span class="proj-metric-num">3</span>
-                    <span class="proj-metric-label">Mechanics built</span>
-                </div>
-                <div class="proj-metric-box">
-                    <span class="proj-metric-num">Pair</span>
-                    <span class="proj-metric-label">Team size</span>
+                <!-- TABLE OF CONTENTS -->
+                <nav class="cs-toc" aria-label="On this page">
+                    <span class="cs-toc-label">On this page</span>
+                    <a href="#overview">Overview</a>
+                    <a href="#contributions">My contributions</a>
+                    <a href="#process">Process</a>
+                    <a href="#challenge">Challenge</a>
+                    <a href="#final">Final game</a>
+                    <a href="#reflection">Reflection</a>
+                </nav>
+
+                <div class="cs-content">
+
+                    <!-- OVERVIEW -->
+                    <section id="overview" class="cs-section">
+                        <span class="cs-num">01</span>
+                        <h3 class="cs-heading">Overview</h3>
+                        <p>Codeway Runner was a partnered assignment to build an Android scroller game inspired by Subway Surfers, with a unique modern twist: a coding-themed world where players dodge bugs and collect syntax tokens.</p>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">The brief</span>
+                            <p>Build a mobile endless runner natively in Android Studio within two weeks, working as a pair.</p>
+                        </div>
+                    </section>
+
+                    <!-- MY CONTRIBUTIONS -->
+                    <section id="contributions" class="cs-section">
+                        <span class="cs-num">02</span>
+                        <h3 class="cs-heading">My contributions</h3>
+                        <p>I owned the core gameplay systems, everything that happens while the player is running. My partner focused on the UI screens and the achievement system.</p>
+
+                        <div class="cs-contrib-grid">
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2"/><path d="M10 22l2-7 3 3v4"/><path d="M6 12l3-3 3 2 3-2 3 3"/></svg>
+                                </div>
+                                <h4>Player physics</h4>
+                                <p>Lane-switching movement and how the player responds to input as the run speeds up.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M14 6.5h7M3 17.5h7"/></svg>
+                                </div>
+                                <h4>Obstacle spawning</h4>
+                                <p>A spawn system driven by a difficulty curve, so obstacles keep pace with the player's increasing speed.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
+                                </div>
+                                <h4>Game loop</h4>
+                                <p>The core update loop tying movement, spawning and scoring together each frame.</p>
+                            </article>
+                        </div>
+
+                        <div class="cs-split">
+                            <div class="cs-split-col cs-split-col--me">
+                                <span class="cs-split-label">Me</span>
+                                <ul>
+                                    <li>Player physics</li>
+                                    <li>Obstacle spawning</li>
+                                    <li>Game loop</li>
+                                </ul>
+                            </div>
+                            <div class="cs-split-col">
+                                <span class="cs-split-label">Partner</span>
+                                <ul>
+                                    <li>UI screens</li>
+                                    <li>Achievement system</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- PROCESS -->
+                    <section id="process" class="cs-section">
+                        <span class="cs-num">03</span>
+                        <h3 class="cs-heading">Design process</h3>
+                        <p>We started with rough sketches of the lane-switching mechanic before moving into Android Studio. The biggest early decision was whether to use Unity or build natively. We chose Android Studio to meet the assignment brief and get hands-on with Java/Kotlin.</p>
+                        <div class="cs-figures">
+                            <figure class="cs-figure">
+                                <img src="Images/CR_MainMenu.jpg" alt="Early sketch or wireframe">
+                                <figcaption>Early concept sketch</figcaption>
+                            </figure>
+                            <figure class="cs-figure">
+                                <img src="Images/CR_Achievements.jpg" alt="First prototype screenshot">
+                                <figcaption>First playable build</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <!-- CHALLENGE -->
+                    <section id="challenge" class="cs-section">
+                        <span class="cs-num">04</span>
+                        <h3 class="cs-heading">Biggest challenge</h3>
+                        <div class="cs-problem">
+                            <div class="cs-problem-card">
+                                <span class="cs-problem-label">Problem</span>
+                                <p>Syncing obstacle spawn timing with the player's increasing speed was tricky. Early playtests felt either too slow or impossible.</p>
+                            </div>
+                            <div class="cs-problem-arrow" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                            <div class="cs-problem-card cs-problem-card--solution">
+                                <span class="cs-problem-label">Solution</span>
+                                <p>We tied the spawn rate to a difficulty curve variable rather than hardcoding values, so the challenge scales smoothly with speed.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- FINAL GAME -->
+                    <section id="final" class="cs-section">
+                        <span class="cs-num">05</span>
+                        <h3 class="cs-heading">Final game</h3>
+                        <div class="cs-gallery">
+                            <figure class="cs-figure">
+                                <img src="Images/CR_MainMenu.jpg" alt="Codeway Runner main menu">
+                                <figcaption>Main menu</figcaption>
+                            </figure>
+                            <figure class="cs-figure">
+                                <img src="Images/CR_Obstacles.png" alt="Codeway Runner obstacles gameplay">
+                                <figcaption>Gameplay: dodging obstacles</figcaption>
+                            </figure>
+                            <figure class="cs-figure">
+                                <img src="Images/CR_Achievements.jpg" alt="Codeway Runner achievements screen">
+                                <figcaption>Achievements</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <!-- REFLECTION -->
+                    <section id="reflection" class="cs-section">
+                        <span class="cs-num">06</span>
+                        <h3 class="cs-heading">Reflection</h3>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">What I'd do differently</span>
+                            <p>I'd plan the achievement system earlier. It was added late and required us to refactor the scoring system, which cost us time we could have spent on polish.</p>
+                        </div>
+                    </section>
+
                 </div>
             </div>
 
         </main>
-
-        <!-- ⑦ FOOTER CTA -->
-        <footer class="proj-footer">
-            <div class="proj-links">
-                <a href="index.html#projects" class="proj-back proj-back--footer">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-                    Back to Projects
-                </a>
-                <a href="https://youtube.com/shorts/A9VmSW5wZus?feature=share" target="_blank" rel="noopener noreferrer" class="project-toggle">
-                    <span>Watch Video</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-                
-            </div>
-        </footer>
         <div class="index-footerbottom">
             <p>Designed by <span class="designer">Shayn &#40643;&#38745;&#33841;</span></p>
         </div>
+        <script src="lightbox.js"></script>
+        <script src="project.js"></script>
+        <script src="whimsy.js"></script>
     </body>
 </html>

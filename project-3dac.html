@@ -5,67 +5,203 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Unity 3rd Person Game — Shayn's Portfolio</title>
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/whimsy.css" type="text/css" rel="stylesheet">
     </head>
-    <body>
-        <div class="top-bar">
+    <body class="whimsy">
+        <div class="top-bar top-bar--project">
             <header>
-                <h1>Shayn's Portfolio!</h1>
+                <a href="index.html" class="topbar-home"><h1>Shayn's Portfolio!</h1></a>
             </header>
-            <nav>
-                <a href="index.html#about">About me</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#contact">Contact</a>
-            </nav>
+            <a href="index.html#projects" class="topbar-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                <span>All projects</span>
+            </a>
         </div>
 
-        <main class="proj-page">
+        <main class="proj-page cs-page">
 
-            <a href="index.html#projects" class="proj-back">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-                Back to Projects
-            </a>
-
-            <div class="proj-hero">
-                <span class="section-eyebrow">3D Action Game · Unity</span>
-                <h2 class="proj-title">Unity 3rd Person Game</h2>
-            </div>
-
-            <div class="proj-gallery">
-                    <img src="Images/3DAC_Bow.png" alt="Unity 3rd Person Game">
-                    <img src="Images/3DAC_Idle.png" alt="Unity 3rd Person Game">
-                    <img src="Images/3DAC_Climb.png" alt="Unity 3rd Person Game">
-            </div>
-
-            <div class="proj-body">
-                <div class="proj-overview">
-                    <h3>Overview</h3>
-                    <p>A 3D action Unity game implementing unique mechanics to create a fun combat-based experience.</p>
+            <!-- HERO -->
+            <section class="cs-hero cs-hero--wide">
+                <div class="cs-hero-text">
+                    <span class="section-eyebrow">3D Action Game · Unity</span>
+                    <h2 class="cs-title">Unity 3rd Person Game</h2>
+                    <p class="cs-tagline">A 3D action game in Unity with unique mechanics built around a fun, combat-based experience.</p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Unity</span>
+                        <span class="proj-tag">C#</span>
+                        <span class="proj-tag">3D</span>
+                        <span class="proj-tag">Combat</span>
+                    </div>
+                    <div class="cs-hero-actions">
+                        <a href="https://youtu.be/96YUA6OwlOc" target="_blank" rel="noopener noreferrer" class="cs-btn cs-btn--primary">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                            Watch gameplay
+                        </a>
+                        <a href="#features" class="cs-btn cs-btn--ghost">Key features</a>
+                    </div>
                 </div>
-                <div class="proj-tags">
-                    <span class="proj-tag">Unity</span>
-                    <span class="proj-tag">C#</span>
-                    <span class="proj-tag">3D</span>
-                    <span class="proj-tag">Combat</span>
+                <div class="cs-screen">
+                    <div class="cs-screen-bar"><span></span><span></span><span></span></div>
+                    <img src="Images/3DAC_Idle.png" alt="Third-person character holding a bow, with a health bar">
                 </div>
-                <div class="proj-writeup">
-                    <h3>About This Project</h3>
-                    <p>Write a full description here — the concept, your role, tools used, challenges, and what you learned.</p>
+            </section>
+
+            <!-- AT A GLANCE -->
+            <dl class="cs-glance">
+                <div class="cs-glance-item">
+                    <dt>Year</dt>
+                    <dd>2025</dd>
                 </div>
-                <div class="proj-links">
-                    <a href="https://youtu.be/96YUA6OwlOc" target="_blank" rel="noopener noreferrer" class="project-toggle">
-                        <span>Watch Video</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    </a>
+                <div class="cs-glance-item">
+                    <dt>Duration</dt>
+                    <dd>3 weeks</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Team</dt>
+                    <dd>Solo</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>My role</dt>
+                    <dd>Programmer</dd>
+                </div>
+                <div class="cs-glance-item">
+                    <dt>Engine</dt>
+                    <dd>Unity</dd>
+                </div>
+            </dl>
+
+            <div class="cs-layout">
+
+                <nav class="cs-toc" aria-label="On this page">
+                    <span class="cs-toc-label">On this page</span>
+                    <a href="#overview">Overview</a>
+                    <a href="#features">Key features</a>
+                    <a href="#role">My role</a>
+                    <a href="#challenge">Challenge</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#reflection">Reflection</a>
+                </nav>
+
+                <div class="cs-content">
+
+                    <section id="overview" class="cs-section">
+                        <span class="cs-num">01</span>
+                        <h3 class="cs-heading">Overview</h3>
+                        <p>A third-person 3D action game built in Unity, focused on implementing unique movement and combat mechanics to create a fun combat-based experience.</p>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">The brief</span>
+                            <p>Create a 3D third-person action combat game.</p>
+                        </div>
+                    </section>
+
+                    <section id="features" class="cs-section">
+                        <span class="cs-num">02</span>
+                        <h3 class="cs-heading">Key features</h3>
+                        <div class="cs-contrib-grid">
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+                                </div>
+                                <h4>Bow combat</h4>
+                                <p>Third-person aiming and shooting with a bow.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 20 9 10 13 15 16 11 21 20"/><line x1="3" y1="20" x2="21" y2="20"/></svg>
+                                </div>
+                                <h4>Climbing</h4>
+                                <p>The game measures the height of each block and picks a matching climb animation, so the player lines up perfectly with the ledge.</p>
+                            </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+                                </div>
+                                <h4>Health system</h4>
+                                <p>An on-screen health bar tracks damage during combat.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="role" class="cs-section">
+                        <span class="cs-num">03</span>
+                        <h3 class="cs-heading">My role</h3>
+                        <p>This was a solo project, so I programmed every system in the game myself.</p>
+                        <div class="cs-split">
+                            <div class="cs-split-col cs-split-col--me">
+                                <span class="cs-split-label">Combat &amp; movement</span>
+                                <ul>
+                                    <li>Hand-to-hand combat (punching)</li>
+                                    <li>Bow combat</li>
+                                    <li>Climbing system that measures block height and plays a matching animation</li>
+                                    <li>Animation switching: idle, walk, run and jump</li>
+                                </ul>
+                            </div>
+                            <div class="cs-split-col">
+                                <span class="cs-split-label">World &amp; presentation</span>
+                                <ul>
+                                    <li>AI enemies</li>
+                                    <li>Interactable items</li>
+                                    <li>Cinematic Unity shots</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="challenge" class="cs-section">
+                        <span class="cs-num">04</span>
+                        <h3 class="cs-heading">Biggest challenge</h3>
+                        <div class="cs-problem">
+                            <div class="cs-problem-card">
+                                <span class="cs-problem-label">Problem</span>
+                                <p>Managing my time. I had to balance this three-week assignment alongside the rest of my modules.</p>
+                            </div>
+                            <div class="cs-problem-arrow" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </div>
+                            <div class="cs-problem-card cs-problem-card--solution">
+                                <span class="cs-problem-label">Solution</span>
+                                <p>I set planned blocks of time each day for each assignment, which helped me divide my time more deliberately between them.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="gallery" class="cs-section">
+                        <span class="cs-num">05</span>
+                        <h3 class="cs-heading">Gallery</h3>
+                        <div class="cs-gallery cs-gallery--wide">
+                            <figure class="cs-figure">
+                                <img src="Images/3DAC_Bow.png" alt="Character drawing a bow">
+                                <figcaption>Drawing the bow</figcaption>
+                            </figure>
+                            <figure class="cs-figure">
+                                <img src="Images/3DAC_Idle.png" alt="Character idle with health bar">
+                                <figcaption>Idle with health bar</figcaption>
+                            </figure>
+                            <figure class="cs-figure">
+                                <img src="Images/3DAC_Climb.png" alt="Character climbing onto a block">
+                                <figcaption>Climbing</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section id="reflection" class="cs-section">
+                        <span class="cs-num">06</span>
+                        <h3 class="cs-heading">Reflection</h3>
+                        <div class="cs-callout">
+                            <span class="cs-callout-label">What I learned</span>
+                            <p>Next time, I would write down every feature I want to add at the start and set aside time for each one, so I'd have enough time left to polish and properly execute my ideas.</p>
+                        </div>
+                    </section>
+
                 </div>
             </div>
 
         </main>
-
-        <footer>
-            
-        </footer>
         <div class="index-footerbottom">
             <p>Designed by <span class="designer">Shayn &#40643;&#38745;&#33841;</span></p>
         </div>
+        <script src="lightbox.js"></script>
+        <script src="project.js"></script>
+        <script src="whimsy.js"></script>
     </body>
 </html>

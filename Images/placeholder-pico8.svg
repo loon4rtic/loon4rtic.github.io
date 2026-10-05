@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" shape-rendering="crispEdges">
+  <!-- Stand-in art for the PICO-8 levels until real screenshots are added (P8_*.png) -->
+  <rect width="128" height="128" fill="#1d2b53"/>
+  <rect y="96" width="128" height="32" fill="#5f574f"/>
+  <rect y="96" width="128" height="4" fill="#00e436"/>
+  <rect x="16" y="76" width="24" height="6" fill="#ab5236"/>
+  <rect x="56" y="60" width="24" height="6" fill="#ab5236"/>
+  <rect x="92" y="44" width="24" height="6" fill="#ab5236"/>
+  <rect x="100" y="34" width="8" height="10" fill="#ffec27"/>
+  <rect x="22" y="66" width="8" height="10" fill="#ff77a8"/>
+  <rect x="24" y="68" width="2" height="2" fill="#000"/>
+  <rect x="64" y="88" width="8" height="8" fill="#ff004d"/>
+  <text x="64" y="20" text-anchor="middle" font-family="monospace" font-size="9" fill="#fff1e8">2D GAME DESIGN</text>
+  <text x="64" y="118" text-anchor="middle" font-family="monospace" font-size="7" fill="#c2c3c7">PICO-8 · 3 LEVELS</text>
+</svg>

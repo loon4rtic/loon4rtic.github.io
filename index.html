@@ -4,11 +4,25 @@
         <title> shayn's portfolio </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Shayn Huang, a game developer and designer in Singapore. Unity, VR and multiplayer projects, from an educational VR road-crossing game to a co-op cooking game.">
+        <link rel="icon" type="image/jpeg" href="Images/facepic.jpg">
+
+        <!-- Link preview (LinkedIn, Discord, WhatsApp, etc.) -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://loon4rtic.github.io/">
+        <meta property="og:title" content="Shayn's Portfolio: Game Developer & Designer">
+        <meta property="og:description" content="Unity, VR and multiplayer game projects by Shayn Huang, Singapore.">
+        <meta property="og:image" content="https://loon4rtic.github.io/Images/GOS_Poster.png">
+        <meta name="twitter:card" content="summary_large_image">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+        <link href="css/whimsy.css" type="text/css" rel="stylesheet">
     </head>
 
-    <body>
+    <body class="whimsy">
         <div class = "top-bar">
             <header>
                 
@@ -32,21 +46,57 @@
 
         <section class = "hero">
             <div class = "hero-content">
-                <p class = "hero-greeting">Hello !</p>
-                <h1 class = "hero-name">I am Shayn</h1>
-                <p class = "hero-tagline">Aspiring Game Developer &amp; Designer</p>
+                <a href="#contact" class="hero-status">
+                    <span class="hero-status-dot" aria-hidden="true"></span>
+                    Open to freelance work &amp; game jam collabs · Singapore
+                </a>
+                <p class = "hero-greeting">Hello! 👋</p>
+                <h1 class = "hero-name">I'm Shayn,<span class="hero-name-sub">I build games that make you <em>feel</em> something.</span></h1>
+                <p class = "hero-tagline">Aspiring Game Developer &amp; Designer studying at Nanyang Polytechnic, working in Unity, VR and the web.</p>
                 <div class="hero-actions">
-                    <a href="#about" class = "hero-scroll">Scroll <span>↓</span></a>
+                    <a href="#projects" class="hero-btn-primary">
+                        View my work
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
                     <a href="Resume Test.pdf" download class="cv-download-btn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download CV
                     </a>
                 </div>
+                <dl class="hero-stats">
+                    <div><dt>Projects</dt><dd>7</dd></div>
+                    <div><dt>Internship</dt><dd>1</dd></div>
+                    <div><dt>Graduating</dt><dd>2027</dd></div>
+                </dl>
             </div>
             <div class = "hero-visual">
-                <div class = "hero-rings"></div>
-                <div class = "hero-blob"></div>
-                <img src="Images/facepic.jpg" alt="Shaynie" class = "hero-photo">
+                <div class = "hero-photo-frame">
+                    <img src="Images/facepic.jpg" alt="Shayn smiling, taking a mirror selfie" class = "hero-photo">
+                </div>
+                <div class="hero-badge hero-badge--top">
+                    <span class="hero-badge-icon" aria-hidden="true">🥽</span>
+                    <span><strong>GO: Crossing</strong>VR final year project</span>
+                </div>
+                <div class="hero-badge hero-badge--bottom">
+                    <span class="hero-badge-icon" aria-hidden="true">💼</span>
+                    <span><strong>Unity Intern</strong>Hiverlab · 2026</span>
+                </div>
+                <span class="doodle-note doodle-note--photo" aria-hidden="true">
+                    <svg viewBox="0 0 50 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 36C10 18 24 8 42 6"/><path d="M34 2l8 4-6 7"/></svg>
+                    that's me! ✿
+                </span>
+            </div>
+            <a href="#showreel" class = "hero-scroll" aria-label="Scroll to showreel">Scroll <span>↓</span></a>
+        </section>
+
+        <!-- Showreel: swap the video ID in the src below once you have a proper reel -->
+        <section class="showreel" id="showreel">
+            <div class="section-heading">
+                <span class="section-eyebrow">See it in motion</span>
+                <h2>Showreel</h2>
+            </div>
+            <div class="showreel-frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/P5vcXFI205Y" title="Shayn's showreel" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -59,13 +109,19 @@
             <div class = "aboutme_content">
                 <div class = "aboutme_article">
                     <h2>Get to know me!</h2>
-                    <p>I’m Shayn, a game developer and designer based in Singapore. I am currently studying for my Diploma in Game Development & Technology at Nanyang Polytechnic, where I built everything from a multiplayer co-op game to an educational VR experience for children with special needs.
-                        I’m drawn to games that make you feel something — the dread of a horror game, the quiet comfort of a cozy indie. That tension between emotion and interaction is what drives how I think about design: every mechanic, every scene should serve the experience.
-                        Outside of game projects, I also build for the web, which is how this portfolio came to life. I’m always looking for new problems to solve and new worlds to build — take a look at my projects to see what I’ve been working on.
-                    </p>
+                    <p>I’m Shayn, a game developer and designer based in Singapore. I am currently studying for my Diploma in Game Development & Technology at Nanyang Polytechnic, where I built everything from a multiplayer co-op game to an educational VR experience for children with special needs.</p>
+                    <p>I’m drawn to games that make you feel something — the dread of a horror game, the quiet comfort of a cozy indie. That tension between emotion and interaction is what drives how I think about design: every mechanic, every scene should serve the experience.</p>
+                    <p>Outside of game projects, I also build for the web, which is how this portfolio came to life. I’m always looking for new problems to solve and new worlds to build — take a look at my projects to see what I’ve been working on.</p>
+                    <ul class="aboutme_facts">
+                        <li>📍 Singapore</li>
+                        <li>🎓 Nanyang Polytechnic</li>
+                        <li>🎮 Unity · VR · Web</li>
+                    </ul>
                 </div>
                 <div class="aboutme_imgsection">
-                        <img src="Images/facepic.jpg" alt="img">
+                    <div class="polaroid">
+                        <img src="Images/facepic.jpg" alt="Shayn smiling, taking a mirror selfie">
+                    </div>
                 </div>
             </div>       
         </div>
@@ -74,7 +130,7 @@
                     <div class = "bar-skills">
                         <h3>Technical Skills</h3>
 
-                        <div class = "bar-skill" data-pct="80">
+                        <div class = "bar-skill" data-pct="90">
                             <div class = "bar-skill-top">
                                 <div class = "bar-skill-left">
                                     <div class = "bar-icon">
@@ -86,7 +142,7 @@
                             </div>
                             <div class = "bar-track"><div class = "bar-fill"></div></div>
                         </div>
-                        <div class = "bar-skill" data-pct="60">
+                        <div class = "bar-skill" data-pct="50">
                             <div class = "bar-skill-top">
                                 <div class = "bar-skill-left">
                                     <div class = "bar-icon">
@@ -98,7 +154,7 @@
                             </div>
                             <div class = "bar-track"><div class = "bar-fill"></div></div>
                         </div>
-                        <div class = "bar-skill" data-pct="70">
+                        <div class = "bar-skill" data-pct="85">
                             <div class = "bar-skill-top">
                                 <div class = "bar-skill-left">
                                     <div class = "bar-icon">
@@ -128,7 +184,7 @@
                             <div class = "bar-skill-top">
                                 <div class = "bar-skill-left">
                                     <div class = "bar-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
                                     </div>
                                     <span>Javascript</span>
                                 </div>
@@ -164,7 +220,7 @@
                                 <div class = "exp-role">Diploma in Game Development & Technology</div>
                                 <div class = "exp-meta">
                                     <span>Nanyang Polytechnic</span>
-                                    <span>Apr 2024 – Mar 2026</span>
+                                    <span>Apr 2024 – Mar 2027</span>
                                 </div>
                             </div>
                         </div>
@@ -176,12 +232,54 @@
                 <span class = "section-eyebrow">Portfolio</span>
                 <h2>Projects</h2>
             </div>
+
+            <!-- Featured project -->
+            <article class="featured">
+                <a href="project-gos.html" class="featured-img">
+                    <img src="Images/GOS_Poster.png" alt="GO: Crossing key art: a child in a VR headset holding hands with the guide character Conney">
+                </a>
+                <div class="featured-content">
+                    <span class="featured-badge">★ Featured · Final Year Project</span>
+                    <h3>GO: Crossing <span class="doodle-note doodle-note--inline">← my favourite! ♡</span></h3>
+                    <p>An educational VR road-crossing game that helps children with special needs learn how to cross the road safely, guided step by step by the friendly character Conney.</p>
+                    <div class="card-chips">
+                        <span class="card-chip">Unity</span>
+                        <span class="card-chip">VR</span>
+                        <span class="card-chip">XR Toolkit</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="project-gos.html" class="project-toggle">
+                            <span>Read the case study</span>
+                            <svg class="project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        <a href="https://youtu.be/P5vcXFI205Y" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Watch Video
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Filters: each card's data-tags lists the filters it belongs to -->
+            <div class="project-filters" role="group" aria-label="Filter projects">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="unity" aria-pressed="false">Unity</button>
+                <button class="filter-btn" data-filter="multiplayer" aria-pressed="false">Multiplayer</button>
+                <button class="filter-btn" data-filter="mobile" aria-pressed="false">Mobile</button>
+                <button class="filter-btn" data-filter="web" aria-pressed="false">Web</button>
+                <button class="filter-btn" data-filter="2d" aria-pressed="false">2D</button>
+            </div>
+
             <div class = "cardcontainer">
-                <div class = "card">
-                    <img src="Images/TDS_tileSelection.png" alt="Project 1 thumbnail">
+                <div class = "card" data-tags="unity">
+                    <img src="Images/TDS_tileSelection.png" alt="Total Defence Simulator tower builder screen">
                     <div class = "card-content">
                         <h3>Total Defence Simulator</h3>
-                        <p>A Singapore themed inspired tower defence game made during my schools work-integrated unit over the course of 2 weeks in Unity.</p>
+                        <div class="card-chips">
+                            <span class="card-chip">Unity</span>
+                            <span class="card-chip">2 weeks</span>
+                        </div>
+                        <p>A Singapore-themed tower defence game made in Unity over 2 weeks during my school's work-integrated unit.</p>
                         <div class="card-actions">
                             <a href="project-tds.html" class="project-toggle">
                                 <span>Read More</span>
@@ -193,31 +291,40 @@
                             </a>
                         </div>
                     </div>
-                        
                 </div>
-                
-                <div class = "card">
-                    <img src="Images/BBT_MainMenu.png" alt="Project 2 thumbnail">
+
+                <div class = "card" data-tags="web">
+                    <img src="Images/BBT_MainMenu.png" alt="All About Bubble Tea! website landing page">
                     <div class = "card-content">
-                        <h3>All about Bubble tea!</h3>
-                        <p>A user responsive bubble tea website that has different pages that relate to information about bubble tea.</p>
+                        <h3>All About Bubble Tea!</h3>
+                        <div class="card-chips">
+                            <span class="card-chip">Web</span>
+                            <span class="card-chip">HTML / CSS / JS</span>
+                        </div>
+                        <p>A responsive bubble tea website with different pages of information about bubble tea, plus an ordering mini-game.</p>
                         <div class="card-actions">
                             <a href="project-bbt.html" class="project-toggle">
                                 <span>Read More</span>
                                 <svg class="project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                             </a>
-                            <a href="https://loon4rtic.github.io/bubbletea/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                View Project
+                            <a href="https://loon4rtic.github.io/bubbletea/" target="_blank" rel="noopener noreferrer" class="project-play">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                                Play in browser
                             </a>
                         </div>
-                    </div>     
+                    </div>
                 </div>
-                <div class = "card">
-                    <img src="Images/OC_Assembly.png" alt="Project 3 thumbnail">
+
+                <div class = "card" data-tags="unity multiplayer">
+                    <img src="Images/OC_Assembly.png" alt="Unity Overcooked kitchen with ingredient counters">
                     <div class = "card-content">
                         <h3>Unity Overcooked</h3>
-                        <p>A Unity Netcode multiplayer game that was inspired by overcooked, where players have to work together and complete orders.</p>
+                        <div class="card-chips">
+                            <span class="card-chip">Unity</span>
+                            <span class="card-chip">Netcode</span>
+                            <span class="card-chip">Multiplayer</span>
+                        </div>
+                        <p>A Unity Netcode multiplayer game inspired by Overcooked, where players work together to complete orders.</p>
                         <div class="card-actions">
                             <a href="project-overcooked.html" class="project-toggle">
                                 <span>Read More</span>
@@ -230,12 +337,18 @@
                         </div>
                     </div>
                 </div>
-                <div class = "card">
-                    <img src="Images/3DAC_Bow.png" alt="Project 4 thumbnail">
+
+                <div class = "card" data-tags="unity">
+                    <img src="Images/3DAC_Bow.png" alt="Third-person character drawing a bow">
                     <div class = "card-content">
                         <h3>Unity 3rd Person Game</h3>
-                        <p>A 3D action unity game which makes use of the Unity 3D software and implements unique mechanics to make a fun combat based game</p>
-                                                <div class="card-actions">
+                        <div class="card-chips">
+                            <span class="card-chip">Unity</span>
+                            <span class="card-chip">3D</span>
+                            <span class="card-chip">Combat</span>
+                        </div>
+                        <p>A 3D action game in Unity with unique mechanics built around fun, combat-based gameplay.</p>
+                        <div class="card-actions">
                             <a href="project-3dac.html" class="project-toggle">
                                 <span>Read More</span>
                                 <svg class="project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -247,12 +360,18 @@
                         </div>
                     </div>
                 </div>
-                <div class = "card">
-                    <img src="Images/CR_MainMenu.jpg" alt="Project 5 thumbnail">
+
+                <div class = "card" data-tags="mobile">
+                    <img src="Images/CR_MainMenu.jpg" alt="Codeway Runner main menu">
                     <div class = "card-content">
                         <h3>Codeway Runner</h3>
-                        <p>A partnered assignment to make an Android scroller based game inspired by subway surfers with a unique modern twist.</p>
-                                                <div class="card-actions">
+                        <div class="card-chips">
+                            <span class="card-chip">Android</span>
+                            <span class="card-chip">Pair</span>
+                            <span class="card-chip">Gameplay programmer</span>
+                        </div>
+                        <p>A partnered assignment to make an Android endless runner inspired by Subway Surfers, with a modern coding-themed twist.</p>
+                        <div class="card-actions">
                             <a href="project-cr.html" class="project-toggle">
                                 <span>Read More</span>
                                 <svg class="project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -263,21 +382,22 @@
                             </a>
                         </div>
                     </div>
-                       
                 </div>
-                <div class = "card">
-                    <img src="Images/GOS_Poster.png" alt="Project 6 thumbnail">
+
+                <div class = "card" data-tags="2d">
+                    <img src="Images/P8_Level1.png" onerror="this.onerror=null;this.src='Images/placeholder-pico8.svg'" alt="PICO-8 level design" class="card-img--pixel">
                     <div class = "card-content">
-                        <h3>GO: Crossing</h3>
-                        <p>For my FYP, I made an educational VR road crossing game to help children with special needs learn how to cross the road.</p>
-                                                <div class="card-actions">
-                            <a href="project-gos.html" class="project-toggle">
+                        <h3>2D Game Design</h3>
+                        <div class="card-chips">
+                            <span class="card-chip">PICO-8</span>
+                            <span class="card-chip">Level design</span>
+                            <span class="card-chip">Solo</span>
+                        </div>
+                        <p>Three levels designed in PICO-8, putting game design fundamentals into practice within the console's tiny constraints.</p>
+                        <div class="card-actions">
+                            <a href="project-pico8.html" class="project-toggle">
                                 <span>Read More</span>
                                 <svg class="project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                            </a>
-                            <a href="https://youtu.be/P5vcXFI205Y" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Watch Video
                             </a>
                         </div>
                     </div>
@@ -289,15 +409,16 @@
                     <div class = "section-heading" id="contact">
                         <span class = "section-eyebrow">Get in Touch</span>
                         <h2>Contact</h2>
+                        <span class="doodle-note doodle-note--contact">don't be shy, say hi! ♡</span>
                     </div>
                 </div>
                 <div class = "contact-container">
                     <div class = "contactInfo">
                         <div class = "box">
-                            <div class = "icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                            <div class = "icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
                             <div class = "text">
                                 <h3>Email</h3>
-                                <p>shayn.huang@gmail.com</p>
+                                <p><a href="mailto:shayn.huang@gmail.com" class="contact-email">shayn.huang@gmail.com</a></p>
                             </div>                           
                         </div>
                         <div class = "social-links">
@@ -322,11 +443,11 @@
                         <form action="https://formspree.io/f/mykqgnej" method="POST">
                             <h2>Send Message</h2>
                             <div class = "inputBox">
-                                <input type = "text" name ="name" required = "required">
+                                <input type = "text" name ="name" placeholder=" " required = "required">
                                 <span>Full Name</span>
                             </div>
                             <div class = "inputBox">
-                                <input type = "text" name ="email" required = "required">
+                                <input type = "email" name ="email" placeholder=" " required = "required">
                                 <span>Email</span>
                             </div>
                             <div class = "inputBox">
@@ -340,14 +461,14 @@
                     </div>
                 </div>
             </section>
-        </body>
-        
+
         <footer>
             <div class="index-footerbottom">
                 <p> Designed by <span class="designer">Shayn  &#40643;&#38745;&#33841;</span></p>
             </div>
         </footer>
         <script src="custom.js"></script>
+        <script src="whimsy.js"></script>
         
     </body>
 </html>
