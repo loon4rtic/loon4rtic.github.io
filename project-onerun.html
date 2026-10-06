@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ONE RUN — Shayn's Portfolio</title>
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
         <link href="css/whimsy.css" type="text/css" rel="stylesheet">
     </head>
     <body class="whimsy">
@@ -18,8 +19,6 @@
             </a>
         </div>
 
-        <!-- Screenshots: drop OR_Cover.png, OR_Gameplay.png and OR_Cards.png into Images/.
-             Until they exist, each image falls back to Images/placeholder-onerun.svg. -->
         <main class="proj-page cs-page">
 
             <!-- HERO -->
@@ -31,6 +30,8 @@
                     <div class="proj-tags">
                         <span class="proj-tag">Unity</span>
                         <span class="proj-tag">C#</span>
+                        <span class="proj-tag">UI/UX</span>
+                        <span class="proj-tag">LootLocker</span>
                         <span class="proj-tag">Deckbuilder</span>
                         <span class="proj-tag">Roguelike</span>
                     </div>
@@ -39,12 +40,12 @@
                             <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
                             Play on itch.io
                         </a>
-                        <a href="#features" class="cs-btn cs-btn--ghost">Key features</a>
+                        <a href="#role" class="cs-btn cs-btn--ghost">My role</a>
                     </div>
                 </div>
                 <div class="cs-screen">
                     <div class="cs-screen-bar"><span></span><span></span><span></span></div>
-                    <img src="Images/OR_Cover.png" onerror="this.onerror=null;this.src='Images/placeholder-onerun.svg'" alt="ONE RUN gameplay">
+                    <img src="Images/OR_Game_Combat.jpg" alt="ONE RUN turn-based card battle against the Drum">
                 </div>
             </section>
 
@@ -60,7 +61,7 @@
                 </div>
                 <div class="cs-glance-item">
                     <dt>My role</dt>
-                    <dd class="cs-todo">Add your role</dd>
+                    <dd>UI/UX designer · Leaderboard · Tutorial</dd>
                 </div>
                 <div class="cs-glance-item">
                     <dt>Platform</dt>
@@ -79,8 +80,8 @@
                     <a href="#overview">Overview</a>
                     <a href="#features">Key features</a>
                     <a href="#role">My role</a>
+                    <a href="#ui-process">UI process</a>
                     <a href="#challenge">Challenge</a>
-                    <a href="#gallery">Gallery</a>
                     <a href="#reflection">Reflection</a>
                 </nav>
 
@@ -121,49 +122,243 @@
                                 <h4>One roguelike run</h4>
                                 <p>Every run is a fresh attempt, so each decision has lasting consequences.</p>
                             </article>
+                            <article class="cs-contrib">
+                                <div class="cs-contrib-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+                                </div>
+                                <h4>Online leaderboard</h4>
+                                <p>One run a day, the same for everyone. Scores are saved to a LootLocker leaderboard so players can see how their run ranks.</p>
+                            </article>
                         </div>
                     </section>
 
                     <section id="role" class="cs-section">
                         <span class="cs-num">03</span>
                         <h3 class="cs-heading">My role</h3>
-                        <p class="cs-todo">Add what you personally built: e.g. card systems, combat logic, UI or art, and how big the team was.</p>
+                        <p>I was the main UI/UX designer on the team, responsible for how the game looks and feels to navigate, from the menus to the screens players use during a run. I also helped code and set up the online leaderboard, using LootLocker as the backend database so every player's score is saved and ranked against everyone else's. On the tutorial, I helped script how it moves from step to step and the camera movement between them, and wrote the steps that teach players the combat UI and how to play each turn.</p>
+                        <div class="cs-split cs-split--3">
+                            <div class="cs-split-col cs-split-col--me">
+                                <span class="cs-split-label">UI/UX design</span>
+                                <ul>
+                                    <li>Designed the game's UI and overall user experience</li>
+                                    <li>Menus and screens players move through during a run</li>
+                                    <li>Kept the interface clear and readable for a mouse-only browser game</li>
+                                </ul>
+                            </div>
+                            <div class="cs-split-col">
+                                <span class="cs-split-label">Online leaderboard</span>
+                                <ul>
+                                    <li>Set up the leaderboard on a LootLocker database</li>
+                                    <li>Helped code score submission and fetching rankings in Unity</li>
+                                    <li>Displayed the rankings in-game so players can compare their run</li>
+                                </ul>
+                            </div>
+                            <div class="cs-split-col">
+                                <span class="cs-split-label">Tutorial</span>
+                                <ul>
+                                    <li>Helped script the flow from one tutorial step to the next</li>
+                                    <li>Helped script the camera movement between steps</li>
+                                    <li>Wrote the steps teaching every part of the combat UI</li>
+                                    <li>Walked new players through how to play a turn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="ui-process" class="cs-section">
+                        <span class="cs-num">04</span>
+                        <h3 class="cs-heading">UI design process</h3>
+                        <p>I mocked up every screen in Canva before it was built in Unity, then iterated on the layouts with the team. Each mockup is shown next to the screen that shipped. Placeholder text and repeated cards in the mockups are intentional: they're layout drafts, not final art. Click any image to see it full size.</p>
+
+                        <div class="cs-iter-level">
+                            <h4>Run over screen · Three views in one</h4>
+                            <p>Instead of sending players to separate pages, the run over screen has one default view and two toggles. The "Stats" and "Leaderboard" buttons expand the screen in place, so players never lose sight of their result.</p>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Default view · Your result</h5>
+                            <p>The stops along the run as coloured tiles, with the stop you died at in red, then a score breakdown and the total. In the build, the breakdown grew to include clean fights, precise kills and handicaps.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_Results1.jpg" alt="Run over screen, default view, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_Results1.jpg" alt="Run over screen, default view, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Stats toggle · Where the run went</h5>
+                            <p>The top half compacts and a table opens underneath, showing each stop's enemy, turns against par, HP lost and score banked, so players can see exactly where their run fell apart.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_Results2.jpg" alt="Run over screen with the stats table open, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_Results2.jpg" alt="Run over screen with the stats table open, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Leaderboard toggle · How you rank</h5>
+                            <p>Since everyone plays the same run each day, how you rank matters as much as your score. The screen splits so the LootLocker leaderboard sits beside your result, with your own row highlighted and a field to set the name you post under.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_Results3.jpg" alt="Run over screen with the leaderboard open, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_Results3.jpg" alt="Run over screen with the leaderboard open, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        </div>
+
+                        <div class="cs-iter-level">
+                            <h4>Combat HUD · Grouping the turn controls</h4>
+                            <ol class="cs-iter cs-iter--wide">
+                                <li class="cs-iter-step">
+                                    <img src="Images/OR_UI_Combat2.jpg" alt="Combat screen, first mockup with the draw pile beside the player stats">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 1</strong><span class="cs-iter-tag">First draft</span></div>
+                                        <p>Banked score and turn count in the top corner, the hand along the bottom, the draw pile tucked under the player's HP, shield and energy, and a large text box beside the enemy.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step">
+                                    <img src="Images/OR_UI_Combat1.jpg" alt="Combat screen, revised mockup with the draw pile beside the End turn button">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>Iteration 2</strong><span class="cs-iter-tag">Layout pass</span></div>
+                                        <p>I moved the draw pile to the right, under the End turn button, so the turn controls sit together. The text box shrank into a smaller info panel in the top right to open up the space around the enemy.</p>
+                                    </div>
+                                </li>
+                                <li class="cs-iter-step cs-iter-step--final">
+                                    <img src="Images/OR_Game_Combat.jpg" alt="Combat screen in the shipped game">
+                                    <div>
+                                        <div class="cs-iter-meta"><strong>In game</strong><span class="cs-iter-tag">Shipped</span></div>
+                                        <p>The shipped HUD follows the second layout: draw and discard piles beside End turn, the player's health and energy bottom left, and the info panel in the top right now shows the enemy's next move, so players can plan around it.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="cs-iter-level">
+                            <h4>From mockup to game · Every screen in the run</h4>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Title screen</h5>
+                            <p>The layout carried straight over: the card row, logo, today's date and seed. The build added Practice and Tutorial alongside Play, a leaderboard shortcut, and a line explaining that practice scores don't count.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_Title.jpg" alt="Title screen, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_Title.jpg" alt="Title screen, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Deck building</h5>
+                            <p>The card grid and "Your deck" panel shipped as planned. The build added filter tabs for each card type, and the detail box became a handicaps panel that shows how each one changes your score multiplier.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_DeckBuilder.jpg" alt="Deck building screen, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_DeckBuilder.jpg" alt="Deck building screen, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Run map</h5>
+                            <p>Shipped almost exactly as mocked up: eight stops, HP, gold, sales left and banked score. The build added the score each stop is worth, plus relics and items under your deck.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_RunMap.jpg" alt="Run map, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_RunMap.jpg" alt="Run map, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Shop</h5>
+                            <p>The tabbed layout, with a detail panel on the left and a grid on the right, made it into the game. Sales left and item slots moved up next to the title.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_Shop.jpg" alt="Shop screen, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_Shop.jpg" alt="Shop screen, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Between stops</h5>
+                            <p>The three-panel layout stayed, with categories on the left, choices in the middle and a summary on the right. The summary now previews your gold and HP before you commit.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_BetweenStops.jpg" alt="Between stops screen, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_BetweenStops.jpg" alt="Between stops screen, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="cs-compare-block">
+                            <h5 class="cs-compare-title">Forge</h5>
+                            <p>Close to the mockup. The build added an instruction line, a scroll bar for larger decks, and a before-and-after label under each card so players can see what an upgrade does.</p>
+                            <div class="cs-compare">
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_UI_Forge.jpg" alt="Forge screen, Canva mockup">
+                                    <figcaption><span class="cs-compare-tag">Canva mockup</span></figcaption>
+                                </figure>
+                                <figure class="cs-figure">
+                                    <img src="Images/OR_Game_Forge.jpg" alt="Forge screen, in game">
+                                    <figcaption><span class="cs-compare-tag cs-compare-tag--game">In game</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        </div>
                     </section>
 
                     <section id="challenge" class="cs-section">
-                        <span class="cs-num">04</span>
+                        <span class="cs-num">05</span>
                         <h3 class="cs-heading">Biggest challenge</h3>
                         <div class="cs-problem">
                             <div class="cs-problem-card">
                                 <span class="cs-problem-label">Problem</span>
-                                <p class="cs-todo">Add the hardest problem you ran into, e.g. balancing cards or structuring the card system.</p>
+                                <p>This was my first time designing UI, so I found it hard to know where things should go: which information players need to see at a glance, what can sit in a corner, and how to lay out a screen so it doesn't feel cluttered.</p>
                             </div>
                             <div class="cs-problem-arrow" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </div>
                             <div class="cs-problem-card cs-problem-card--solution">
                                 <span class="cs-problem-label">Solution</span>
-                                <p class="cs-todo">Add how you solved it.</p>
+                                <p>I studied the UI of other games, especially other deckbuilders, to understand how they place things like the hand, draw pile and card details. I used them as references for my Canva mockups, then refined the layouts from there.</p>
                             </div>
-                        </div>
-                    </section>
-
-                    <section id="gallery" class="cs-section">
-                        <span class="cs-num">05</span>
-                        <h3 class="cs-heading">Gallery</h3>
-                        <div class="cs-gallery cs-gallery--wide">
-                            <figure class="cs-figure">
-                                <img src="Images/OR_Cover.png" onerror="this.onerror=null;this.src='Images/placeholder-onerun.svg'" alt="ONE RUN title screen">
-                                <figcaption>Title screen</figcaption>
-                            </figure>
-                            <figure class="cs-figure">
-                                <img src="Images/OR_Gameplay.png" onerror="this.onerror=null;this.src='Images/placeholder-onerun.svg'" alt="ONE RUN turn-based card battle">
-                                <figcaption>Card battle</figcaption>
-                            </figure>
-                            <figure class="cs-figure">
-                                <img src="Images/OR_Cards.png" onerror="this.onerror=null;this.src='Images/placeholder-onerun.svg'" alt="ONE RUN deck and card selection">
-                                <figcaption>Building the deck</figcaption>
-                            </figure>
                         </div>
                     </section>
 
@@ -172,7 +367,7 @@
                         <h3 class="cs-heading">Reflection</h3>
                         <div class="cs-callout">
                             <span class="cs-callout-label">What I learned</span>
-                            <p class="cs-todo">Add what you learned, or what you'd do differently next time.</p>
+                            <p>ONE RUN was a good stepping stone for learning the basics of UI/UX. Going from blank Canva mockups to screens that shipped taught me how much placement affects how a game feels to play. It's something I want to keep getting better at, and I hope that further down the line I'll have a much stronger instinct for where each element belongs.</p>
                         </div>
                     </section>
 
@@ -181,9 +376,47 @@
 
         </main>
 
-        <div class="index-footerbottom">
-            <p>Designed by <span class="designer">Shayn &#40643;&#38745;&#33841;</span></p>
-        </div>
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Shayn's Portfolio!</a>
+                    <p class="footer-note">thanks for stopping by ♡</p>
+                    <a href="index.html#contact" class="footer-status">
+                        <span class="hero-status-dot" aria-hidden="true"></span>
+                        Open to freelance work &amp; game jam collabs
+                    </a>
+                </div>
+                <nav class="footer-col" aria-label="Footer">
+                    <h3 class="footer-heading">Explore</h3>
+                    <a href="index.html#about">About me</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="Shayn_Huang_CV.pdf" download>Download CV</a>
+                </nav>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Say hi</h3>
+                    <a href="mailto:shayn.huang@gmail.com">shayn.huang@gmail.com</a>
+                    <div class="footer-socials">
+                        <a href="https://github.com/loon4rtic" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shayn-huang-b044453a5/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://loon4rtic.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.104 2.41 2.434 2.41h.032c1.33 0 2.434-1.102 2.434-2.41 0 1.308 1.035 2.41 2.364 2.41 1.328 0 2.4-1.102 2.4-2.41 0 1.308 1.105 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.622-2.08-2.99-3.13-3.612C19.948 1.338 4.052 1.338 3.13 1.338zM8.5 10.258c-.282 0-.542.025-.79.073-.006.006-.012.006-.018.006-1.443.27-2.457 1.116-3.11 1.965-.654.85-1.018 1.762-1.018 1.762v5.48c0 .54.482 1.458 1.024 1.458h15.822c.543 0 1.09-.917 1.09-1.457v-5.48s-.364-.913-1.018-1.762c-.654-.85-1.665-1.697-3.11-1.965-.006 0-.012 0-.018-.006-.248-.048-.508-.073-.79-.073h-.022c-.013 0-.025 0-.038.003-.607.016-1.13.21-1.553.524-.41.308-.703.72-.866 1.19-.163-.47-.456-.882-.866-1.19-.423-.314-.946-.508-1.553-.524-.013-.003-.025-.003-.038-.003H8.5zm0 0"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Designed &amp; built by <span class="designer">Shayn &#40643;&#38745;&#33841;</span> <span class="footer-year">· © 2026</span></p>
+                <a href="#" class="footer-top">
+                    <img src="Images/mascot/head.png" alt="">
+                    Back to top
+                </a>
+            </div>
+        </footer>
         <script src="lightbox.js"></script>
         <script src="project.js"></script>
         <script src="whimsy.js"></script>

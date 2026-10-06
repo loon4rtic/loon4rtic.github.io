@@ -12,7 +12,7 @@
         <meta property="og:url" content="https://loon4rtic.github.io/">
         <meta property="og:title" content="Shayn's Portfolio: Game Developer & Designer">
         <meta property="og:description" content="Unity, VR and multiplayer game projects by Shayn Huang, Singapore.">
-        <meta property="og:image" content="https://loon4rtic.github.io/Images/GOS_Poster.png">
+        <meta property="og:image" content="https://loon4rtic.github.io/Images/GOS_Poster.jpg">
         <meta name="twitter:card" content="summary_large_image">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
         <link href="css/style.css" type="text/css" rel="stylesheet">
@@ -58,13 +58,13 @@
                         View my work
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
-                    <a href="Resume Test.pdf" download class="cv-download-btn">
+                    <a href="Shayn_Huang_CV.pdf" download class="cv-download-btn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download CV
                     </a>
                 </div>
                 <dl class="hero-stats">
-                    <div><dt>Projects</dt><dd>7</dd></div>
+                    <div><dt>Projects</dt><dd>8</dd></div>
                     <div><dt>Internship</dt><dd>1</dd></div>
                     <div><dt>Graduating</dt><dd>2027</dd></div>
                 </dl>
@@ -207,7 +207,17 @@
                                     <span>Hiverlab</span>
                                     <span>May 2026 – Aug 2026</span>
                                 </div>
-                                <p class="exp-desc">Developed XR/VR experiences using Unity, contributing to client projects involving interactive simulations and real-time 3D environments.</p>
+                                <p class="exp-desc">Provided Unity expertise and helped with Unity optimisation across two main projects, and helped with game design on MINT Play+.</p>
+                                <details class="exp-more">
+                                    <summary>
+                                        <span>View 2 projects</span>
+                                        <svg class="exp-more-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </summary>
+                                    <ul class="exp-projects">
+                                        <li><strong>Spatial Work simulator</strong> · Optimised the AI navigation and waypoint system, reworked UI placement, added a new login screen with "Remember me", and playtested scenarios to check the simulator's results.</li>
+                                        <li><strong>MINT Play+</strong> · Came up with new mechanics for a toy app and explained them to the client, and drafted responsive UI in Unity from the prototype.</li>
+                                    </ul>
+                                </details>
                             </div>
                         </div>
                         <h3 class = "exp-subheading">Education</h3>
@@ -236,7 +246,7 @@
             <!-- Featured project -->
             <article class="featured">
                 <a href="project-gos.html" class="featured-img">
-                    <img src="Images/GOS_Poster.png" alt="GO: Crossing key art: a child in a VR headset holding hands with the guide character Conney">
+                    <img src="Images/GOS_Poster.jpg" alt="GO: Crossing key art: a child in a VR headset holding hands with the guide character Conney">
                 </a>
                 <div class="featured-content">
                     <span class="featured-badge">★ Featured · Final Year Project</span>
@@ -271,8 +281,31 @@
             </div>
 
             <div class = "cardcontainer">
+                <div class = "card" data-tags="unity web">
+                    <img src="Images/ONERUN.jpg" onerror="this.onerror=null;this.src='Images/placeholder-onerun.svg'" alt="ONE RUN deckbuilder title screen">
+                    <div class = "card-content">
+                        <h3>ONE RUN</h3>
+                        <div class="card-chips">
+                            <span class="card-chip">Unity</span>
+                            <span class="card-chip">UI/UX</span>
+                            <span class="card-chip">4.7 ★ on itch.io</span>
+                        </div>
+                        <p>A turn-based roguelike deckbuilder made in Unity, where every choice counts across a single run. Playable in your browser.</p>
+                        <div class="card-actions">
+                            <a href="project-onerun.html" class="project-toggle">
+                                <span>Read More</span>
+                                <svg class="project-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                            </a>
+                            <a href="https://sinisterup.itch.io/one-run" target="_blank" rel="noopener noreferrer" class="project-play">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                                Play in browser
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class = "card" data-tags="unity">
-                    <img src="Images/TDS_tileSelection.png" alt="Total Defence Simulator tower builder screen">
+                    <img src="Images/TDS_tileSelection.jpg" alt="Total Defence Simulator tower builder screen">
                     <div class = "card-content">
                         <h3>Total Defence Simulator</h3>
                         <div class="card-chips">
@@ -294,7 +327,7 @@
                 </div>
 
                 <div class = "card" data-tags="web">
-                    <img src="Images/BBT_MainMenu.png" alt="All About Bubble Tea! website landing page">
+                    <img src="Images/BBT_MainMenu.jpg" alt="All About Bubble Tea! website landing page">
                     <div class = "card-content">
                         <h3>All About Bubble Tea!</h3>
                         <div class="card-chips">
@@ -316,7 +349,7 @@
                 </div>
 
                 <div class = "card" data-tags="unity multiplayer">
-                    <img src="Images/OC_Assembly.png" alt="Unity Overcooked kitchen with ingredient counters">
+                    <img src="Images/OC_Assembly.jpg" alt="Unity Overcooked kitchen with ingredient counters">
                     <div class = "card-content">
                         <h3>Unity Overcooked</h3>
                         <div class="card-chips">
@@ -339,7 +372,7 @@
                 </div>
 
                 <div class = "card" data-tags="unity">
-                    <img src="Images/3DAC_Bow.png" alt="Third-person character drawing a bow">
+                    <img src="Images/3DAC_Bow.jpg" alt="Third-person character drawing a bow">
                     <div class = "card-content">
                         <h3>Unity 3rd Person Game</h3>
                         <div class="card-chips">
@@ -385,7 +418,7 @@
                 </div>
 
                 <div class = "card" data-tags="2d">
-                    <img src="Images/P8_Level1.png" onerror="this.onerror=null;this.src='Images/placeholder-pico8.svg'" alt="PICO-8 level design" class="card-img--pixel">
+                    <img src="Images/P8_L1_final.png" onerror="this.onerror=null;this.src='Images/placeholder-pico8.svg'" alt="PICO-8 level design" class="card-img--pixel">
                     <div class = "card-content">
                         <h3>2D Game Design</h3>
                         <div class="card-chips">
@@ -462,9 +495,45 @@
                 </div>
             </section>
 
-        <footer>
-            <div class="index-footerbottom">
-                <p> Designed by <span class="designer">Shayn  &#40643;&#38745;&#33841;</span></p>
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">Shayn's Portfolio!</a>
+                    <p class="footer-note">thanks for stopping by ♡</p>
+                    <a href="#contact" class="footer-status">
+                        <span class="hero-status-dot" aria-hidden="true"></span>
+                        Open to freelance work &amp; game jam collabs
+                    </a>
+                </div>
+                <nav class="footer-col" aria-label="Footer">
+                    <h3 class="footer-heading">Explore</h3>
+                    <a href="#about">About me</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                    <a href="Shayn_Huang_CV.pdf" download>Download CV</a>
+                </nav>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Say hi</h3>
+                    <a href="mailto:shayn.huang@gmail.com">shayn.huang@gmail.com</a>
+                    <div class="footer-socials">
+                        <a href="https://github.com/loon4rtic" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shayn-huang-b044453a5/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://loon4rtic.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.104 2.41 2.434 2.41h.032c1.33 0 2.434-1.102 2.434-2.41 0 1.308 1.035 2.41 2.364 2.41 1.328 0 2.4-1.102 2.4-2.41 0 1.308 1.105 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.622-2.08-2.99-3.13-3.612C19.948 1.338 4.052 1.338 3.13 1.338zM8.5 10.258c-.282 0-.542.025-.79.073-.006.006-.012.006-.018.006-1.443.27-2.457 1.116-3.11 1.965-.654.85-1.018 1.762-1.018 1.762v5.48c0 .54.482 1.458 1.024 1.458h15.822c.543 0 1.09-.917 1.09-1.457v-5.48s-.364-.913-1.018-1.762c-.654-.85-1.665-1.697-3.11-1.965-.006 0-.012 0-.018-.006-.248-.048-.508-.073-.79-.073h-.022c-.013 0-.025 0-.038.003-.607.016-1.13.21-1.553.524-.41.308-.703.72-.866 1.19-.163-.47-.456-.882-.866-1.19-.423-.314-.946-.508-1.553-.524-.013-.003-.025-.003-.038-.003H8.5zm0 0"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Designed &amp; built by <span class="designer">Shayn &#40643;&#38745;&#33841;</span> <span class="footer-year">· © 2026</span></p>
+                <a href="#" class="footer-top">
+                    <img src="Images/mascot/head.png" alt="">
+                    Back to top
+                </a>
             </div>
         </footer>
         <script src="custom.js"></script>

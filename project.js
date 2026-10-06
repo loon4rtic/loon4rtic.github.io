@@ -14,7 +14,11 @@
             if(!entry.isIntersecting) return;
             links.forEach(function(l){ l.classList.remove('active'); });
             var link = byId[entry.target.id];
-            if(link) link.classList.add('active');
+            if(link){
+                link.classList.add('active');
+                // lets the mascot's TOC rider (whimsy.js) follow along
+                document.dispatchEvent(new CustomEvent('toc:active', { detail: link }));
+            }
         });
     }, { rootMargin: '-30% 0px -60% 0px' });
 

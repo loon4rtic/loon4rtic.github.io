@@ -177,3 +177,121 @@
         if(e.animationName === 'mascot-jump') mascot.classList.remove('is-jumping');
     });
 })();
+
+// Mini Shayn on project pages: instead of the corner peek, Mini Shayn climbs up and
+// hangs off the top edge of the hero screenshot with a line about that
+// project, and a tiny head rides the "On this page" rail as you scroll.
+(function(){
+    var visual = document.querySelector('.cs-hero > .cs-screen, .cs-hero > .cs-phone, .cs-hero > .cs-poster');
+    if(!visual) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // one greeting per project, keyed by file name
+    var page = location.pathname.split('/').pop().replace('.html', '');
+    var greetings = {
+        'project-tds': 'psst… I wrote the level loader! 🗺️',
+        'project-gos': 'my final year project ♡',
+        'project-cr': 'watch out for bugs! 🐛',
+        'project-bbt': 'all about bubble tea 🧋',
+        'project-3dac': 'combat time! ⚔️',
+        'project-onerun': 'you can play this one on itch.io!',
+        'project-overcooked': 'orders up! 🍳',
+        'project-pico8': 'so many iterations… ✎'
+    };
+    var clickLines = [
+        'hehe, you found me!',
+        'the gallery is my fave part ↓',
+        'boing! ✦',
+        'just hanging around~',
+        "don't let go… oh wait, that's me",
+        'thanks for reading ♡'
+    ];
+
+    // wrap the screenshot so Mini Shayn can hide behind it (the rotation moves to the wrapper)
+    var kind = visual.classList.contains('cs-phone') ? 'phone'
+        : visual.classList.contains('cs-poster') ? 'poster'
+        : (visual.classList.contains('cs-screen--pixel') || visual.classList.contains('cs-screen--diagram')) ? 'narrow'
+        : 'screen';
+    var host = document.createElement('div');
+    host.className = 'peek-host peek-host--' + kind;
+    visual.parentNode.insertBefore(host, visual);
+    host.appendChild(visual);
+
+    var peeker = document.createElement('button');
+    peeker.type = 'button';
+    peeker.className = 'peeker';
+    peeker.setAttribute('aria-label', 'Mini Shayn, hanging off the screenshot. Click to say hi.');
+    var figure = document.createElement('span');
+    figure.className = 'mascot-figure peeker-figure';
+    ['armR', 'legR', 'legL', 'body', 'armL', 'head'].forEach(function(part){
+        var img = document.createElement('img');
+        img.src = 'Images/mascot/' + part + '.png';
+        img.alt = '';
+        img.className = 'mascot-' + part;
+        figure.appendChild(img);
+    });
+    peeker.appendChild(figure);
+    host.appendChild(peeker);
+
+    // the bubble lives on the host so it can sit in front of the screenshot
+    var bubble = document.createElement('span');
+    bubble.className = 'mascot-bubble peeker-bubble';
+    bubble.setAttribute('aria-live', 'polite');
+    host.appendChild(bubble);
+
+    var hideTimer;
+    function say(text, ms){
+        bubble.textContent = text;
+        host.classList.add('is-talking');
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(function(){
+            host.classList.remove('is-talking');
+        }, ms || 3200);
+    }
+
+    // climb up shortly after load, then say the project line
+    setTimeout(function(){
+        host.classList.add('is-up');
+        setTimeout(function(){
+            say(greetings[page] || 'welcome to my project!', 3800);
+        }, reduceMotion ? 0 : 650);
+    }, reduceMotion ? 300 : 900);
+
+    // click: pull all the way up for a second, then drop back down
+    var last = -1;
+    peeker.addEventListener('click', function(){
+        var i;
+        do { i = Math.floor(Math.random() * clickLines.length); } while(i === last);
+        last = i;
+        say(clickLines[i]);
+        host.classList.remove('is-hopping');
+        void host.offsetWidth; // restart the hop animation
+        host.classList.add('is-hopping');
+    });
+    figure.addEventListener('animationend', function(e){
+        if(e.animationName === 'peeker-hop') host.classList.remove('is-hopping');
+    });
+
+    // TOC rider: a little head that slides down the rail to the current section
+    var toc = document.querySelector('.cs-toc');
+    if(!toc) return;
+    var rider = document.createElement('img');
+    rider.src = 'Images/mascot/head.png';
+    rider.alt = '';
+    rider.className = 'toc-rider';
+    toc.appendChild(rider);
+
+    var lastTop = null, tiltTimer;
+    document.addEventListener('toc:active', function(e){
+        var link = e.detail;
+        var top = link.offsetTop + link.offsetHeight / 2;
+        if(top === lastTop) return;
+        // lean the way the head is sliding, then settle
+        rider.style.setProperty('--tilt', lastTop === null ? '0deg' : (top > lastTop ? '14deg' : '-14deg'));
+        rider.style.setProperty('--y', top + 'px');
+        rider.classList.add('is-visible', 'is-moving');
+        clearTimeout(tiltTimer);
+        tiltTimer = setTimeout(function(){ rider.classList.remove('is-moving'); }, 450);
+        lastTop = top;
+    });
+})();

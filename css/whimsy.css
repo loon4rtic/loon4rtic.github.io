@@ -611,3 +611,118 @@
   .mascot:focus-visible .mascot-armL,
   .mascot.is-talking .mascot-armL{ animation: none; }
 }
+
+/* ─────────────────────────────────────────────
+   Mini Shayn on project pages (built by whimsy.js): hangs off the top
+   edge of the hero screenshot, plus a little head riding the TOC rail
+   ───────────────────────────────────────────── */
+.peek-host{
+  --px: 5px;
+  position: relative;
+  isolation: isolate;
+  justify-self: center;
+  width: 100%;
+  /* headroom so Mini Shayn and the bubble clear the sticky top bar */
+  margin-top: calc(12 * var(--px));
+}
+.peek-host--phone{ max-width: 280px; rotate: 3deg; }
+.peek-host--poster{ max-width: 420px; rotate: 2deg; }
+.peek-host--narrow{ max-width: 440px; }
+/* the wrapper carries the tilt now, so the screenshot itself stays straight */
+.peek-host > .cs-phone,
+.peek-host > .cs-poster{ transform: none; }
+/* screenshot sits in front, so everything below the ledge is hidden */
+.peek-host > .cs-screen,
+.peek-host > .cs-phone,
+.peek-host > .cs-poster{ position: relative; z-index: 1; }
+
+.peeker{
+  --ledge: 0; /* how many skin pixels poke above the top edge */
+  position: absolute;
+  left: 70%;
+  top: 0;
+  z-index: 0;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  translate: -50% calc(var(--ledge) * -1 * var(--px));
+  transition: translate .55s var(--bouncy);
+  -webkit-tap-highlight-color: transparent;
+}
+.peek-host.is-up .peeker{ --ledge: 7; }
+.peek-host.is-up .peeker:hover,
+.peek-host.is-up .peeker:focus-visible,
+.peek-host.is-up.is-talking .peeker{ --ledge: 10; }
+.peeker:focus-visible{ outline: none; }
+.peeker:focus-visible .mascot-figure{
+  filter:
+    drop-shadow(2px 0 0 #95b588) drop-shadow(-2px 0 0 #95b588)
+    drop-shadow(0 2px 0 #95b588) drop-shadow(0 -2px 0 #95b588);
+}
+
+/* arms hooked over the edge */
+.peeker .mascot-armR{ rotate: 150deg; }
+.peeker .mascot-armL{ rotate: -150deg; }
+.peeker:hover .mascot-armL,
+.peeker:focus-visible .mascot-armL,
+.peek-host.is-talking .peeker .mascot-armL{ animation: mascot-wave .5s ease-in-out infinite alternate; }
+
+.peek-host.is-hopping .peeker-figure{ animation: peeker-hop .7s var(--bouncy); }
+@keyframes peeker-hop{
+  0%, 100%{ transform: translateY(0); }
+  45%{ transform: translateY(calc(-12 * var(--px))); }
+}
+
+/* bubble sits beside the head (above would tuck under the top bar), in front of the screenshot */
+.peeker-bubble{
+  right: calc(30% + 9 * var(--px));
+  bottom: calc(100% + 2 * var(--px));
+  translate: none;
+  transform-origin: 100% 60%;
+  z-index: 2;
+}
+.peeker-bubble::after{
+  top: 50%;
+  right: -9px;
+  bottom: auto;
+  margin-top: -7px;
+  rotate: -45deg;
+}
+.peek-host.is-talking .peeker-bubble{ opacity: 1; scale: 1; }
+
+/* TOC rider */
+.toc-rider{
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  image-rendering: pixelated;
+  pointer-events: none;
+  opacity: 0;
+  translate: 0 calc(var(--y, 0px) - 9px);
+  filter: drop-shadow(1px 0 0 #574d8a) drop-shadow(-1px 0 0 #574d8a)
+          drop-shadow(0 1px 0 #574d8a) drop-shadow(0 -1px 0 #574d8a);
+  transition: translate .5s var(--bouncy), rotate .3s ease, opacity .3s ease;
+}
+.toc-rider.is-visible{ opacity: 1; }
+.toc-rider.is-moving{ rotate: var(--tilt); }
+
+@media (max-width: 700px){
+  .peek-host{ --px: 3.5px; }
+  .peek-host--phone{ max-width: 220px; rotate: none; }
+  .peeker-bubble{ font-size: 1.15rem; max-width: 170px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .peeker,
+  .peeker-bubble,
+  .toc-rider{ transition: none; }
+  .peeker-figure,
+  .peek-host.is-hopping .peeker-figure,
+  .peeker:hover .mascot-armL,
+  .peeker:focus-visible .mascot-armL,
+  .peek-host.is-talking .peeker .mascot-armL{ animation: none; }
+}
